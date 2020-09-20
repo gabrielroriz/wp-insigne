@@ -1,43 +1,6 @@
 @import "../utils/Mixins.scss";
 @import "../utils/Vars.scss";
 
-%gridded-section-wrapper-attr {
-  @extend %section-wrapper-attr;
-  display: flex;
-  flex-direction: row;
-
-  @include tablet-landscape-and-below {
-    flex-direction: column;
-  }
-}
-
-%gridded-section-title-attr {
-  width: 20%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-
-  @include tablet-landscape-and-below {
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-  }
-}
-
-%gridded-section-content-attr {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-
-  @include tablet-landscape-and-below {
-    width: 100%;
-  }
-}
-
 .home__header {
   width: 100%;
   height: calc(100vh - 100px);
