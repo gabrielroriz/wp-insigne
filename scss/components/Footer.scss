@@ -12,6 +12,8 @@
     flex-direction: row;
     justify-content: space-between;
 
+    padding-bottom: 50px;
+
     @include tablet-landscape-and-below {
       flex-direction: column;
       justify-content: center;
@@ -70,6 +72,39 @@
 
       &:hover {
         text-decoration: underline;
+      }
+    }
+  }
+
+  &__rights {
+    width: 80%;
+    border-top: 2px solid #ccc;
+    padding-top: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include desktop-and-below {
+      width: 95%;
+    }
+
+    &__links {
+      margin-top: 20px;
+
+      @include desktop-and-below {
+        display: flex;
+        flex-direction: column;
+      }
+
+      a {
+        text-align: center;
+        margin-right: 18px;
+
+        @include desktop-and-below {
+          margin-top: 18px;
+        }
       }
     }
   }

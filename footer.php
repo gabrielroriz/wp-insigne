@@ -72,6 +72,15 @@ $filmes = array(
 
         </div>
     </div>  
+
+    <div class="footer__rights">
+        Todos os direitos reservados - Insigne
+        <div class="footer__rights__links">
+            <a>Políticas de Privacidade</a>
+            <a>Termos de Uso</a>
+            <a>Políticas de Cookies</a>
+        </div>
+    </div>
 </footer>
 
 </body>
