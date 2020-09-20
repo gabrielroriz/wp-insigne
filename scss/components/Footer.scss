@@ -1,0 +1,75 @@
+@import "../utils/Mixins.scss";
+@import "../utils/Vars.scss";
+
+.footer {
+  @extend %section-attr;
+  padding-bottom: 75px;
+
+  &__wrapper {
+    @extend %section-wrapper-attr;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @include tablet-landscape-and-below {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__logo {
+    width: 230px;
+    height: 60px;
+    background-color: #222;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+
+    @include tablet-landscape-and-below {
+      margin-top: 24px;
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__list {
+    margin-right: 80px;
+
+    @include tablet-landscape-and-below {
+      width: 100%;
+      margin-right: 0px;
+    }
+
+    &:last-child {
+      margin-right: 20px;
+
+      @include tablet-landscape-and-below {
+        margin-right: 0px;
+      }
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+
+    li {
+      font-size: 14px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
