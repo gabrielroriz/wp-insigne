@@ -2,42 +2,41 @@
 @import "../utils/Mixins.scss";
 
 .navbar {
-  &__logo {
-    width: 250px;
-    height: 100%;
-    background-color: #ddd;
-  }
-
   &__container {
+    position: relative;
+
     width: 100%;
-    background-color: $color-darker-blue;
+    height: 80px;
+    background-color: #ccc;
+
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 80px;
-    position: relative;
+
     z-index: 5;
-    border-bottom: 1px solid $color-luminous-green;
   }
 
   &__wrapper {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    height: 100%;
-    max-width: 1300px;
-    background-color: $color-darker-blue;
-    padding: 0px 30px;
-    position: relative;
 
-    img {
-      width: 30px;
-      height: auto;
-      object-fit: contain;
-    }
+    max-width: $page-max-width;
+    background-color: #ccc;
+    padding: 0px 30px;
+  }
+
+  &__logo {
+    width: 250px;
+    height: 100%;
+    background-color: #ddd;
   }
 
   &__submenu-box {
@@ -134,24 +133,27 @@
       }
     }
   }
+}
 
-  &__button--mobile {
+.navbar--mobile {
+  &__button {
+    width: 30px;
+    height: auto;
+    object-fit: contain;
     display: none;
 
     @include desktop-and-below {
       display: flex;
     }
 
-    &__hidden {
+    &--hidden {
       display: none;
     }
   }
-}
 
-.navbar--mobile {
   &__container {
     display: none;
-    height: 450px;
+    height: 0%;
     width: 100%;
     position: absolute;
     left: 0;

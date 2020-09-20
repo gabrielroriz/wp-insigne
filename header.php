@@ -9,70 +9,63 @@
   </head>
   <body>
 
-<div class="navbar__container">
+  <?php 
+
+  // Itens da NavBar.
+  // Conteúdo: ([0] 'slug', [1] 'label');
+  // Formato: ([0] 'contato', [1] 'Contato');
+  $nav_items = array(
+    array("home", "Home"),
+    array("filmes", "Filmes"),
+    array("sobre", "Quem somos"),
+    array("contato", "Contato"),
+  );
+
+  ?>
+
+  <div class="navbar__container">
       <div class="navbar__wrapper">
 
           <a href="<?php echo site_url('/home');?>" class="navbar__logo">
             <!-- <img src="<?php echo get_template_directory_uri() ?>/assets/min-images/icons/logo.svg" alt=""/> -->
           </a>
 
-          <img id="navbar__hamburguer-button" src="<?php echo get_template_directory_uri() ?>/assets/min-images/icons/hamburguer.svg" class="navbar__button--mobile" onclick="toggleNav();"  alt=""/>
-          <img id="navbar__close-button" src="<?php echo get_template_directory_uri() ?>/assets/min-images/icons/close.svg"  class="navbar__button--mobile__hidden" onclick="toggleNav();" alt="" />
+          <img 
+            class="navbar--mobile__button" 
+            id="navbar-mobile-hamb-button" 
+            src="<?php echo get_template_directory_uri() ?>/assets/min-images/icons/hamburguer.svg" 
+            onclick="toggleNav();"  
+            alt=""
+          />
 
+          <img 
+            class="navbar--mobile__button--hidden" 
+            id="navbar-mobile-close-button" 
+            src="<?php echo get_template_directory_uri() ?>/assets/min-images/icons/close.svg"  
+            onclick="toggleNav();" 
+            alt="" />
+
+          <!--
+            Para cada item do menu, extraímos o slug e o label da página.
+            EX: slug ("home") e label ("Home").
+          -->
           <div class="navbar__items">
-            
-            <!-- INÍCIO -->
-            <div class="navbar__items__item <?php echo (is_on_page(["home"]) ? "navbar__items__item--selected" : "") ?>">
-              <a href="<?php echo site_url('/home');?>">Home</a>
+            <?php foreach($nav_items as $nav_item) { $page_slug = $nav_item[0]; /* */ $page_label = $nav_item[1]; ?>
+            <!-- Caso estiver na página deste item do menu, adicionar a classe com mode "--selected". -->
+            <div class="navbar__items__item <?php echo (is_on_page([$page_slug]) ? "navbar__items__item--selected" : "") ?>">
+              <!-- Adiciona o item com o label da página e o link para o '/slug' -->
+              <a href="<?php echo site_url('/' . $page_slug);?>"><?php echo $page_label; ?></a>
             </div>
-
-            <!-- TRABALHOS -->
-            <div class="navbar__items__item <?php echo (is_on_page(["trabalhos"]) ? "navbar__items__item--selected" : "") ?>">
-              <a href="<?php echo site_url('/trabalhos');?>">Filmes</a>
-            </div>
-
-            <!-- SOBRE -->
-            <div class="navbar__items__item <?php echo (is_on_page(["sobre"]) ? "navbar__items__item--selected" : "") ?>">
-                <a href="<?php echo site_url('/sobre');?>">Quem Somos</a>
-            </div>
-
-            <!-- SOBRE -->
-            <div class="navbar__items__item <?php echo (is_on_page(["sobre"]) ? "navbar__items__item--selected" : "") ?>">
-                <a href="<?php echo site_url('/sobre');?>">Trabalhos</a>
-            </div>
-          
-          
+              
+            <?php } ?>
           </div>
       </div>
 
-      <div class="navbar--mobile__container" id="navbar--mobile__container">
+      <div class="navbar--mobile__container" id="navbar-mobile-box">
         <div class="navbar--mobile__content">
-            <a href="<?php echo site_url('/home');?>">Início</a>
-            <a href="<?php echo site_url('/trabalhos');?>">Trabalhos</a>
-            <a href="<?php echo site_url('/sobre');?>">Sobre</a>
-            <!-- <a id="navbar--mobile__item--aprenda" onclick="toggleSubmenu('SUBMENU_APRENDA');">
-              Aprenda
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/min-images/icons/menu_arrow_up.svg" />
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/min-images/icons/menu_arrow_down.svg" />
-            </a> -->
-            <div class="navbar--mobile__submenu" id="navbar--mobile__submenu--aprenda">
-              <a href="#">Branding</a>
-              <a href="#">Design</a>
-              <a href="#">Negócios</a>
-              <a href="#">Materiais Gratuitos</a>
-            </div>
-            <!-- <a id="navbar--mobile__item--compre" onclick="toggleSubmenu('SUBMENU_COMPRE');">
-              Compre
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/min-images/icons/menu_arrow_up.svg" />
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/min-images/icons/menu_arrow_down.svg" />
-            </a> -->
-            <!-- <div class="navbar--mobile__submenu" id="navbar--mobile__submenu--compre">
-              <a href="<?php echo site_url('/ferramentas');?>">Ferramentas</a>
-              <a href="<?php echo site_url('/cursos');?>">Cursos</a>
-              <a href="<?php echo site_url('/consultoria');?>">Consultoria</a>
-            </div> -->
-            <a href="<?php echo site_url('/novidades');?>">Novidades</a>
-            <a href="<?php echo site_url('/contato');?>">Contato</a>
+            <?php foreach($nav_items as $nav_item) { $page_slug = $nav_item[0]; /* */ $page_label = $nav_item[1]; ?>
+              <a href="<?php echo site_url('/' . $page_slug);?>"><?php echo $page_label; ?></a>
+            <?php } ?>
         </div>
     </div>
   </div>

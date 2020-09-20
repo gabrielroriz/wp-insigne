@@ -1,30 +1,40 @@
-/**
- * OPEN/CLOSE MOBILE NAVBAR
- */
-
 var navOpened = false;
 
-const navBarMobileContainer = document.getElementById(
-  "navbar--mobile__container"
-);
+const navBarMobileBox = document.getElementById("navbar-mobile-box");
 
-const navBarHamburguerIcon = document.getElementById(
-  "navbar__hamburguer-button"
-);
+// Ícone de hamburguer da NavBar em mobile.
+const navBarHambIcon = document.getElementById("navbar-mobile-hamb-button");
+// Ícone de fechar da NavBar em mobile.
+const navBarCloseIcon = document.getElementById("navbar-mobile-close-button");
 
-const navBarCloseIcon = document.getElementById("navbar__close-button");
+function toggleHamburguerIcon() {
+  // Classe que torna o ícone visível.
+  const classVisible = "navbar--mobile__button";
+  // Classe que esconde o ícone.
+  const classHidden = "navbar--mobile__button--hidden";
+
+  // Se o ícone de hambúrguer estiver sendo mostrado,
+  // escondê-lo e mostrar o botão de fechar.
+  if (navBarHambIcon.className === classVisible) {
+    navBarHambIcon.className = classHidden;
+    navBarCloseIcon.className = classVisible;
+  } else {
+    // Caso contrário, esconder o botão fechar.
+    // E mostrar o ícone de hambúrguer.
+    navBarHambIcon.className = classVisible;
+    navBarCloseIcon.className = classHidden;
+  }
+}
 
 function openNav() {
-  navBarMobileContainer.style.height = "450px";
-  navBarHamburguerIcon.className = "navbar__button--mobile__hidden"; //hidden
-  navBarCloseIcon.className = "navbar__button--mobile";
+  navBarMobileBox.style.height = "450px";
+  toggleHamburguerIcon();
   disableScroll();
 }
 
 function closeNav() {
-  navBarMobileContainer.style.height = "0%";
-  navBarHamburguerIcon.className = "navbar__button--mobile";
-  navBarCloseIcon.className = "navbar__button--mobile__hidden"; //hidden
+  navBarMobileBox.style.height = "0%";
+  toggleHamburguerIcon();
   enableScroll();
 }
 
@@ -36,74 +46,6 @@ function toggleNav() {
   }
   navOpened = !navOpened;
 }
-
-/**
- * OPEN/CLOSE SUBMENUS ON MOBILE NAVBAR
- */
-
-const SUBMENUS = {
-  SUBMENU_COMPRE: {
-    itemId: "navbar--mobile__item--compre",
-    submenuId: "navbar--mobile__submenu--compre",
-    open: false
-  },
-  SUBMENU_APRENDA: {
-    itemId: "navbar--mobile__item--aprenda",
-    submenuId: "navbar--mobile__submenu--aprenda",
-    open: false
-  }
-};
-
-function toggleSubmenu(TAG) {
-  const { open } = SUBMENUS[TAG];
-  if (!open) {
-    openSubmenu(TAG);
-  } else {
-    closeSubmenu(TAG);
-  }
-
-  SUBMENUS[TAG].open = !open;
-}
-
-function openSubmenu(TAG) {
-  const { submenuId, itemId } = SUBMENUS[TAG];
-
-  const submenu = document.getElementById(submenuId);
-  submenu.style.display = "contents";
-  submenu.style.height = "100%";
-
-  const item = document.getElementById(itemId);
-  const arrowUp = item.children[0];
-  const arrowDown = item.children[1];
-
-  arrowUp.style.display = "block";
-  arrowDown.style.display = "none";
-}
-
-function closeSubmenu(TAG) {
-  const { submenuId, itemId } = SUBMENUS[TAG];
-
-  const submenu = document.getElementById(submenuId);
-  submenu.style.display = "none";
-  submenu.style.height = "0%";
-
-  const item = document.getElementById(itemId);
-  const arrowUp = item.children[0];
-  const arrowDown = item.children[1];
-
-  arrowUp.style.display = "none";
-  arrowDown.style.display = "block";
-}
-
-function startSubmenus() {
-  closeSubmenu("SUBMENU_APRENDA");
-  SUBMENUS["SUBMENU_APRENDA"].open = false;
-
-  closeSubmenu("SUBMENU_COMPRE");
-  SUBMENUS["SUBMENU_COMPRE"].open = false;
-}
-
-startSubmenus();
 
 /**
  * UTILS
