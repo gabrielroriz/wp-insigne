@@ -39,58 +39,6 @@
     background-color: #ddd;
   }
 
-  &__submenu-box {
-    display: none;
-    position: absolute;
-    background-color: $color-luminous-green;
-    padding: 30px 60px;
-    color: $color-darker-blue;
-
-    a {
-      color: $color-darker-blue !important;
-      font-family: "Helvetica-Neue-Thin";
-      //   display: block;
-      // color: $color-darker-blue !important;
-      // line-height: 1.56;
-      // font-size: 18px;
-      // font-family: "Helvetica-Neue-Light" !important;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-
-    p {
-      font-size: 18px;
-      line-height: 1;
-    }
-
-    h1 {
-      margin: 0px;
-      font-family: "Helvetica-Neue-Medium";
-      font-weight: bold;
-      font-size: 24px;
-    }
-
-    &--aprenda {
-      bottom: -200px;
-      right: 0px;
-      width: 650px;
-      height: 200px;
-      grid-template-columns: 1fr 1fr;
-      z-index: 9999;
-    }
-
-    &--compre {
-      bottom: -250px;
-      right: 0px;
-      width: 800px;
-      height: 250px;
-      grid-template-columns: 1fr 1fr 1fr;
-      z-index: 9999;
-    }
-  }
-
   &__items {
     display: flex;
     height: 100%;
@@ -108,10 +56,11 @@
       padding: 3px;
 
       &--selected {
-        border-bottom: 3px solid $color-luminous-green;
+        border-bottom: 3px solid black;
 
         a {
-          font-family: "Helvetica-Neue-Bold" !important;
+          color: red;
+          font-weight: bold;
         }
       }
 
@@ -119,16 +68,10 @@
         text-decoration: none;
         font-family: "Helvetica-Neue-Light";
         font-size: 15px;
-        color: $color-luminous-green;
-      }
+        color: black;
 
-      &:hover {
-        a {
-          font-family: "Helvetica-Neue-Bold";
-        }
-
-        .navbar__submenu-box {
-          display: grid;
+        &:hover {
+          color: blue;
         }
       }
     }
@@ -158,7 +101,7 @@
     position: absolute;
     left: 0;
     top: 80px;
-    background-color: $color-darker-blue;
+    background-color: #ddd;
     overflow-x: hidden;
     transition: 0.3s;
     z-index: 10;
@@ -168,8 +111,11 @@
     -khtml-user-select: none; /* Konqueror HTML */
     -moz-user-select: none; /* Old versions of Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Opera and Firefox */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+
+    &--visible {
+      height: 300px;
+    }
 
     @include desktop-and-below {
       display: block;
@@ -202,21 +148,6 @@
         margin-left: 24px;
         object-fit: contain;
       }
-    }
-  }
-
-  &__submenu {
-    height: 0%;
-    display: none;
-    transition: 0.3s;
-
-    a {
-      width: 100%;
-      font-family: "Helvetica-Neue-Thin";
-      font-size: 17px;
-      padding-left: 40px;
-      padding: 0px 8px 0px 12px;
-      text-decoration: underline;
     }
   }
 }

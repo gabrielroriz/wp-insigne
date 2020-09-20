@@ -49,6 +49,39 @@ function remove_default_custom_fields_meta_box( $post_type, $context, $post ) {
 }
 
 
+//Seta uma variável global da página que está.
+function set_current_page_name( $pages ){
+  global $current;
+  $current = get_post_type(); 
+  if($current == "page"){
+     $current = get_post()->post_name; 
+  } 
+  console_log($current);
+}
+
+add_action( 'wp', 'set_current_page_name' );
+
+//Remove o termo "Protegido" e "Privado" dos títulos
+function the_title_trim($title) {
+
+	$title = attribute_escape($title);
+
+	$findthese = array(
+		'#Protegido:#',
+		'#Privado:#'
+	);
+
+	$replacewith = array(
+		'', // What to replace "Protegido:" with
+		'' // What to replace "Privado:" with
+	);
+
+	$title = preg_replace($findthese, $replacewith, $title);
+	return $title;
+}
+
+add_filter('the_title', 'the_title_trim');
+
 //Verifica se está dentro de um array de páginas.
 function is_on_page( $pages ){
   foreach($pages as $page){

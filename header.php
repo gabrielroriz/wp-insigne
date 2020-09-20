@@ -52,9 +52,11 @@
           <div class="navbar__items">
             <?php foreach($nav_items as $nav_item) { $page_slug = $nav_item[0]; /* */ $page_label = $nav_item[1]; ?>
             <!-- Caso estiver na página deste item do menu, adicionar a classe com mode "--selected". -->
-            <div class="navbar__items__item <?php echo (is_on_page([$page_slug]) ? "navbar__items__item--selected" : "") ?>">
+            <div class="navbar__items__item <?php echo (is_on_page([$page_slug]) ? "navbar__items__item--selected" : ""); ?>">
               <!-- Adiciona o item com o label da página e o link para o '/slug' -->
-              <a href="<?php echo site_url('/' . $page_slug);?>"><?php echo $page_label; ?></a>
+              <a href="<?php echo site_url('/' . $page_slug); ?>">
+                <?php echo $page_label; ?>
+              </a>
             </div>
               
             <?php } ?>

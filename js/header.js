@@ -26,14 +26,29 @@ function toggleHamburguerIcon() {
   }
 }
 
+function toggleNavBarMenuBox() {
+  // Classe que torna o ícone visível.
+  const classVisible = "navbar--mobile__container--visible";
+
+  const visible = navBarMobileBox.classList.contains(classVisible);
+  // Se está visível.
+  if (visible) {
+    // Então, remover a classe.
+    navBarMobileBox.classList.remove(classVisible);
+  } else {
+    // Se não, adicionar a classe.
+    navBarMobileBox.classList.add(classVisible);
+  }
+}
+
 function openNav() {
-  navBarMobileBox.style.height = "450px";
+  toggleNavBarMenuBox();
   toggleHamburguerIcon();
   disableScroll();
 }
 
 function closeNav() {
-  navBarMobileBox.style.height = "0%";
+  toggleNavBarMenuBox();
   toggleHamburguerIcon();
   enableScroll();
 }
