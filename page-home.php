@@ -41,4 +41,24 @@
 
     </div>
 
+    <div class="home__clientes">
+        <div class="home__clientes__wrapper">    
+            <div class="home__clientes__title">
+                NOSSOS CLIENTES
+            </div>
+
+            <div class="home__clientes__content">
+                <div class="home__clientes__item"></div>    
+                <div class="home__clientes__item"></div>    
+                <div class="home__clientes__item"></div>    
+                <div class="home__clientes__item"></div>    
+                <div class="home__clientes__item"></div>    
+                <div class="home__clientes__item"></div>    
+                <div class="home__clientes__item"></div>    
+                <div class="home__clientes__item"></div>    
+                <div class="home__clientes__item"></div>    
+            </div>
+        </div>
+    </div>
+
 <?php get_footer()?>
