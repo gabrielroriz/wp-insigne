@@ -106,4 +106,9 @@
         </div>
     </div>
 
+
+    <div class="home__brand">
+
+    </div>
+
 <?php get_footer()?>
