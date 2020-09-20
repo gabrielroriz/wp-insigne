@@ -12,8 +12,9 @@ function theme_scripts()
      * COMMON
      */
 
-    wp_enqueue_style('style', get_stylesheet_uri(), null, microtime(), all);
+    wp_enqueue_script('header-js', get_theme_file_uri('/js/header.js'), null, microtime(), true);
     wp_enqueue_script('main', get_theme_file_uri('/js/main.js'), null, microtime(), true);
+    wp_enqueue_style('style', get_stylesheet_uri(), null, microtime(), all);
 
     /**
      * FOR EACH PAGE
@@ -45,4 +46,13 @@ add_action('wp_head','theme_head');
 add_action( 'do_meta_boxes', 'remove_default_custom_fields_meta_box', 1, 3 );
 function remove_default_custom_fields_meta_box( $post_type, $context, $post ) {
     remove_meta_box( 'postcustom', $post_type, $context );
+}
+
+
+//Verifica se está dentro de um array de páginas.
+function is_on_page( $pages ){
+  foreach($pages as $page){
+    if($GLOBALS['current'] == $page){ return true; }
+  }
+  return false;
 }

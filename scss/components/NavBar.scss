@@ -1,0 +1,220 @@
+@import "../utils/Vars.scss";
+@import "../utils/Mixins.scss";
+
+.navbar {
+  &__logo {
+    width: 250px;
+    height: 100%;
+    background-color: #ddd;
+  }
+
+  &__container {
+    width: 100%;
+    background-color: $color-darker-blue;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    position: relative;
+    z-index: 5;
+    border-bottom: 1px solid $color-luminous-green;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    max-width: 1300px;
+    background-color: $color-darker-blue;
+    padding: 0px 30px;
+    position: relative;
+
+    img {
+      width: 30px;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  &__submenu-box {
+    display: none;
+    position: absolute;
+    background-color: $color-luminous-green;
+    padding: 30px 60px;
+    color: $color-darker-blue;
+
+    a {
+      color: $color-darker-blue !important;
+      font-family: "Helvetica-Neue-Thin";
+      //   display: block;
+      // color: $color-darker-blue !important;
+      // line-height: 1.56;
+      // font-size: 18px;
+      // font-family: "Helvetica-Neue-Light" !important;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    h1 {
+      margin: 0px;
+      font-family: "Helvetica-Neue-Medium";
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    &--aprenda {
+      bottom: -200px;
+      right: 0px;
+      width: 650px;
+      height: 200px;
+      grid-template-columns: 1fr 1fr;
+      z-index: 9999;
+    }
+
+    &--compre {
+      bottom: -250px;
+      right: 0px;
+      width: 800px;
+      height: 250px;
+      grid-template-columns: 1fr 1fr 1fr;
+      z-index: 9999;
+    }
+  }
+
+  &__items {
+    display: flex;
+    height: 100%;
+
+    @include desktop-and-below {
+      display: none;
+    }
+
+    &__item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      margin-right: 40px;
+      padding: 3px;
+
+      &--selected {
+        border-bottom: 3px solid $color-luminous-green;
+
+        a {
+          font-family: "Helvetica-Neue-Bold" !important;
+        }
+      }
+
+      a {
+        text-decoration: none;
+        font-family: "Helvetica-Neue-Light";
+        font-size: 15px;
+        color: $color-luminous-green;
+      }
+
+      &:hover {
+        a {
+          font-family: "Helvetica-Neue-Bold";
+        }
+
+        .navbar__submenu-box {
+          display: grid;
+        }
+      }
+    }
+  }
+
+  &__button--mobile {
+    display: none;
+
+    @include desktop-and-below {
+      display: flex;
+    }
+
+    &__hidden {
+      display: none;
+    }
+  }
+}
+
+.navbar--mobile {
+  &__container {
+    display: none;
+    height: 450px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 80px;
+    background-color: $color-darker-blue;
+    overflow-x: hidden;
+    transition: 0.3s;
+    z-index: 10;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+
+    @include desktop-and-below {
+      display: block;
+    }
+  }
+
+  &__content {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: 1.5rem;
+    padding: 0 5%;
+
+    a {
+      padding: 8px;
+      text-decoration: none;
+      font-size: 21px;
+      line-height: 35px;
+      display: block;
+      transition: 0.5s;
+      margin-bottom: 10px;
+      font-family: "Helvetica-Neue-Bold";
+      color: #212121;
+      text-align: left;
+      cursor: pointer;
+
+      display: flex;
+
+      img {
+        margin-left: 24px;
+        object-fit: contain;
+      }
+    }
+  }
+
+  &__submenu {
+    height: 0%;
+    display: none;
+    transition: 0.3s;
+
+    a {
+      width: 100%;
+      font-family: "Helvetica-Neue-Thin";
+      font-size: 17px;
+      padding-left: 40px;
+      padding: 0px 8px 0px 12px;
+      text-decoration: underline;
+    }
+  }
+}
