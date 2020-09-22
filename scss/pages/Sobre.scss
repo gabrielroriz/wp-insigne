@@ -1,0 +1,182 @@
+@import "../utils/Mixins.scss";
+@import "../utils/Vars.scss";
+
+$gray: #707070;
+
+.sobre {
+    color: $gray;
+
+    &__header {
+        @extend %section-attr;
+        height: 90vh;
+
+        &__wrapper {
+            @extend %section-wrapper-attr;
+
+            height: 100%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        &__title {
+            font-size: 4.2vw;
+            margin-top: 20vh;
+            // margin-bottom: 100px;
+
+            h1 {
+                color: $gray;
+                font-weight: 900;
+            }
+
+            span {
+                color: $gray;
+                font-weight: 400;
+            }
+        }
+
+        &__cta {
+            h4 {
+                text-transform: uppercase;
+                font-weight: 300;
+                margin-bottom: 0;
+                font-size: 20px;
+                color: $gray;
+            }
+
+            a {
+                text-decoration: none;
+                color: $gray;
+                font-size: 50px;
+                margin-top: 0;
+            }
+        }
+    }
+
+
+    &__texto1 {
+        @extend %section-attr;
+
+        &__wrapper {
+            @extend %section-wrapper-attr;
+            padding-top: 105px;
+            width: 95%;
+            max-width: 1140px;
+        }
+
+        h2 {
+            font-size: 36px;
+            line-height: 1.7;
+            color: $gray;
+        }
+
+        h3 {
+            font-size: 32px;
+            line-height: 1.6;
+            font-weight: 400;
+            color: $gray;
+        }
+
+        p {
+            color: $gray;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+    }
+
+
+    &__beliefs {
+        @extend %section-attr;
+
+        &__wrapper {
+            @extend %section-wrapper-attr;
+            
+            margin-top: 100px;
+
+            display: grid;
+            grid-template-columns: 2fr 8fr;
+            column-gap: 15px;
+        }
+
+        &__title {
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 14px;
+            margin-top: 50px;
+        }
+
+        &__right {
+            display: grid;
+            grid-template-columns: 1fr;
+            row-gap: 20px;
+        }
+    }
+
+    &__belief {
+        border: 1px solid $gray;
+        padding: 45px 30px;
+        height: 420px;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        &__number {
+            margin-right: 56px;
+            font-weight: 900;
+            font-size: 70px;
+        }
+
+        &__text {
+            width: 430px;
+            font-weight: 400;
+            line-height: 1.8;
+            font-size: 18px;
+        }
+    }
+
+
+    &__grid {
+        @extend %section-attr;
+
+        &__wrapper {
+            @extend %section-wrapper-attr;
+            
+            margin-top: 70px;
+            margin-bottom: 240px;
+            border-bottom: 1px solid $gray;
+            padding-bottom: 70px;
+
+            display: grid;
+            grid-template-columns: 2fr 8fr;
+            column-gap: 15px;
+        }
+
+        &__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 50px;
+            row-gap: 60px;
+        }
+    }
+
+    &__smallbelief {
+        display: flex;
+        flex-direction: row;
+        
+        &__number {
+            @extend .sobre__belief__number;
+            margin-right: 10px;
+        }
+
+        &__text {
+            @extend .sobre__belief__text;
+            width: 100%;
+        }
+    }
+
+}
