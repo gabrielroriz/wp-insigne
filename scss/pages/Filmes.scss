@@ -22,6 +22,12 @@
             align-items: flex-end;
 
             border-bottom: 1px solid lightgray;
+
+            @include tablet-landscape-and-below {
+                padding: 0;
+                display: flex;
+                flex-direction: column-reverse;
+            }
     
         }
     
@@ -46,6 +52,10 @@
             position: relative;
             width: 100%;
             height: 100%;
+
+            @include tablet-landscape-and-below {
+                height: 50vh;
+            }
         }
     }
 
@@ -57,11 +67,19 @@
         -moz-box-shadow: 0px 0px 80px -13px rgba(0,0,0,0.35);
         box-shadow: 0px 0px 80px -13px rgba(0,0,0,0.35);
 
+        @include tablet-landscape-and-below {
+            top: 0;
+        }
+
         &__1 {
             top: 60px;
             left: 30px;
             transform: scale(0.9);
             z-index: 100;
+
+            @include tablet-landscape-and-below {
+                transform: scale(0.45);
+            }
         }
 
         &__2 {
@@ -69,6 +87,10 @@
             left: 240px;
             transform: scale(0.75);
             z-index: 90;
+
+            @include tablet-landscape-and-below {
+                transform: scale(0.30);
+            }
         }
 
         &__3 {
@@ -76,6 +98,10 @@
             left: 460px;
             transform: scale(0.6);
             z-index: 80;
+
+            @include tablet-landscape-and-below {
+                display: none;
+            }
         }
 
         &__fundo {
@@ -84,6 +110,10 @@
             transform: scale(0.75);
             z-index: 70;
             opacity: 0.2;
+
+            @include tablet-landscape-and-below {
+                transform: scale(0.45);
+            }
         }
     }
 
@@ -149,6 +179,11 @@
             h4 {
                 font-weight: 400;
             }
+
+            a {
+                text-decoration: none;
+                color: black
+            }
         }
 
         &__grid {
@@ -157,6 +192,14 @@
             grid-template-columns: 1fr 1fr 1fr 1fr;
             column-gap: 10px;
             row-gap: 10px;
+
+            @include tablet-landscape-and-below {
+                overflow-x: scroll;
+            }
+
+            &::-webkit-scrollbar {
+                width: 0px;
+            }
         }
     }
 

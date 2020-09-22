@@ -60,7 +60,7 @@
             <div class="filmes__row">
                 <div class="filmes__row__head">
                     <h3><?php echo $tipo; ?></h3>
-                    <h4>Veja todos</h4>
+                    <h4><a href="#">Veja todos</a></h4>
                 </div>
                 <div class="filmes__row__grid">
                     <?php for($i = 0; $i < 4; $i++): ?>
