@@ -10,6 +10,7 @@ $gray: #707070;
         @extend %section-attr;
         height: 90vh;
 
+
         &__wrapper {
             @extend %section-wrapper-attr;
 
@@ -19,12 +20,21 @@ $gray: #707070;
             flex-direction: column;
             justify-content: space-between;
             text-align: center;
+
+            @include tablet-landscape-and-below {
+                width: 100%;
+                padding: 0;
+            }
         }
 
         &__title {
             font-size: 4.2vw;
             margin-top: 20vh;
             // margin-bottom: 100px;
+
+            @include tablet-landscape-and-below {
+                font-size: 6.2vw;
+            }
 
             h1 {
                 color: $gray;
@@ -70,6 +80,10 @@ $gray: #707070;
             font-size: 36px;
             line-height: 1.7;
             color: $gray;
+
+            @include tablet-landscape-and-below {
+                line-height: 1.4;
+            }
         }
 
         h3 {
@@ -77,6 +91,11 @@ $gray: #707070;
             line-height: 1.6;
             font-weight: 400;
             color: $gray;
+
+            @include tablet-landscape-and-below {
+                line-height: 1.4;
+                font-size: 28px;
+            }
         }
 
         p {
@@ -84,6 +103,11 @@ $gray: #707070;
             font-weight: 400;
             font-size: 18px;
             line-height: 1.8;
+
+            @include tablet-landscape-and-below {
+                line-height: 2.2;
+                font-size: 22px;
+            }
         }
     }
 
@@ -99,6 +123,11 @@ $gray: #707070;
             display: grid;
             grid-template-columns: 2fr 8fr;
             column-gap: 15px;
+
+            @include tablet-landscape-and-below {
+                grid-template-columns: 1fr;
+                margin-top: 10px;
+            }
         }
 
         &__title {
@@ -106,6 +135,15 @@ $gray: #707070;
             text-align: center;
             font-size: 14px;
             margin-top: 50px;
+
+            @include tablet-landscape-and-below {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: flex-start;
+                padding-bottom: 120px;
+                margin-top: 20px;
+            }
         }
 
         &__right {
@@ -125,6 +163,11 @@ $gray: #707070;
         justify-content: flex-start;
         align-items: flex-start;
 
+        @include tablet-landscape-and-below {
+            height: auto;
+            flex-direction: column;
+        }
+
         &__number {
             margin-right: 56px;
             font-weight: 900;
@@ -136,6 +179,10 @@ $gray: #707070;
             font-weight: 400;
             line-height: 1.8;
             font-size: 18px;
+
+            @include tablet-landscape-and-below {
+                width: auto;
+            }
         }
     }
 
@@ -154,6 +201,14 @@ $gray: #707070;
             display: grid;
             grid-template-columns: 2fr 8fr;
             column-gap: 15px;
+
+            @include tablet-landscape-and-below {
+                grid-template-columns: 1fr;
+                width: 86%;
+                padding: 0;
+                padding-bottom: 70px;
+                margin-bottom: 100px;
+            }
         }
 
         &__grid {
@@ -161,21 +216,29 @@ $gray: #707070;
             grid-template-columns: 1fr 1fr;
             column-gap: 50px;
             row-gap: 60px;
+
+            grid-template-columns: 1fr;
         }
     }
 
     &__smallbelief {
         display: flex;
         flex-direction: row;
+
+        @include tablet-landscape-and-below {
+            flex-direction: column;
+        }
         
         &__number {
             @extend .sobre__belief__number;
             margin-right: 10px;
+            color: $gray;
         }
 
         &__text {
             @extend .sobre__belief__text;
             width: 100%;
+            color: $gray;
         }
     }
 

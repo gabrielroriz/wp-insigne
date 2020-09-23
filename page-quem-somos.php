@@ -19,7 +19,7 @@
 <div class="sobre__texto1">
     <div class="sobre__texto1__wrapper">
         <h2>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus ex quo commodi vero! Esse sit consequuntur, repellendus aliquam accusamus dolore. Totam unde ex odit, nesciunt rem accusamus commodi autem et?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus ex quo commodi vero! 
         </h2>
         <h3>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus ex quo commodi vero! Esse sit consequuntur, repellendus aliquam accusamus dolore. 
@@ -63,7 +63,7 @@
             <?php for($i = 4; $i < 13; $i++ ): ?>
                 <div class="sobre__smallbelief">
                     <div class="sobre__smallbelief__number">
-                    04
+                    <?php echo $i;?>
                     </div>
                     <div class="sobre__smallbelief__text">
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit tempore odit repellat vel, ea explicabo temporibus vero exercitationem provident ad sequi magni quae officiis in voluptatum sit, accusamus, optio necessitatibus.
