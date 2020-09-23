@@ -21,6 +21,10 @@ $light-gray: #E6E6E6;
             justify-content: flex-start;
             align-items: flex-end;
 
+            @include tablet-landscape-and-below {
+                background: $light-gray;
+            }
+
             h1 {
                 font-size: 200px;
                 font-weight: 900;
@@ -29,6 +33,10 @@ $light-gray: #E6E6E6;
                 margin: 0;
                 color: $gray;
                 text-transform: uppercase;
+
+                @include tablet-landscape-and-below {
+                    font-size: 15vw;
+                }
             }
 
             span {
@@ -49,6 +57,11 @@ $light-gray: #E6E6E6;
 
             display: grid;
             grid-template-columns: 4fr 6fr;
+
+            @include tablet-landscape-and-below {
+                grid-template-columns: 1fr;
+                margin-bottom: 140;
+            }
         }
 
         &__infos {
@@ -84,6 +97,12 @@ $light-gray: #E6E6E6;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+
+            @include tablet-landscape-and-below {
+                display: grid;
+                grid-template-columns: 1fr;
+                row-gap: 20px;
+            }
             
             a {
                 text-decoration: none;
@@ -95,6 +114,12 @@ $light-gray: #E6E6E6;
 
         &__wpp {
             margin-bottom: 5px;
+
+            @include tablet-landscape-and-below {
+                text-align: center;
+                margin-top: 100px;
+            }
+
             a {
                 color: white;
                 text-decoration: none;
@@ -110,6 +135,10 @@ $light-gray: #E6E6E6;
             margin-top: 10px;
             font-size: 12px;
             color: $gray;
+
+            @include tablet-landscape-and-below {
+                text-align: center;
+            }
         }
     }
 
