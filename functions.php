@@ -3,7 +3,8 @@
 require get_template_directory() . '/includes/utils.php';
 require get_template_directory() . '/includes/customizer/customizer.php';
 require get_template_directory() . '/includes/widgets/widget-example.php';
-require get_template_directory() . '/includes/metaboxes/modelo-de-pagina.php';
+require get_template_directory() . '/includes/metaboxes/filmes.php';
+require get_template_directory() . '/includes/metaboxes/projetos.php';
 
 
 function theme_scripts()
@@ -89,3 +90,76 @@ function is_on_page( $pages ){
   }
   return false;
 }
+
+
+// Adiciona custom post types
+function create_custom_category($model_slug){
+  register_taxonomy(
+        $model_slug . '-category',
+        'team',
+        array(
+            'label' => __( 'Category' ),
+            'rewrite' => array( 'slug' =>  $model_slug . '-category'),
+            'hierarchical' => true,
+        )
+    );
+}
+
+function wp_register_custom_post_types() {
+
+   /**
+   * PROJETOS 
+   */
+
+  create_custom_category("projetos");
+
+  $projetos_labels = array(
+     'name' => _x( 'Projetos', 'Nome geral para o modelo Projetos' ),
+     'singular_name' => _x( 'Projeto', 'Nome singularizado para o modelo Projeto' ),
+     
+  );
+
+  $projetos_args = array(
+    'labels' => $projetos_labels,
+    'description' => 'Projetos disponíveis.',
+    'public' => true,
+    'has_archive'=> true,
+    'show_in_admin_bar' => true,
+    'show_in_nav_menus' => true,
+    'menu_icon'         => 'dashicons-welcome-write-blog',
+    'supports'          => array( 'title', 'thumbnail', 'custom-fields'),
+    'taxonomies'        => array('projetos-category')
+  );
+  
+  register_post_type('projetos', $projetos_args);
+
+
+  /**
+   * FILMES 
+   */
+
+  create_custom_category("filmes");
+
+  $filmes_labels = array(
+     'name' => _x( 'Filmes', 'Nome geral para o modelo Filmes' ),
+     'singular_name' => _x( 'Filme', 'Nome singularizado para o modelo Filme' ),
+     
+  );
+
+  $filmes_args = array(
+    'labels' => $filmes_labels,
+    'description' => 'Filmes disponíveis.',
+    'public' => true,
+    'has_archive'=> true,
+    'show_in_admin_bar' => true,
+    'show_in_nav_menus' => true,
+    'menu_icon'         => 'dashicons-welcome-write-blog',
+    'supports'          => array( 'title', 'thumbnail', 'custom-fields'),
+    'taxonomies'        => array('filmes-category')
+  );
+  
+  register_post_type('filmes', $filmes_args);
+
+}
+
+add_action( 'init', 'wp_register_custom_post_types' );
