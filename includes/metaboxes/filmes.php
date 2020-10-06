@@ -29,7 +29,7 @@ function filme_meta_box_html($post)
     metabox_end();
 }
 
-function filme_meta_box_save($post_id)
+function filmes_meta_box_save($post_id)
 {
     if(isset($_POST) && !empty($_POST))
     {
@@ -48,4 +48,4 @@ function filme_meta_box_save($post_id)
     
     return $post_id;
 }
-add_action('save_post_filme', 'filme_meta_box_save', 100, 1);
+add_action('save_post_filmes', 'filmes_meta_box_save', 100, 1);

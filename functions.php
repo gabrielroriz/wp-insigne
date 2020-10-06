@@ -15,7 +15,7 @@ function theme_scripts()
 
     wp_enqueue_script('header-js', get_theme_file_uri('/js/header.js'), null, microtime(), true);
     wp_enqueue_script('main', get_theme_file_uri('/js/main.js'), null, microtime(), true);
-    wp_enqueue_style('style', get_stylesheet_uri(), null, microtime(), all);
+    wp_enqueue_style('style', get_stylesheet_uri(), null, microtime(), 'all');
 
     /**
      * FOR EACH PAGE
@@ -82,6 +82,12 @@ function the_title_trim($title) {
 }
 
 add_filter('the_title', 'the_title_trim');
+
+// Carrega o wp.media no javascript:
+function load_wp_media_files() {
+  wp_enqueue_media();
+}
+add_action( 'admin_enqueue_scripts', 'load_wp_media_files' );
 
 //Verifica se está dentro de um array de páginas.
 function is_on_page( $pages ){

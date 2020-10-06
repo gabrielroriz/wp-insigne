@@ -42,61 +42,20 @@
 
 <div class="filmes__tab" id="tab_tipo">
     <div class="filmes__tab__wrapper">
-
-        <?php 
-            $tipos = [
-                "Storytelling",
-                "Lançamentos - Super Lives",
-                "Publicidade",
-                "Animação/Motion",
-                "Obras Originais",
-                "Branded Content",
-                "Institucionais"
-            ];
-            $categorias = get_terms([
-                "taxonomy" => "filmes-category",
-                "hide_empty" => false
-            ]);
-
-            // $filmes_por_categoria = new WP_Query([
-            //     "post_type"=> "filmes",
-            //     "tax_query" => [
-            //         "taxonomy" => "filmes-category"
-            //     ]
-            // ]);
-
-        ?>
-        
-        <?php foreach($categorias as $categoria): ?>
-
-            <?php 
-                $filmes = new WP_Query([
-                    "post_type" => "filmes",
-                    "tax_query" => [
-                        [
-                            "taxonomy" => "filmes-category",
-                            "field" => "slug",
-                            "terms" => $categoria->slug
-                        ]
-                    ]
-                ]);
-            ?>
-
+    
             <div class="filmes__row">
                 <div class="filmes__row__head">
-                    <h3><?php echo $categoria->name; ?></h3>
-                    <h4><a href="<?php get_term_link($categoria)?>">Veja todos</a></h4>
+                    <h3>Storytelling</h3>
+                    <!-- <h4><a href="#">Veja todos</a></h4> -->
                 </div>
                 <div class="filmes__row__grid">
-                    <?php while($filmes->have_posts()): $filmes->the_post(); ?>
+                    <?php for($i = 0; $i < 16; $i++): ?>
                         <div class="filmes__griditem">
-                            <img src="<?php echo get_post_meta(get_the_ID(), "FILMES_IMAGEM")[0]; ?>">
+                            <img src="https://via.placeholder.com/520x763">
                         </div>  
-                    <?php endwhile; ?>
+                    <?php endfor ?>
                 </div>
             </div>
-
-        <?php endforeach; ?>
 
     </div>
 </div>
