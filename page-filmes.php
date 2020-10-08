@@ -85,7 +85,7 @@
             <div class="filmes__row">
                 <div class="filmes__row__head">
                     <h3><?php echo $categoria->name; ?></h3>
-                    <h4><a href="<?php get_term_link($categoria)?>">Veja todos</a></h4>
+                    <h4><a href="<?php echo "/filmes-category/" . $categoria->slug . "/"; ?>">Veja todos</a></h4>
                 </div>
                 <div class="filmes__row__grid">
                     <?php while($filmes->have_posts()): $filmes->the_post(); ?>

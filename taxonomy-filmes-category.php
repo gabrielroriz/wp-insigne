@@ -42,18 +42,36 @@
 
 <div class="filmes__tab" id="tab_tipo">
     <div class="filmes__tab__wrapper">
+
+        <?php 
+            $categoria = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy')); 
+        ?>
     
             <div class="filmes__row">
                 <div class="filmes__row__head">
-                    <h3>Storytelling</h3>
+                    <h3><?php echo $categoria->name ?></h3>
                     <!-- <h4><a href="#">Veja todos</a></h4> -->
                 </div>
+
+                <?php
+                $filmes = new WP_Query([
+                    "post_type" => "filmes",
+                    "tax_query" => [
+                        [
+                            "taxonomy" => "filmes-category",
+                            "field" => "slug",
+                            "terms" => $categoria->slug
+                        ]
+                    ]
+                ]);
+                ?>
+
                 <div class="filmes__row__grid">
-                    <?php for($i = 0; $i < 16; $i++): ?>
+                    <?php while($filmes->have_posts()): $filmes->the_post(); ?>
                         <div class="filmes__griditem">
-                            <img src="https://via.placeholder.com/520x763">
+                            <img src="<?php echo get_post_meta(get_the_ID(), "FILMES_IMAGEM")[0]; ?>">
                         </div>  
-                    <?php endfor ?>
+                    <?php endwhile ?>
                 </div>
             </div>
 
