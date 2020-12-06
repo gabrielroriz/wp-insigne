@@ -237,18 +237,40 @@
   padding: 100px 0px;
   background-color: #2e1a47;
 
-  h1 {
+  &__container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  span {
     color: #ffb81c;
     font-size: 160px;
     margin: 0px;
     text-align: center;
-
+    position: relative;
+    z-index: 2;
     @include desktop-and-below {
       font-size: 90px;
     }
 
     @include mobile-landscape-and-below {
       font-size: 40px;
+    }
+  }
+
+  &__pontilhado {
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    z-index: -1;
+    width: 25%;
+
+    @include mobile-landscape-and-below {
+      width: 40%;
+      bottom: -25px;
+      right: -25px;
     }
   }
 }

@@ -4,6 +4,8 @@
 .footer {
   @extend %section-attr;
   padding-bottom: 75px;
+  color: #ffb81c;
+  background-color: #2e1a47;
 
   &__wrapper {
     @extend %section-wrapper-attr;
@@ -22,9 +24,6 @@
   }
 
   &__logo {
-    width: 230px;
-    height: 60px;
-    background-color: #222;
   }
 
   &__content {
@@ -63,7 +62,7 @@
 
     a {
       text-decoration: none;
-      color: #222;
+      color: #ffb81c;
     }
 
     li {
@@ -78,7 +77,7 @@
 
   &__rights {
     width: 80%;
-    border-top: 2px solid #ccc;
+    border-top: 2px solid #ffb71c73;
     padding-top: 30px;
 
     display: flex;

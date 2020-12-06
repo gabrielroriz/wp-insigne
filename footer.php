@@ -26,7 +26,7 @@ $filmes = array(
 <footer class="footer">
     <div class="footer__wrapper">
         <div class="footer__logo">
-
+            <img src="<?php echo get_template_directory_uri() . "/assets/min-images/logos/insingeLogoAmarelo.svg"; ?>" alt=""/>
         </div>
 
         <div class="footer__content">

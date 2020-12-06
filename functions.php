@@ -169,3 +169,9 @@ function wp_register_custom_post_types() {
 }
 
 add_action( 'init', 'wp_register_custom_post_types' );
+
+
+// Remove a barra de ADMIN.
+
+function hide_admin_bar(){ return false; }
+add_filter( 'show_admin_bar', 'hide_admin_bar' );

@@ -10,23 +10,6 @@
         <div class="home__header__title"><?php echo $home_title; ?></div>
     </div>
 
-    <?php 
-
-        $projetos = array(
-            array("Projeto 01", "Breve descrição do projeto 01 de no máximo de 02 linhas"),
-            array("Projeto 02", "Breve descrição do projeto 01 de no máximo de 02 linhas"),
-            array("Projeto 03", "Breve descrição do projeto 01 de no máximo de 02 linhas"),
-            array("Projeto 04", "Breve descrição do projeto 01 de no máximo de 02 linhas"),
-            array("Projeto 05", "Breve descrição do projeto 01 de no máximo de 02 linhas"),
-            array("Projeto 06", "Breve descrição do projeto 01 de no máximo de 02 linhas"),
-            array("Projeto 07", "Breve descrição do projeto 01 de no máximo de 02 linhas"),
-            array("Projeto 08", "Breve descrição do projeto 01 de no máximo de 02 linhas"),
-            array("Projeto 09", "Breve descrição do projeto 01 de no máximo de 02 linhas"),
-            array("Projeto 10", "Breve descrição do projeto 01 de no máximo de 02 linhas"),
-        );
-
-    ?>
-
       <?php 
 
         $args = array( 
@@ -66,28 +49,6 @@
         </div>  
 
     </div>
-
-    <!-- SEÇÃO CANCELADA! -->
-
-    <!-- <div class="home__clientes">
-        <div class="home__clientes__wrapper">    
-            <div class="home__clientes__title">
-                NOSSOS CLIENTES
-            </div>
-
-            <div class="home__clientes__content">
-                <div class="home__clientes__item"></div>    
-                <div class="home__clientes__item"></div>    
-                <div class="home__clientes__item"></div>    
-                <div class="home__clientes__item"></div>    
-                <div class="home__clientes__item"></div>    
-                <div class="home__clientes__item"></div>    
-                <div class="home__clientes__item"></div>    
-                <div class="home__clientes__item"></div>    
-                <div class="home__clientes__item"></div>    
-            </div>
-        </div>
-    </div> -->
 
     <div class="home__sobre">
         <div class="home__sobre__wrapper">    
@@ -129,7 +90,14 @@
 
 
     <div class="home__brand">
-        <h1>WE ARE INSIGNE</h1>
+        <div class="home__brand__container">
+            <span>
+                WE ARE INSIGNE
+                <img src="<?php echo get_template_directory_uri() . "/assets/min-images/home/brand/pontilhado.png"; ?>" class="home__brand__pontilhado" />
+            </span>
+            
+        </div>
+        
     </div>
 
 <?php get_footer()?>

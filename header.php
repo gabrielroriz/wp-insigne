@@ -17,7 +17,7 @@
   $nav_items = array(
     array("home", "Home"),
     array("filmes", "Filmes"),
-    array("quem-somos", "Quem somos"),
+    array("sobre", "Quem somos"),
     array("contato", "Contato"),
   );
 
@@ -27,7 +27,7 @@
       <div class="navbar__wrapper">
 
           <a href="<?php echo site_url('/home');?>" class="navbar__logo">
-            <!-- <img src="<?php echo get_template_directory_uri() ?>/assets/min-images/icons/logo.svg" alt=""/> -->
+            <img src="<?php echo get_template_directory_uri() . "/assets/min-images/logos/insigneLogoAmareloRow.png"; ?>" alt=""/>
           </a>
 
           <img 
