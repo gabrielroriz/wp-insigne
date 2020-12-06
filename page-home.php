@@ -1,7 +1,13 @@
 <?php get_header() ?>
 
-    <div class="home__header">
+    <?php 
+        $home_title = "\"Bravo\" é o mínimo.";
+    ?>
 
+    <div class="home__header">
+        <img src="<?php echo get_template_directory_uri() . "/assets/min-images/home/header/headerBottomPath.svg"; ?>" class="home__header__bottom-path" />
+        
+        <div class="home__header__title"><?php echo $home_title; ?></div>
     </div>
 
     <?php 
@@ -21,27 +27,49 @@
 
     ?>
 
+      <?php 
+
+        $args = array( 
+            "post_type" => "filmes",
+            "post_statu" => "publish",
+            'orderby' => 'date',
+            "order" => "ASC",
+            'posts_per_page' => 4
+        );
+
+        $filmes = array();
+
+        $loop = new WP_Query($args); 
+
+        while ($loop->have_posts()) : $loop->the_post();
+            array_push($filmes, array(get_post_meta(get_the_ID(), "FILMES_IMAGEM", true), get_post_permalink()));
+        endwhile;
+
+        wp_reset_postdata();
+    ?>
+
+
     <div class="home__projetos">
         <div class="home__projetos__wrapper">
             <div class="home__projetos__grid">
-                <?php foreach($projetos as $projeto) {
-                    $projeto__title = $projeto[0];
-                    $projeto__description = $projeto[1];
+                <?php foreach($filmes as $filme) {
+                    $filme__image = $filme[0];
+                    $filme__link = $filme[1];
                 ?>
-                <div class="home__projetos__grid__item">
-                    <div class="home__projetos__grid__item__content">
-                        <h2><?php echo $projeto__title; ?></h2>
-                        <p><?php echo $projeto__description; ?></p>
-                    </div>
-                </div>
-
+                <a class="home__projetos__grid__item" 
+                   style="background-image: url(<?php echo $filme__image; ?>);" 
+                   href="<?php echo $filme__link; ?>"
+                >
+                </a>
                 <?php } ?>
             </div>
         </div>  
 
     </div>
 
-    <div class="home__clientes">
+    <!-- SEÇÃO CANCELADA! -->
+
+    <!-- <div class="home__clientes">
         <div class="home__clientes__wrapper">    
             <div class="home__clientes__title">
                 NOSSOS CLIENTES
@@ -59,56 +87,49 @@
                 <div class="home__clientes__item"></div>    
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div class="home__sobre">
         <div class="home__sobre__wrapper">    
             <div class="home__sobre__title">
-                QUEM SOMOS
+                <span>É isso que nos motiva e movimenta.</span>
+                <h2>Somos uma produtora audiovisual <strong>que te leva aonde você merece estar.</strong></h2>
+                <h2>Somos para aqueles que só se <strong>contentam com o melhor.</strong></h2>
+                
             </div>
 
             <div class="home__sobre__content">
-                <h1>Lorem ipsum dolor sit amet, consectetur</h1>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p><strong>Entregamos soluções audiovisuais criativas em diversos formatos</strong>: storytelling, lançamento em super lives, animação, branded content, institucionais, programas para internet e tv, e todo tipo de obra original.</p>
+                    
+                <p><strong>Somos um time de criativos e técnicos a serviço de quem quer alcançar o sucesso do jeito certo. Sabemos o que fazer e como fazer.</strong></p> 
+                
+                <p>Mais que vídeos, fazemos arte cinematográfica.</p>
+                
+                <p><strong>Somos Insigne.</strong></p>
             </div>
         </div>
     </div>
 
-    <?php 
-        $beliefs = array(
-            array("01", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."),
-            array("02", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."),
-            array("03", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."),
-            array("04", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."),
-        );
-    ?>
+  
 
     <div class="home__beliefs">
         <div class="home__beliefs__wrapper">    
             <div class="home__beliefs__title">
-                NOSSAS CRENÇAS
+                NÓS TE AJUDAMOS A SER NOTÁVEL
             </div>
 
             <div class="home__beliefs__content">
-                <h1>Lorem ipsum dolor sit amet, consectetur</h1>
-                <div class="home__beliefs__grid">
-                    <?php foreach($beliefs as $belief){ 
-                        $belief_number = $belief[0];
-                        $belief_text = $belief[1];
-                    ?>
-                        <div class="home__beliefs__item">
-                            <h2><?php echo $belief_number; ?></h2>
-                            <p><?php echo $belief_text; ?></p>
-                        </div>  
-                    <?php } ?>
-                </div>      
+                <div class="home__beliefs__button">
+                    ENTRAR EM CONTATO VIA WHATSAPP
+                </div>
+                <span>Horário de atendimento: das 08:00h às 17:00h</br>
             </div>
         </div>
     </div>
 
 
     <div class="home__brand">
-
+        <h1>WE ARE INSIGNE</h1>
     </div>
 
 <?php get_footer()?>
