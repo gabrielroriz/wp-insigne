@@ -16,7 +16,7 @@
   // Formato: ([0] 'contato', [1] 'Contato');
   $nav_items = array(
     array("home", "Home"),
-    array("filmes", "Filmes"),
+    array("osfilmes", "Filmes"),
     array("sobre", "Quem somos"),
     array("contato", "Contato"),
   );
@@ -28,6 +28,7 @@
 
           <a href="<?php echo site_url('/home');?>" class="navbar__logo">
             <img src="<?php echo get_template_directory_uri() . "/assets/min-images/logos/insigneLogoAmareloRow.png"; ?>" alt=""/>
+            <img src="<?php echo get_template_directory_uri() . "/assets/min-images/logos/insingeLogoAmareloShort.svg"; ?>" alt=""/>
           </a>
 
           <img 

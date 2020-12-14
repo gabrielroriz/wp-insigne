@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="365" height="122" viewBox="0 0 365 122">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Retângulo_114" data-name="Retângulo 114" width="365" height="122" transform="translate(0 3033)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="divisória-quemsomos-mobile" transform="translate(0 -3033)" clip-path="url(#clip-path)">
+    <g id="Grupo_33" data-name="Grupo 33">
+      <path id="Caminho_346" data-name="Caminho 346" d="M1517.462,2677.958l120.629,394.559L1526.985,3090.9l-48.277-383.649Z" transform="translate(3400.242 2486.383) rotate(107)" fill="#2e1a47"/>
+      <path id="Caminho_345" data-name="Caminho 345" d="M1517.462,2677.958l47.195,413.088-37.672-.15-48.277-383.649Z" transform="translate(3400.242 2469.383) rotate(107)" fill="#efdbb2"/>
+      <path id="Caminho_294" data-name="Caminho 294" d="M-83.77,993.334,77.446,948.417,331.535,978.9,462.377,935.05" transform="translate(245.196 2108.1) rotate(16)" fill="none" stroke="#ffb81c" stroke-width="3"/>
+      <path id="Caminho_331" data-name="Caminho 331" d="M-83.77,993.334,77.446,948.417,331.535,978.9,462.377,935.05" transform="translate(245.196 2113.1) rotate(16)" fill="none" stroke="#ffb81c" stroke-width="2" opacity="0.82"/>
+      <path id="Caminho_332" data-name="Caminho 332" d="M-83.77,993.334,77.446,948.417,331.535,978.9,462.377,935.05" transform="translate(243.196 2117.1) rotate(16)" fill="none" stroke="#ffb81c" stroke-width="1" opacity="0.71"/>
+    </g>
+  </g>
+</svg>

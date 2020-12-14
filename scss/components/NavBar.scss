@@ -45,6 +45,23 @@ $navbar-height: 120px;
       width: 250px;
       height: 100%;
       object-fit: contain;
+
+      &:nth-child(1) {
+        display: block;
+
+        @include desktop-and-below {
+          display: none;
+        }
+      }
+
+      &:nth-child(2) {
+        display: none;
+        width: 60px;
+
+        @include desktop-and-below {
+          display: block;
+        }
+      }
     }
   }
 
@@ -108,7 +125,8 @@ $navbar-height: 120px;
     position: absolute;
     left: 0;
     top: $navbar-height;
-    background-color: #ddd;
+    background: #201231;
+    color: #ffb81c;
     overflow-x: hidden;
     transition: 0.3s;
     z-index: 10;
@@ -144,7 +162,7 @@ $navbar-height: 120px;
       display: block;
       transition: 0.5s;
       margin-bottom: 10px;
-      color: #212121;
+      color: #ffb81c;
       text-align: left;
       cursor: pointer;
 

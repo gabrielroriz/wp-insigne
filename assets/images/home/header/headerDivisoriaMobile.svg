@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="365" height="262" viewBox="0 0 365 262">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Retângulo_113" data-name="Retângulo 113" width="365" height="262" transform="translate(0 557)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="shapes-topo-mobile" transform="translate(0 -557)" clip-path="url(#clip-path)">
+    <g id="shapes-topo-mobile-2" data-name="shapes-topo-mobile">
+      <path id="Caminho_341" data-name="Caminho 341" d="M-16304.893-19692.137l307.406,70.545-418.578,42.5-43.383,26.592,29.314-45.262Z" transform="matrix(0.695, -0.719, 0.719, 0.695, 25431.297, 2699.529)" fill="none" stroke="#ffb81c" stroke-width="2"/>
+      <path id="Caminho_340" data-name="Caminho 340" d="M-16423.479-19698.07l439.263,103.332-235.116,78.947-264.58-71.316,60.434-104.475Z" transform="matrix(0.799, -0.602, 0.602, 0.799, 24898.875, 6598.178)" fill="#ffb81c"/>
+      <path id="Caminho_339" data-name="Caminho 339" d="M-16614.049-19739.711l616.563,118.119-240.087,176.59-206.692,23.582-189.629-118.479,19.846-193.324Z" transform="matrix(0.883, -0.469, 0.469, 0.883, 23837.873, 10371.646)" fill="#2e1a47"/>
+    </g>
+  </g>
+</svg>

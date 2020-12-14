@@ -13,9 +13,11 @@ function theme_scripts()
      * COMMON
      */
 
+    
     wp_enqueue_script('header-js', get_theme_file_uri('/js/header.js'), null, microtime(), true);
     wp_enqueue_script('main', get_theme_file_uri('/js/main.js'), null, microtime(), true);
     wp_enqueue_style('style', get_stylesheet_uri(), null, microtime(), 'all');
+    wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap', false); 
 
     /**
      * FOR EACH PAGE
