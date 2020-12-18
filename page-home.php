@@ -61,7 +61,7 @@
                     </div>
 
                     <div class="home__sobre__content">
-                        <img src="<?php echo get_template_directory_uri() . "/assets/min-images/home/sobre/sobreMobileDivisoriaTop.svg"; ?>" class="home__sobre__content__divisoria home__sobre__content__divisoria--top" />
+                        <!-- <img src="<?php echo get_template_directory_uri() . "/assets/min-images/home/sobre/sobreMobileDivisoriaTop.svg"; ?>" class="home__sobre__content__divisoria home__sobre__content__divisoria--top" /> -->
                         <p><strong>Entregamos soluções audiovisuais criativas em diversos formatos</strong>: storytelling, lançamento em super lives, animação, branded content, institucionais, programas para internet e tv, e todo tipo de obra original.</p>
                             
                         <p><strong>Somos um time de criativos e técnicos a serviço de quem quer alcançar o sucesso do jeito certo. Sabemos o que fazer e como fazer.</strong></p> 
