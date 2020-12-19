@@ -48,7 +48,11 @@
                                 style="background-image: url(<?php echo $filme__image; ?>);" 
                                 href="<?php echo $filme__link; ?>"
                                 >
+                                <div class="home__projetos__grid__item__hover">
+                                    <img src="<?php echo get_template_directory_uri() . "/assets/min-images/home/projetos/newTab.svg"; ?>"/>
+                                </div>
                                 </a>
+                          
                             </div>
                             <?php } ?>
                         </div>
