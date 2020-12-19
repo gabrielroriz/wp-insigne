@@ -91,7 +91,7 @@
                         <div class="home__cta__button">
                             ENTRAR EM CONTATO VIA WHATSAPP
                         </div>
-                        <span>Horário de atendimento: das 08:00h às 17:00h</br>
+                        <span>Horário de atendimento:<br>das 08:00h às 17:00h</br>
                     </div>
                 </div>
             </div>
