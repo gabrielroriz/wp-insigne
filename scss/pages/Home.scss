@@ -1,6 +1,12 @@
 @import "../utils/Mixins.scss";
 @import "../utils/Vars.scss";
 
+.demoWrapper {
+}
+
+.child {
+}
+
 .home__container {
   width: 100%;
   background-color: #2e1a47;
@@ -103,17 +109,20 @@
       margin-top: 100px;
     }
 
-    &__item {
-      width: 800px;
-      height: 500px;
-      background-size: cover;
-      background-position: center;
-      z-index: 1;
+    &__item-container {
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 Aspect Ratio */
+      position: relative; /* If you want text inside of it */
+    }
 
-      @include mobile-landscape-and-below {
-        width: 300px;
-        height: 150px;
-      }
+    &__item {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
   }
 }
@@ -347,20 +356,29 @@
 
   span {
     color: #ffb81c;
-    font-size: 160px;
+
     margin: 0px;
     text-align: center;
     position: relative;
     z-index: 2;
     font-weight: 900;
 
-    @include desktop-and-below {
-      font-size: 90px;
+    white-space: nowrap;
+
+    // @include desktop-and-below {
+    //   font-size: 90px;
+    // }
+
+    // @include mobile-landscape-and-below {
+    //   font-size: 30px;
+
+    font-size: 10vw;
+
+    @media (min-width: 1920px) {
+      font-size: 200px;
     }
 
-    @include mobile-landscape-and-below {
-      font-size: 40px;
-    }
+    // }
   }
 
   &__pontilhado {

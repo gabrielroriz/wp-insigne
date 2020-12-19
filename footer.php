@@ -74,7 +74,7 @@ $filmes = array(
     </div>  
 
     <div class="footer__rights">
-        Todos os direitos reservados - Insigne
+        © Todos os direitos reservados - Insigne
         <div class="footer__rights__links">
             <a>Políticas de Privacidade</a>
             <a>Termos de Uso</a>

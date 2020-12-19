@@ -50,24 +50,24 @@
             Para cada item do menu, extraímos o slug e o label da página.
             EX: slug ("home") e label ("Home").
           -->
-          <div class="navbar__items">
+          <ul class="navbar__items">
             <?php foreach($nav_items as $nav_item) { $page_slug = $nav_item[0]; /* */ $page_label = $nav_item[1]; ?>
             <!-- Caso estiver na página deste item do menu, adicionar a classe com mode "--selected". -->
-            <div class="navbar__items__item <?php echo (is_on_page([$page_slug]) ? "navbar__items__item--selected" : ""); ?>">
+            <li class="navbar__items__item <?php echo (is_on_page([$page_slug]) ? "navbar__items__item--selected" : ""); ?>">
               <!-- Adiciona o item com o label da página e o link para o '/slug' -->
               <a href="<?php echo site_url('/' . $page_slug); ?>">
                 <?php echo $page_label; ?>
               </a>
-            </div>
+            </li>
               
             <?php } ?>
-          </div>
+          </ul>
       </div>
 
       <div class="navbar--mobile__container" id="navbar-mobile-box">
         <div class="navbar--mobile__content">
             <?php foreach($nav_items as $nav_item) { $page_slug = $nav_item[0]; /* */ $page_label = $nav_item[1]; ?>
-              <a href="<?php echo site_url('/' . $page_slug);?>"><?php echo $page_label; ?></a>
+              <a title="<?php echo $page_label; ?>" href="<?php echo site_url('/' . $page_slug);?>"><?php echo $page_label; ?></a>
             <?php } ?>
         </div>
     </div>

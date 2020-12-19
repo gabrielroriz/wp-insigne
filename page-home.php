@@ -42,11 +42,14 @@
                                 $filme__image = $filme[0];
                                 $filme__link = $filme[1];
                             ?>
-                            <a class="home__projetos__grid__item" 
-                            style="background-image: url(<?php echo $filme__image; ?>);" 
-                            href="<?php echo $filme__link; ?>"
-                            >
-                            </a>
+                            <div class="home__projetos__grid__item-container">
+                                <a 
+                                class="home__projetos__grid__item"
+                                style="background-image: url(<?php echo $filme__image; ?>);" 
+                                href="<?php echo $filme__link; ?>"
+                                >
+                                </a>
+                            </div>
                             <?php } ?>
                         </div>
                     </div>  
@@ -96,11 +99,7 @@
 
             <div class="home__brand">
                 <div class="home__brand__container">
-                    <span>
-                        WE ARE INSIGNE
-                        <img src="<?php echo get_template_directory_uri() . "/assets/min-images/home/brand/pontilhado.png"; ?>" class="home__brand__pontilhado" />
-                    </span>
-                    
+                    <span>WE ARE INSIGNE<img src="<?php echo get_template_directory_uri() . "/assets/min-images/home/brand/pontilhado.png"; ?>" class="home__brand__pontilhado" /></span>                    
                 </div>
                 
             </div>
