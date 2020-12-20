@@ -8,10 +8,82 @@
         <div class="home__wrapper">
 
             <div class="home__header">
+                <img src="<?php echo get_template_directory_uri() . "/assets/min-images/home/header/headerBG@1x.png"; ?>" class="home__header__background home__header__background--visible" />
+                <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" class="home__header__background" />
+                <img src="https://via.placeholder.com/850" class="home__header__background" />
+                <img src="https://media3.s-nbcnews.com/j/newscms/2019_41/3047866/191010-japan-stalker-mc-1121_06b4c20bbf96a51dc8663f334404a899.fit-760w.JPG" class="home__header__background" />
+                <img src="https://via.placeholder.com/850" class="home__header__background" />
+                <img src="https://media3.s-nbcnews.com/j/newscms/2019_41/3047866/191010-japan-stalker-mc-1121_06b4c20bbf96a51dc8663f334404a899.fit-760w.JPG" class="home__header__background" />
+
+                <div class="header-arrow home__header__left-arrow home__header__disabled-arrow" onclick="handleLeftClick()">
+                    <img src="<?php echo get_template_directory_uri() . "/assets/min-images/home/header/headerArrowRight.svg"; ?>"/>
+                </div>
+
+                <div class="header-arrow home__header__right-arrow" onclick="handleRightClick()">
+                    <img src="<?php echo get_template_directory_uri() . "/assets/min-images/home/header/headerArrowRight.svg"; ?>"/>
+                </div>
+                
                 <img src="<?php echo get_template_directory_uri() . "/assets/min-images/home/header/headerBottomPath.svg"; ?>" class="home__header__bottom-path" />
                 <img src="<?php echo get_template_directory_uri() . "/assets/min-images/home/header/headerDivisoriaMobile.svg"; ?>" class="home__header__bottom-path--mobile" />
                 <div class="home__header__title"><?php echo $home_title; ?></div>
             </div>
+
+             <script>
+                let selectedIndex = 0;
+                const totalItems = document.getElementsByClassName("home__header__background").length;
+
+                const toggleVisible = (index) => {
+                    const list = document.getElementsByClassName("home__header__background");
+                    list[index].classList.toggle('home__header__background--visible');
+                }
+
+                function handleLeftClick () {
+                    if(selectedIndex === 0) return;
+                    selectedIndex--;
+                    toggleVisible(selectedIndex  + 1);
+                    toggleVisible(selectedIndex);
+                   
+                    updateArrow();                  
+                };
+
+                function handleRightClick () {
+                    if(selectedIndex === totalItems - 1) return;
+                    selectedIndex++;
+                    toggleVisible(selectedIndex - 1);
+                    toggleVisible(selectedIndex);
+                    updateArrow();
+                }
+
+                function updateArrow(){
+                    // Setas.
+                    const arrows = document.getElementsByClassName("header-arrow");
+
+                    // Atualiza a seta da direita.
+                    if(selectedIndex === 0){
+                        arrows[0].classList.toggle('home__header__disabled-arrow');
+                    } else {
+                        if (arrows[0].classList.contains('home__header__disabled-arrow')){
+                            arrows[0].classList.remove('home__header__disabled-arrow');
+                        }
+                    }
+
+                    // Atualiza a seta da direita.
+                    if(selectedIndex === totalItems - 1){
+                        arrows[1].classList.toggle('home__header__disabled-arrow');
+                    } else {
+                        if (arrows[1].classList.contains('home__header__disabled-arrow')){
+                            arrows[1].classList.remove('home__header__disabled-arrow');
+                        }
+                    }
+                }
+
+                const cycle = setInterval(function(){ 
+                    handleRightClick();
+                    if(selectedIndex === totalItems - 1){
+                        clearInterval(cycle);
+                    }
+                }, 7000);
+            </script>
 
             <?php 
 
@@ -113,3 +185,4 @@
 
     </div>
 </div>
+
