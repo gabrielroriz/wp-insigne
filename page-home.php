@@ -59,7 +59,8 @@
                     </div>  
                 </div>
 
-                <div class="home__sobre__wrapper">    
+                <div class="home__sobre__wrapper">   
+                    <img src="<?php echo get_template_directory_uri() . "/assets/min-images/home/sobre/rightAsset.svg"; ?>" class="home__sobre__right-asset"/>
                     <div class="home__sobre__title">
                         <span>É isso que nos motiva e movimenta.</span>
                         <h2>Somos uma produtora audiovisual <strong>que te leva aonde você merece estar.</strong></h2>

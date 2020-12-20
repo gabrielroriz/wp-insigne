@@ -9,7 +9,7 @@
 
 .home__container {
   width: 100%;
-  background-color: #2e1a47;
+  background: #2e1a47 0% 0% no-repeat padding-box;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -20,6 +20,7 @@
   width: 100%;
   max-width: 1920px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  overflow: hidden;
 }
 
 .home__header {
@@ -171,11 +172,32 @@
     background-position: center;
     min-height: 2358px;
 
+    position: relative;
+
+    @media (max-width: 1763px) {
+      background-image: none;
+      display: flex;
+      flex-direction: column;
+      min-height: 0px;
+      padding: 0px;
+      margin-bottom: 100px;
+    }
+
     @include mobile-landscape-and-below {
       padding: 0px;
       margin-top: 0px;
       background-image: none;
       min-height: 0px;
+    }
+  }
+
+  &__right-asset {
+    position: absolute;
+    top: 380px;
+    right: -2px;
+
+    @media (max-width: 1763px) {
+      display: none;
     }
   }
 
@@ -187,8 +209,16 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    padding-left: 130px;
     padding-right: 250px;
     margin-top: 600px;
+
+    @media (max-width: 1763px) {
+      margin-top: 350px;
+      width: 100%;
+
+      padding: 150px 30px;
+    }
 
     @include mobile-landscape-and-below {
       padding: 0px 30px;
@@ -202,7 +232,11 @@
 
     h2 {
       font-weight: 500;
-      font-size: 54px;
+      font-size: 64px;
+
+      @media (max-width: 1763px) {
+        font-size: 48px;
+      }
 
       @include mobile-landscape-and-below {
         font-size: 24px;
@@ -223,23 +257,35 @@
 
     position: relative;
 
-    p {
-      width: 75%;
-      font-size: 38px;
-      z-index: 1;
-
-      @include mobile-landscape-and-below {
-        font-size: 24px;
-      }
+    @media (max-width: 1763px) {
+      margin-top: 0px;
+      width: 100%;
+      background-color: #efdbb2;
+      padding: 150px 30px;
     }
 
     @include mobile-landscape-and-below {
       background-color: #efdbb2;
       padding: 100px 30px;
       margin-top: 50px;
+    }
 
-      p {
+    p {
+      width: 75%;
+      font-size: 30px;
+      letter-spacing: 0.68px;
+      line-height: 2.8rem;
+
+      z-index: 1;
+
+      @media (max-width: 1763px) {
         width: 100%;
+        font-size: 24px;
+      }
+
+      @include mobile-landscape-and-below {
+        width: 100%;
+        font-size: 18px;
       }
     }
 
