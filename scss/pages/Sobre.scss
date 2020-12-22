@@ -1,244 +1,116 @@
 @import "../utils/Mixins.scss";
 @import "../utils/Vars.scss";
 
+$purple: #2e1a47;
+$dark-purple: #1E112E;
+$gold: #FFB81C;
 
 .sobre {
-    color: $gray;
+    color: white;
+    background-color: $purple;
+    width: 100%;
+    max-width: 1920px;
+    box-shadow: 0px ;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.39), 0 6px 6px rgba(0, 0, 0, 0.23);
+    margin: 0 auto;
+
+    &__navbar {
+        width: 100px;
+        height: 120px;
+    }
 
     &__header {
         @extend %section-attr;
-        height: 90vh;
-
-
-        &__wrapper {
-            @extend %section-wrapper-attr;
-
-            height: 100%;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            text-align: center;
-
-            @include tablet-landscape-and-below {
-                width: 100%;
-                padding: 0;
-            }
-        }
-
-        &__title {
-            font-size: 4.2vw;
-            margin-top: 20vh;
-            // margin-bottom: 100px;
-
-            @include tablet-landscape-and-below {
-                font-size: 6.2vw;
-            }
-
-            h1 {
-                color: $gray;
-                font-weight: 900;
-            }
-
-            span {
-                color: $gray;
-                font-weight: 400;
-            }
-        }
-
-        &__cta {
-            h4 {
-                text-transform: uppercase;
-                font-weight: 300;
-                margin-bottom: 0;
-                font-size: 20px;
-                color: $gray;
-            }
-
-            a {
-                text-decoration: none;
-                color: $gray;
-                font-size: 50px;
-                margin-top: 0;
-            }
-        }
+        background-image: url("./assets/min-images/quemsomos/header.png");
+        height: 1080px;
     }
 
 
     &__texto1 {
-        @extend %section-attr;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 4fr 6fr;
+        padding-top: 50px;
+        background-color: $dark-purple;
+        height: auto;
+        background-image: url("./assets/min-images/quemsomos/yellow.svg");
+        background-repeat: no-repeat;
+        background-position-y: -230px;
+        z-index: 100;
 
-        &__wrapper {
-            @extend %section-wrapper-attr;
-            padding-top: 105px;
-            width: 95%;
-            max-width: 1140px;
-        }
-
-        h2 {
-            font-size: 36px;
-            line-height: 1.7;
-            color: $gray;
-
-            @include tablet-landscape-and-below {
-                line-height: 1.4;
-            }
-        }
-
-        h3 {
-            font-size: 32px;
-            line-height: 1.6;
-            font-weight: 400;
-            color: $gray;
-
-            @include tablet-landscape-and-below {
-                line-height: 1.4;
-                font-size: 28px;
-            }
-        }
-
-        p {
-            color: $gray;
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 1.8;
-
-            @include tablet-landscape-and-below {
-                line-height: 2.2;
-                font-size: 22px;
-            }
-        }
-    }
-
-
-    &__beliefs {
-        @extend %section-attr;
-
-        &__wrapper {
-            @extend %section-wrapper-attr;
-            
-            margin-top: 100px;
+        &__left {
+            padding-top: 150px;
+            padding-left: 140px;
+            color: $purple;
+            font-size: 68px;
+            font-weight: 300;
 
             display: grid;
-            grid-template-columns: 2fr 8fr;
-            column-gap: 15px;
+            row-gap: 50px;
+            padding-bottom: 330px;
 
-            @include tablet-landscape-and-below {
-                grid-template-columns: 1fr;
-                margin-top: 10px;
-            }
-        }
-
-        &__title {
-            text-transform: uppercase;
-            text-align: center;
-            font-size: 14px;
-            margin-top: 50px;
-
-            @include tablet-landscape-and-below {
-                display: flex;
-                flex-direction: row;
-                justify-content: flex-start;
-                align-items: flex-start;
-                padding-bottom: 120px;
-                margin-top: 20px;
+            b {
+                font-weight: 700;
             }
         }
 
         &__right {
-            display: grid;
-            grid-template-columns: 1fr;
-            row-gap: 20px;
-        }
-    }
-
-    &__belief {
-        border: 1px solid $gray;
-        padding: 45px 30px;
-        height: 420px;
-
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: flex-start;
-
-        @include tablet-landscape-and-below {
-            height: auto;
-            flex-direction: column;
-        }
-
-        &__number {
-            margin-right: 56px;
-            font-weight: 900;
-            font-size: 70px;
-        }
-
-        &__text {
-            width: 430px;
-            font-weight: 400;
+            font-size: 34px;
+            color: $gold;
             line-height: 1.8;
-            font-size: 18px;
-
-            @include tablet-landscape-and-below {
-                width: auto;
-            }
-        }
-    }
-
-
-    &__grid {
-        @extend %section-attr;
-
-        &__wrapper {
-            @extend %section-wrapper-attr;
+            padding-top: 200px;
+            width: 80%;
+            justify-self: flex-end;
+            padding-right: 140px;
             
-            margin-top: 70px;
-            margin-bottom: 240px;
-            border-bottom: 1px solid $gray;
-            padding-bottom: 70px;
-
             display: grid;
-            grid-template-columns: 2fr 8fr;
-            column-gap: 15px;
+            row-gap: 40px;
+        }
 
-            @include tablet-landscape-and-below {
-                grid-template-columns: 1fr;
-                width: 86%;
-                padding: 0;
-                padding-bottom: 70px;
-                margin-bottom: 100px;
+        &__move {
+            text-transform: uppercase;
+            font-weight: 400;
+            font-size: 28px;
+        }
+    }
+    &__texto1-bottom {
+        width: 100%;
+        height: 297px;
+        background: url("./assets/min-images/quemsomos/texto1-bottom.svg");
+        background-repeat: no-repeat;
+        background-position: top left;
+    }
+
+
+    &__beliefs {
+        width: 100%;
+        
+        &__belief {
+            width: 100%;
+            height: 1200px;
+
+            &__b1 {
+                background: url("./assets/min-images/quemsomos/crenca1.png");
+                background-repeat: no-repeat;
+                background-position: center right;
+                margin-top: -300px;
+                margin-bottom: -550px;
+            }
+
+            &__b2 {
+                background: url("./assets/min-images/quemsomos/crenca2.png");
+                background-repeat: no-repeat;
+                background-position: center left;
+                margin: -550px 0;
+                
+            }
+
+            &__b3 {
+                background: url("./assets/min-images/quemsomos/crenca3.png");
+                background-repeat: no-repeat;
+                background-position: center right;   
+                margin: -550px 0;
             }
         }
-
-        &__grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            column-gap: 50px;
-            row-gap: 60px;
-
-            grid-template-columns: 1fr;
-        }
     }
-
-    &__smallbelief {
-        display: flex;
-        flex-direction: row;
-
-        @include tablet-landscape-and-below {
-            flex-direction: column;
-        }
-        
-        &__number {
-            @extend .sobre__belief__number;
-            margin-right: 10px;
-            color: $gray;
-        }
-
-        &__text {
-            @extend .sobre__belief__text;
-            width: 100%;
-            color: $gray;
-        }
-    }
-
 }

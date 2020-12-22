@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="941" height="1632.088" viewBox="0 0 941 1632.088">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Caminho_352" data-name="Caminho 352" d="M0,0H941V1632.088H0Z" transform="translate(0 847.852)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="svg-texto-apresentacao-quemsomos-desktop" transform="translate(0 -847.852)" clip-path="url(#clip-path)">
+    <path id="shape-borda-amarela" d="M1802-19582c-24.03,18.182,109,1389,109,1389l-971-290,11.515-1347.332Z" transform="translate(-1041 20669)" fill="none" stroke="#ffb81c" stroke-width="3"/>
+    <path id="shape-amarelo-claro" d="M1779-19592c-24.03,18.182,219,1368,219,1368L955-18459l-3.485-1371.332Z" transform="translate(-1061 20649)" fill="#efdbb2"/>
+  </g>
+</svg>
