@@ -4,6 +4,7 @@
     <div class="sobre__navbar"></div>
 
     <div class="sobre__header">
+        <img width="100%" src="<?php echo get_template_directory_uri() . "/assets/min-images/quemsomos/img-cavalo-header.png"; ?>" alt="">
     </div>
 
     <div class="sobre__texto1">
@@ -56,6 +57,5 @@
         </div>
     </div>
     
-    
+    <?php get_footer() ?>
 </div>
-<?php // get_footer() ?>
