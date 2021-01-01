@@ -36,26 +36,33 @@
         </div>
 
         <div class="sobre__beliefs__belief sobre__beliefs__belief__b1 ">
-            <div class="sobre__beliefs__belief__numeral">
+            <div class="sobre__beliefs__belief__numeral sobre__beliefs__belief__numeral__b1">
                 01
             </div>
-            <div class="sobre__beliefs__belief__text">
+            <div class="sobre__beliefs__belief__text sobre__beliefs__belief__text__b1">
                 Acreditamos que a palavra e um aperto de mão são mais fortes que qualquer assinatura em um pedaço de papel.
             </div>
         </div>
 
         <div class="sobre__beliefs__belief sobre__beliefs__belief__b2">
-            <div class="sobre__beliefs__belief__numeral">
-                01
+            <div class="sobre__beliefs__belief__numeral sobre__beliefs__belief__numeral__b2">
+                02
+            </div>
+            <div class="sobre__beliefs__belief__text sobre__beliefs__belief__text__b2">
+                Acreditamos que a palavra e um aperto de mão são mais fortes que qualquer assinatura em um pedaço de papel.
             </div>
         </div>
 
         <div class="sobre__beliefs__belief sobre__beliefs__belief__b3">
-            <div class="sobre__beliefs__belief__numeral">
-                01
+            <div class="sobre__beliefs__belief__numeral sobre__beliefs__belief__numeral__b3">
+                03
+            </div>
+            <div class="sobre__beliefs__belief__text sobre__beliefs__belief__text__b3">
+                Acreditamos que a palavra e um aperto de mão são mais fortes que qualquer assinatura em um pedaço de papel.
             </div>
         </div>
     </div>
-    
-    <?php get_footer() ?>
+
+    <?php //get_footer() 
+    ?>
 </div>
