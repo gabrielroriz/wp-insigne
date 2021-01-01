@@ -126,7 +126,7 @@ $cream: #EFDBB2;
                 background: url("./assets/min-images/quemsomos/crenca3.png");
                 background-repeat: no-repeat;
                 background-position: center right;   
-                margin: -550px 0;
+                margin-top: -550px;
             }
 
             &__numeral {
@@ -185,4 +185,17 @@ $cream: #EFDBB2;
             }
         }
     }
+
+
+    &__bgrid {
+        background-color: $purple;
+        background-image: url("./assets/min-images/quemsomos/crencagrid.svg");
+        background-repeat: no-repeat;
+        height: 1370px;
+        z-index: 500;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 500px 350px;
+    }
+
 }

@@ -63,6 +63,42 @@
         </div>
     </div>
 
+
+    <div class="sobre__bgrid">
+        <div class="sobre__bgrid__item">
+            <div class="sobre__bgrid__item__number">
+                04
+            </div>
+            <div class="sobre__bgrid__item__text">
+                Acreditamos que o sucesso é consequencia deste melhor trabalho.
+            </div>
+        </div>
+        <div class="sobre__bgrid__item">
+            <div class="sobre__bgrid__item__number">
+                05
+            </div>
+            <div class="sobre__bgrid__item__text">
+            Acreditamos que força é fundamental, mas que está além do físico. Ela deve ser mental, e estar presente em cada uma de nossas atitudes.
+            </div>
+        </div>
+        <div class="sobre__bgrid__item">
+            <div class="sobre__bgrid__item__number">
+                06
+            </div>
+            <div class="sobre__bgrid__item__text">
+                Acreditamos que sucesso rápido é tão palpável quanto vento.
+            </div>
+        </div>
+        <div class="sobre__bgrid__item">
+            <div class="sobre__bgrid__item__number">
+                07
+            </div>
+            <div class="sobre__bgrid__item__text">
+                Acreditamos na ordem, e no sucesso que dela é consequência.
+            </div>
+        </div>
+    </div>
+
     <?php //get_footer() 
     ?>
 </div>
