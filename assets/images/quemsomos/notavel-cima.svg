@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="402" viewBox="0 0 1920 402">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Retângulo_124" data-name="Retângulo 124" width="1920" height="402" transform="translate(0 5040)" fill="#2e1a47"/>
+    </clipPath>
+  </defs>
+  <g id="slice-ser-notavel-cima" transform="translate(0 -5040)" clip-path="url(#clip-path)">
+    <path id="shape-borda-amarela-notavel" d="M10048.434,5764.66l2020.092-638.124,133.459,728.521-2081.073,569.015Z" transform="translate(-9279.145 -1686.998) rotate(8)" fill="none" stroke="#ffb81c" stroke-width="1"/>
+    <path id="fundo-roxo-notavel" d="M9935.814,5713.383l2336.176-467-49.75,729.4L9935.814,6350.234Z" transform="translate(-10076.176 -254.063)" fill="#201231"/>
+  </g>
+</svg>
