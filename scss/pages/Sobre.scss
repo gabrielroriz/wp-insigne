@@ -16,7 +16,7 @@ $cream: #EFDBB2;
     margin: 0 auto;
 
     &__navbar {
-        width: 100px;
+        width: 100%;
         height: 120px;
     }
 
@@ -26,6 +26,20 @@ $cream: #EFDBB2;
         height: 1080px;
         margin-bottom: -280px;
         z-index: 10000;
+
+        @include tablet-landscape-and-below {
+            display: none;
+        }
+    }
+
+    &__mheader {
+        margin: 0;
+        padding: 0;
+        margin-bottom: -20%;
+
+        @include desktop-and-up {
+            display: none;
+        }
     }
 
 
@@ -40,6 +54,16 @@ $cream: #EFDBB2;
         z-index: 0;
         background-color: $dark-purple;
 
+        @include tablet-landscape-and-below {
+            grid-template-columns: 1fr;
+            padding-top: 0;
+            background-position: top left;
+            background-position-y: -40px;
+            background-size: contain;
+            background-color: $dark-purple;
+            padding-top: 100px;
+        }
+
         &__left {
             padding-top: 150px;
             padding-left: 143px;
@@ -50,6 +74,22 @@ $cream: #EFDBB2;
             display: grid;
             row-gap: 50px;
             padding-bottom: 330px;
+
+            @include tablet-landscape-and-below {
+                padding-top: 0px;
+                padding-bottom: 0px;
+                padding-left: 20px;
+                width: 100%;
+                font-size: 20px;
+                letter-spacing: 0.4px;
+                line-height: 25px;
+            }
+
+            div {
+                @include tablet-landscape-and-below {
+                    width: 213px;
+                }
+            }
 
             b {
                 font-weight: 700;
@@ -68,12 +108,35 @@ $cream: #EFDBB2;
             
             display: grid;
             row-gap: 40px;
+
+            @include tablet-landscape-and-below {
+                padding: 0;
+                width: 100%;
+                padding-top: 170px;
+                padding-left: 20px;
+
+                font-size: 20px;
+                letter-spacing: 0.4px;
+                line-height: 30px;
+            }
+
+            div {
+                @include tablet-landscape-and-below {
+                    width: 302px;
+                }
+            }
         }
 
         &__move {
             text-transform: uppercase;
             font-weight: 300;
             font-size: 28px;
+
+            @include tablet-landscape-and-below {
+                font-size: 16px;
+                line-height: 23px;
+                letter-spacing: 6.25px;
+            }
         }
     }
     &__texto1-bottom {
@@ -84,6 +147,22 @@ $cream: #EFDBB2;
         background-position: top left;
         background-color: $purple;
         margin-bottom: -570px;
+
+        @include tablet-landscape-and-below {
+            display: none;
+        }
+    }
+
+    &__texto1-mbottom {
+        width: 100%;
+        height: auto;
+        background-color: $purple;
+        padding: 0;
+        margin: 0;
+
+        @include desktop-and-up {
+            display: none;
+        }
     }
 
 
@@ -91,6 +170,10 @@ $cream: #EFDBB2;
         width: 100%;
         background-color: transparent;
         position: relative;
+        
+        @include tablet-landscape-and-below {
+            display: none;
+        }
 
         &__nisto {
             position: absolute;
@@ -103,6 +186,14 @@ $cream: #EFDBB2;
             line-height: 32px;
             letter-spacing: 8.6px;
             width: 280px;
+
+            @include tablet-landscape-and-below {
+                position: relative;
+                top: 0;
+                left: 0;
+                width: 100%;
+
+            }
         }
         
         &__belief {
@@ -113,6 +204,10 @@ $cream: #EFDBB2;
             align-items: center;
             position: relative;
 
+            @include tablet-landscape-and-below {
+                height: 400px;
+            }
+
 
             &__b1 {
                 background: url("./assets/min-images/quemsomos/crenca1.png");
@@ -121,6 +216,10 @@ $cream: #EFDBB2;
                 margin-top: -280px;
                 margin-bottom: -550px;
                 padding-left: 143px;
+
+                @include tablet-landscape-and-below {
+                    padding: 0;
+                }
             }
 
             &__b2 {
@@ -128,6 +227,10 @@ $cream: #EFDBB2;
                 background-repeat: no-repeat;
                 background-position: center left;
                 margin: -550px 0;
+
+                @include tablet-landscape-and-below {
+                    margin: -50px 0;
+                }
                 
             }
 
@@ -137,6 +240,11 @@ $cream: #EFDBB2;
                 background-position: center right;   
                 margin-top: -550px;
                 margin-bottom: -450px;
+
+                @include tablet-landscape-and-below {
+                    margin-top: -50px;
+                    margin-bottom: -50px;
+                }
             }
 
             &__numeral {
@@ -145,6 +253,10 @@ $cream: #EFDBB2;
                 color: $gold;
                 position: absolute;
                 z-index: 3;
+
+                @include tablet-landscape-and-below {
+                    position: relative;
+                }
 
                 &__b1 {
                     left: 130px;
@@ -173,10 +285,19 @@ $cream: #EFDBB2;
                 position: absolute;
                 z-index: 2;
 
+                @include tablet-landscape-and-below {
+                    position: static;
+                }
+
                 &__b1 {
                     left: 220px;
                     top: 700px;
                     padding-left: 160px;
+
+                    @include tablet-landscape-and-below {
+                        left: auto;
+                        top: auto;
+                    }
                 }
 
                 &__b2 {
@@ -184,16 +305,31 @@ $cream: #EFDBB2;
                     top: 590px;
                     padding-right: 200px;
                     text-align: right;
+
+                    @include tablet-landscape-and-below {
+                        padding: 0;
+                    }
                 }
 
                 &__b3 {
                     left: 180px;
                     top: 550px;
                     padding-left: 190px;
-
+                
+                    @include tablet-landscape-and-below {
+                        padding: 0;
+                    }
                 }
             }
         }
+    }
+
+    &__mbeliefs {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        background-color: $purple;
+        padding-top: 50px;
     }
 
 
@@ -208,11 +344,21 @@ $cream: #EFDBB2;
         grid-gap: 50px;
         padding: 440px 350px 320px 350px;
 
+        @include tablet-landscape-and-below {
+            grid-template-columns: 1fr;
+            padding: 0;
+            height: auto;
+        }
+
         &__item {
             position: relative;
             display: grid;
             grid-template-columns: 4fr 6fr;
             column-gap: 10px;
+
+            @include tablet-landscape-and-below {
+                grid-template-columns: 1fr;
+            }
 
             &__number {
                 color: $gold;
@@ -236,6 +382,10 @@ $cream: #EFDBB2;
     &__cta {
         background-color: transparent;
         margin-top: -200px;
+
+        @include tablet-landscape-and-below {
+            margin: 0;
+        }
         
         &__darkpurple {
             width: 100%;
@@ -245,12 +395,21 @@ $cream: #EFDBB2;
             justify-content: space-between;
             align-items: center;
             padding: 20px 360px;
+
+            @include tablet-landscape-and-below {
+                padding: 0;
+                flex-direction: column;
+            }
         }
 
         &__texto {
             color: white;
             font-weight: 800;
             font-size: 76px;
+
+            @include tablet-landscape-and-below {
+                font-size: 36px;
+            }
         }
 
         &__button {
@@ -266,6 +425,10 @@ $cream: #EFDBB2;
                 font-size: 14px;
                 font-weight: 600;
                 margin-bottom: 10px;
+
+                @include tablet-landscape-and-below {
+                    padding: 10px;
+                }
             }
 
             span {

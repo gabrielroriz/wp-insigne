@@ -7,6 +7,10 @@
         <img width="100%" src="<?php echo get_template_directory_uri() . "/assets/min-images/quemsomos/img-cavalo-header.png"; ?>" alt="">
     </div>
 
+    <div class="sobre__mheader">
+        <img width="100%" src="<?php echo get_template_directory_uri() . "/assets/min-images/quemsomos/img-header-mobile.png"; ?>" alt="">
+    </div>
+
     <div class="sobre__texto1">
         <div class="sobre__texto1__left">
             <div class="sobre__texto1__move">
@@ -27,6 +31,9 @@
         </div>
     </div>
     <div class="sobre__texto1-bottom">
+    </div>
+    <div class="sobre__texto1-mbottom">
+        <img width="100%" src="<?php echo get_template_directory_uri() . "/assets/min-images/quemsomos/texto1-bottom.svg"; ?>" alt="">
     </div>
 
 
@@ -58,6 +65,39 @@
                 03
             </div>
             <div class="sobre__beliefs__belief__text sobre__beliefs__belief__text__b3">
+                Acreditamos que a palavra e um aperto de mão são mais fortes que qualquer assinatura em um pedaço de papel.
+            </div>
+        </div>
+    </div>
+
+    <div class="sobre__mbeliefs">
+    <div class="sobre__mbeliefs__nisto">
+            E é nisso que acreditamos
+        </div>
+
+        <div class="sobre__mbeliefs__belief sobre__mbeliefs__belief__b1 ">
+            <div class="sobre__mbeliefs__belief__numeral sobre__mbeliefs__belief__numeral__b1">
+                01
+            </div>
+            <div class="sobre__mbeliefs__belief__text sobre__mbeliefs__belief__text__b1">
+                Acreditamos que a palavra e um aperto de mão são mais fortes que qualquer assinatura em um pedaço de papel.
+            </div>
+        </div>
+
+        <div class="sobre__mbeliefs__belief sobre__mbeliefs__belief__b2">
+            <div class="sobre__mbeliefs__belief__numeral sobre__mbeliefs__belief__numeral__b2">
+                02
+            </div>
+            <div class="sobre__mbeliefs__belief__text sobre__mbeliefs__belief__text__b2">
+                Acreditamos que a palavra e um aperto de mão são mais fortes que qualquer assinatura em um pedaço de papel.
+            </div>
+        </div>
+
+        <div class="sobre__mbeliefs__belief sobre__mbeliefs__belief__b3">
+            <div class="sobre__mbeliefs__belief__numeral sobre__mbeliefs__belief__numeral__b3">
+                03
+            </div>
+            <div class="sobre__mbeliefs__belief__text sobre__mbeliefs__belief__text__b3">
                 Acreditamos que a palavra e um aperto de mão são mais fortes que qualquer assinatura em um pedaço de papel.
             </div>
         </div>
