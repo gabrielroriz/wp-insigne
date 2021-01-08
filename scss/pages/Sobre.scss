@@ -5,6 +5,7 @@ $purple: #2e1a47;
 $dark-purple: #1E112E;
 $gold: #FFB81C;
 $cream: #EFDBB2;
+$padding-left-mobile: 20px;
 
 .sobre {
     color: white;
@@ -78,7 +79,7 @@ $cream: #EFDBB2;
             @include tablet-landscape-and-below {
                 padding-top: 0px;
                 padding-bottom: 0px;
-                padding-left: 20px;
+                padding-left: $padding-left-mobile;
                 width: 100%;
                 font-size: 20px;
                 letter-spacing: 0.4px;
@@ -113,7 +114,7 @@ $cream: #EFDBB2;
                 padding: 0;
                 width: 100%;
                 padding-top: 170px;
-                padding-left: 20px;
+                padding-left: $padding-left-mobile;
 
                 font-size: 20px;
                 letter-spacing: 0.4px;
@@ -330,6 +331,84 @@ $cream: #EFDBB2;
         width: 100%;
         background-color: $purple;
         padding-top: 50px;
+
+        @include desktop-and-up {
+            display: none;
+        }
+
+        &__nisto {
+            width: 100%;
+            padding-left: $padding-left-mobile;
+            
+            font-size: 22px;
+            letter-spacing: 8.6px;
+            line-height: 32px;
+            font-weight: 300;
+            text-transform: uppercase;
+            color: $gold;
+
+            margin-bottom: 50px;
+        }
+
+        &__belief {
+            width: 100%;
+            height: 500px;
+
+            &__numeral {
+                padding-left: $padding-left-mobile;
+                font-size: 114px;
+                color: $gold;
+                line-height: 116px;
+                letter-spacing: -10px;
+                font-weight: 300;
+
+                &__b2 {
+                    text-align: right;
+                    padding-left: 0;
+                    padding-right: $padding-left-mobile;
+                }
+            }
+
+            &__text {
+                padding-left: $padding-left-mobile;
+                color: $gold;
+                font-size: 22px;
+                line-height: 32px;
+                letter-spacing: 0;
+                font-weight: 300;
+
+                &__b2 {
+                    padding-left: 0;
+                    padding-right: $padding-left-mobile;
+                    text-align: right;
+                    margin: 0;
+                }
+            }
+
+            &__b1 {
+                background-image: url("./assets/min-images/quemsomos/img-cavalo-01-mobile.png");
+                background-size: contain;
+                background-position: right center;
+                background-repeat: no-repeat;
+                margin-bottom: -90px;
+            }
+
+            &__b2 {
+                background-image: url("./assets/min-images/quemsomos/img-cavalo-02-mobile.png");
+                background-size: contain;
+                background-position: left center;
+                background-repeat: no-repeat;
+                margin-bottom: -120px;
+            }
+
+            &__b3 {
+                background-image: url("./assets/min-images/quemsomos/img-cavalo-03-mobile.png");
+                background-size: contain;
+                background-position: right center;
+                background-repeat: no-repeat;
+                margin-bottom: -100px;
+            }
+        }
     }
 
 
@@ -366,6 +445,12 @@ $cream: #EFDBB2;
                 font-size: 145px;
                 align-self: flex-start;
                 justify-self: flex-end;
+
+                @include tablet-landscape-and-below {
+                    font-size: 40px;
+                    padding-left: $padding-left-mobile;
+                    justify-self: flex-start;
+                }
             }
 
             &__text {
@@ -375,6 +460,12 @@ $cream: #EFDBB2;
                 font-weight: 300;
                 color: $cream;
                 border-bottom: 1px solid $cream;
+
+                @include tablet-landscape-and-below {
+                    padding-left: $padding-left-mobile;
+                    line-height: 32px;
+                    border-bottom: 0;
+                }
             }
         }
     }
@@ -397,7 +488,7 @@ $cream: #EFDBB2;
             padding: 20px 360px;
 
             @include tablet-landscape-and-below {
-                padding: 0;
+                padding: 20px 0;
                 flex-direction: column;
             }
         }
@@ -409,6 +500,11 @@ $cream: #EFDBB2;
 
             @include tablet-landscape-and-below {
                 font-size: 36px;
+                font-weight: 700;
+                text-align: center;
+                width: 80%;
+                margin: 0 auto;
+                margin-bottom: 30px;
             }
         }
 
@@ -427,13 +523,25 @@ $cream: #EFDBB2;
                 margin-bottom: 10px;
 
                 @include tablet-landscape-and-below {
-                    padding: 10px;
+                    max-width: 80%;
+                    margin: 0 auto;
+                    padding: 20px 60px;
+                    font-size: 14px;
+                    line-height: 24px;
+                    letter-spacing: 0.28px;
+                    text-align: center;
                 }
             }
 
             span {
                 font-weight: 300;
                 font-size: 12px;
+
+                @include tablet-landscape-and-below {
+                    text-align: center;
+                    line-height: 15px;
+                    margin-top: 10px;
+                }
             }
         }
     }
