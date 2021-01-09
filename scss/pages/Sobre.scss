@@ -424,8 +424,15 @@ $padding-left-mobile: 20px;
         padding: 440px 350px 320px 350px;
 
         @include tablet-landscape-and-below {
+            background-color: #231436;
+            background-image: url("./assets/min-images/quemsomos/crencasmobile.svg");
+            background-size: contain;
+            background-position: bottom;
             grid-template-columns: 1fr;
             padding: 0;
+            padding-top: 200px;
+            padding-bottom: 200px;
+            margin-top: -200px;
             height: auto;
         }
 

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 227" width="370" height="224">
+	<defs>
+		<image width="375" height="227" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXcAAADjAQMAAABEjsZcAAAAAXNSR0IB2cksfwAAAANQTFRFLhpHzTx42AAAACFJREFUeJztwTEBAAAAwqD1T20Hb6AAAAAAAAAAAAAA4DcqkAAByjbXhgAAAABJRU5ErkJggg=="/>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+			<path d="M0 0L375 0L375 227L0 227L0 0Z" />
+		</clipPath>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #231436 } 
+		.shp1 { fill: none;stroke: #ffb81c } 
+	</style>
+	<use id="Layer 1" href="#img1" x="0" y="0" />
+	<g id="Clip-Path: demais-crenças-mobile" clip-path="url(#cp1)">
+		<g id="demais-crenças-mobile">
+			<path id="fundo-roxo-escuro-mobile" class="shp0" d="M-43.26 -809.26L-41.77 134.27L115.92 221.19L322.08 158.88L402.85 -34.96L391.9 -478.14L387.04 -809.27L121.84 -832.67L0.94 -856.07L-43.26 -809.26Z" />
+			<path id="borda-amarela-mobile" class="shp1" d="M-46.81 -810.45L-28.48 153.35L109.92 193.19L327.25 170.86L396.85 -62.96L385.9 -506.13L383.49 -810.44L118.29 -833.84L-2.61 -857.24L-46.81 -810.45Z" />
+		</g>
+	</g>
+</svg>
