@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="375" height="227" viewBox="0 0 375 227">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Retângulo_136" data-name="Retângulo 136" width="375" height="227" transform="translate(0 3695)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="demais-crenças-mobile" transform="translate(0 -3695)" clip-path="url(#clip-path)">
+    <path id="fundo-roxo-escuro-mobile" d="M-782.261-17591.264l1.49,943.531,157.693,86.924,206.154-62.309,80.769-193.846-10.946-443.174-4.86-331.127-265.2-23.4-120.9-23.4Z" transform="translate(739 20477)" fill="#231436"/>
+    <path id="borda-amarela-mobile" d="M-779.811-17564.447l18.33,963.8,138.4,39.842,217.327-22.336,69.6-233.818-10.946-443.174-2.41-304.311-265.2-23.4-120.9-23.4Z" transform="translate(733 20449)" fill="none" stroke="#ffb81c" stroke-width="1"/>
+  </g>
+</svg>

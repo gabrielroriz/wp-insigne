@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1253" viewBox="0 0 1920 1253">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Retângulo_120" data-name="Retângulo 120" width="1920" height="1253" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="img-header-filmes-desktop" clip-path="url(#clip-path)">
+    <path id="fundo-roxo-escuro-header" d="M10000,1036l400,190,1694-302s-20-992-28-986-2054-54-2054-54L9840,212s-110,872-102,872S10000,1036,10000,1036Z" transform="translate(-10070)" fill="#1e112e"/>
+    <path id="shape_amarelo" data-name="shape amarelo" d="M9768.833,454.336,10710.4,984.193l53.776-1224.5-767.2-32.424Z" transform="translate(-9995 210)" fill="#ffb81c"/>
+    <path id="shape-amarelo-bordas" d="M9797.716,442.682l853.508,591.717L10821.97-233.545l-825-39.182Z" transform="translate(-9995 210)" fill="none" stroke="#ffb81c" stroke-width="2"/>
+  </g>
+</svg>

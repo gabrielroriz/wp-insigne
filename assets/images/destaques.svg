@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1950 375" width="1950" height="375">
+	<defs>
+		<image width="1950" height="375" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB54AAAF3AQMAAABHTHVFAAAAAXNSR0IB2cksfwAAAANQTFRFLhpHzTx42AAAAHBJREFUeJztwYEAAAAAw6D5U5/gBlUBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFwDZvIAAaNuOukAAAAASUVORK5CYII="/>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+			<path d="M0 0L1950 0L1950 375L0 375L0 0Z" />
+		</clipPath>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #3c235b } 
+		.shp1 { fill: none;stroke: #ffb81c;stroke-width: 2 } 
+	</style>
+	<use id="Layer 1" href="#img1" x="0" y="0" />
+	<g id="Clip-Path" clip-path="url(#cp1)">
+		<g id="Layer">
+			<path id="Layer" class="shp0" d="M-92 -19.7L1485.45 360.38L1970.99 4.47L2021.52 -1970.64L-102.98 -1810.26L-92 -19.7Z" />
+			<path id="Layer" class="shp1" d="M-117.04 31.71L1485.23 283.05L2005.04 31.71L1988.52 -1899.64L-135.98 -1739.26L-117.04 31.71Z" />
+		</g>
+	</g>
+</svg>

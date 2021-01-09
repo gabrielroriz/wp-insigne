@@ -1,50 +1,58 @@
 @import "../utils/Mixins.scss";
 @import "../utils/Vars.scss";
 
+$purple: #2e1a47;
+$dark-purple: #1E112E;
+$light-purple:#3c235b;
+$gold: #FFB81C;
+$cream: #EFDBB2;
+$padding-left-mobile: 20px;
+
+
 .filmes {
+    color: white;
+    background-color: $purple;
+    width: 100%;
+    max-width: 1920px;
+    box-shadow: 0px ;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.39), 0 6px 6px rgba(0, 0, 0, 0.23);
+    margin: 0 auto;
 
     &__header {
 
         @extend %section-attr;
+        display: grid;
+        grid-template-columns: 3fr 7fr;
+        background-image: url("./assets/min-images/filmes/header.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-position-y: -50px;
+        background-color: $light-purple;
+        height: 1200px;
+        align-items: flex-start;
 
-        &__wrapper {
-            @extend %section-wrapper-attr;
-
-            max-width: 1500px;
-            padding: 0 65px;
-            
-            display: grid;
-            grid-template-columns: 1.5fr 3fr;
-            column-gap: 20px;
-    
-            width: 100%;
-            height: 850px;
-            align-items: flex-end;
-
-            border-bottom: 1px solid lightgray;
-
-            @include tablet-landscape-and-below {
-                padding: 0;
-                display: flex;
-                flex-direction: column-reverse;
-            }
-    
-        }
-    
         &__title {
+            margin-left: 133px;
+            margin-top: 185px;
             h1 {
+                width: 256px;
                 font-weight: 900;
-                font-size: 180px;
+                font-size: 116px;
+                line-height: 141px;
+                letter-spacing: -5.8px;
                 word-break: break-all;
                 margin: 0 0 10px 0;
                 line-height: 0.8;
                 text-transform: uppercase;
+                color: $purple;
             }
             
             h4 {
                 font-size: 20px;
                 font-weight: 400;
                 margin-left: 10px;
+                color: $purple;
             }
         }
 
@@ -52,10 +60,40 @@
             position: relative;
             width: 100%;
             height: 100%;
+            margin-top: 185px;
 
             @include tablet-landscape-and-below {
                 height: 50vh;
             }
+        }
+    }
+
+    &__highlight {
+        width: 481px;
+        height: 814px;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 69px;
+        padding-left: 37px;
+        justify-content: flex-end;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+
+        &__number {
+            width: 292px;
+            border-bottom: 8px solid white;
+            font-size: 125px;
+            line-height: 143px;
+            letter-spacing: 2.5px;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+
+        &__text {
+            font-size: 22px;
+            line-height: 32px;
+            letter-spacing: 0;
         }
     }
 
@@ -114,6 +152,84 @@
             @include tablet-landscape-and-below {
                 transform: scale(0.45);
             }
+        }
+    }
+
+    &__destaques {
+        width: 100%;
+        height: 1780px;
+        position: relative;
+        background: url('./assets/min-images/filmes/destaques.svg');
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        background-size: contain;
+        background-color: $light-purple;
+
+        &__title {
+            width: 302px;
+            height: 346px;
+            position: absolute;
+            top: 50px;
+            left: 130px;
+            background: url('./assets/min-images/filmes/01.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;    
+        }
+        
+        &__text {
+            font-weight: 700;
+            color: $cream;
+            font-size: 28px;
+            text-transform: uppercase;
+            position: absolute;
+            top: 220px;
+            left: 190px;
+        }
+
+        &__img {
+            position: absolute;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &__img1 {
+            top: 220px;
+            left: 676px;
+            width: 900px;
+            height: 500px;    
+        }
+
+        &__img2 {
+            top: 737px;
+            left: 126px;
+            width: 1019px;
+            height: 380px;    
+        }
+
+        &__img3 {
+            top: 737px;
+            left: 1166px;
+            width: 500px;
+            height: 240px;    
+        }
+
+        &__img4 {
+            top: 1134px;
+            left: 774px;
+            width: 370px;
+            height: 240px;
+        }
+
+        &__img5 {
+            top: 995px;
+            left: 1166px;
+            width: 380px;
+            height: 350px;
         }
     }
 
