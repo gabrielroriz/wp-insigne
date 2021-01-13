@@ -47,6 +47,11 @@
     </div>
 
     <div class="filmes__tabs">
+        <div class="filmes__tabs__title">
+            <div class="filmes__tabs__text">
+                Filtragem
+            </div>
+        </div>
         <div class="filmes__tabs__wrapper">
             <a href="#" class="filmes__tabs__button filmes__tabs__selected" id="tab_todos_button">
                 Todos os trabalhos
@@ -56,13 +61,19 @@
                 Tipo de trabalho
             </a>
         </div>
-    </div>
-
-    <div class="filmes__tab" id="tab_todos">
-        <?php for ($i = 0; $i < 20; $i++) : ?>
-            <div class="filmes__poster">
-            </div>
-        <?php endfor; ?>
+        <div class="filmes__tab" id="tab_todos">
+            <?php for ($i = 0; $i < 20; $i++) : ?>
+                <div class="filmes__tab__poster" style="background-image: url('<?php echo get_template_directory_uri() . "/assets/min-images/filmes/poster.png"; ?>');">
+                    <div class="filmes__tab__poster__grid">
+                        <div class="filmes__tab__poster__text">
+                            <span>
+                                Catho
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            <?php endfor; ?>
+        </div>
     </div>
 
     <div class="filmes__tab" id="tab_tipo">
@@ -125,6 +136,20 @@
 
         </div>
 
+    </div>
+
+    <div class="filmes__cta">
+        <img width="100%" src="<?php echo get_template_directory_uri() . "/assets/min-images/quemsomos/notavel-cima.svg"; ?>" alt="">
+        <div class="filmes__cta__darkpurple">
+            <div class="filmes__cta__texto">
+                Nós te ajudamos <br>a ser notável.
+            </div>
+            <div class="filmes__cta__button">
+                <a href="">Entrar em contato via WhatsApp</a>
+                <span>Horário de atendimento: <br/> das 08:00h às 17:00h.</span>
+            </div>
+        </div>
+        <img width="100%" src="<?php echo get_template_directory_uri() . "/assets/min-images/quemsomos/notavel-baixo.svg"; ?>" alt="">
     </div>
 
     <?php //get_footer()
