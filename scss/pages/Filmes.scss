@@ -32,9 +32,20 @@ $padding-left-mobile: 20px;
         height: 1200px;
         align-items: flex-start;
 
+        @include tablet-landscape-and-below {
+            background-image: url("./assets/min-images/filmes/img-header-filme-mobile.svg");
+            height: 1300px;
+            grid-template-columns: 1fr;
+        }
+
         &__title {
             margin-left: 133px;
             margin-top: 185px;
+
+            @include tablet-landscape-and-below {
+                margin-left: 30px;
+            }
+
             h1 {
                 width: 256px;
                 font-weight: 900;
@@ -63,7 +74,8 @@ $padding-left-mobile: 20px;
             margin-top: 185px;
 
             @include tablet-landscape-and-below {
-                height: 50vh;
+                margin-top: 0;
+                padding: 0 30px;
             }
         }
     }
@@ -79,6 +91,14 @@ $padding-left-mobile: 20px;
         background-repeat: no-repeat;
         background-size: contain;
 
+        @include tablet-landscape-and-below {
+            width: 100%;
+            height: 410px;
+            background-size: cover;
+            background-position: center center;
+            padding: 22px;
+        }
+
 
         &__number {
             width: 292px;
@@ -88,15 +108,27 @@ $padding-left-mobile: 20px;
             letter-spacing: 2.5px;
             font-weight: 300;
             margin-bottom: 10px;
+
+            @include tablet-landscape-and-below {
+                width: 100%;
+            }
+
         }
 
         &__text {
             font-size: 22px;
             line-height: 32px;
             letter-spacing: 0;
+
+            @include tablet-landscape-and-below {
+                font-weight: 500;
+            }
         }
     }
 
+    // Código deprecado da versão 1 
+    // da página (posters um em
+    // cima do outro.)
     &__poster {
         position: absolute;
         top: 20px;
@@ -175,6 +207,22 @@ $padding-left-mobile: 20px;
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center center;    
+
+            @include tablet-landscape-and-below {
+                width: 100%;
+                height: 300px;
+                background-position: center left;
+                background-position-x: 14px;
+                background-size: 210px 210px;
+                background-color: red;
+                position: relative;
+                top: 0;
+                left: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                padding: 30px 30px;
+            }
         }
         
         &__text {
@@ -185,10 +233,20 @@ $padding-left-mobile: 20px;
             position: absolute;
             top: 220px;
             left: 190px;
+
+            @include tablet-landscape-and-below {
+                position: relative;
+                top: auto;
+                left: auto;
+            }
         }
 
         &__img {
             position: absolute;
+
+            @include tablet-landscape-and-below {
+                display: none;
+            }
 
             img {
                 width: 100%;
@@ -208,7 +266,8 @@ $padding-left-mobile: 20px;
             top: 737px;
             left: 126px;
             width: 1019px;
-            height: 380px;    
+            height: 380px;
+        
         }
 
         &__img3 {
@@ -230,6 +289,13 @@ $padding-left-mobile: 20px;
             left: 1166px;
             width: 380px;
             height: 350px;
+
+            @include tablet-landscape-and-below {
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 300px;
+            }
         }
     }
 
@@ -285,6 +351,7 @@ $padding-left-mobile: 20px;
 
         &__selected {
             border-bottom: 5px solid $cream;
+            font-weight: 700;
         }
     }
 

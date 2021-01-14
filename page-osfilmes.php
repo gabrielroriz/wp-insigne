@@ -54,7 +54,7 @@
         </div>
         <div class="filmes__tabs__wrapper">
             <a href="#" class="filmes__tabs__button filmes__tabs__selected" id="tab_todos_button">
-                Todos os trabalhos
+                Todos os filmes
             </a>
 
             <a href="#" class="filmes__tabs__button" id="tab_tipo_button">
