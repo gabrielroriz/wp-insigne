@@ -17,7 +17,7 @@
   $nav_items = array(
     array("home", "Home"),
     array("osfilmes", "Filmes"),
-    array("sobre", "Quem somos"),
+    array("quem-somos", "Quem somos"),
     array("contato", "Contato"),
   );
 
