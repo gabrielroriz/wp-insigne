@@ -58,12 +58,14 @@
         }
 
         @include desktop-1024-and-below{
-            width: 50%;
+          width: 25%;
         }
 
         @include tablet-768-and-below{
             width: 75%;
             padding-top: 50px;
+            justify-content: flex-start;
+            padding-left: 30px;
 
             h1{
                 font-size: 12em;
@@ -90,7 +92,7 @@
       width: 80%;
       object-fit: contain;
 
-      @include desktop-1024-and-below{
+      @include tablet-768-and-below{
         top: auto;
         bottom: 0 !important;
       }
@@ -98,21 +100,66 @@
   }
 
   &__infos {
-    @extend %section-attr;
+      padding: 100px 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-    &__wrapper {
-      @extend %section-wrapper-attr;
+    &__container{
+        width: 70%;
+        display: flex;
+        flex-direction: row;
 
-      margin-top: 140px;
-      margin-bottom: 240px;
-
-      display: grid;
-      grid-template-columns: 4fr 6fr;
-
-      @include tablet-landscape-and-below {
-        grid-template-columns: 1fr;
-        margin-bottom: 140;
+        
+      @include desktop-1024-and-below{
+        width: 100%;
+        flex-direction: column;
       }
+    }
+
+    &__number{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding-right: 150px;
+
+        @include desktop-1024-and-below{
+          justify-content: flex-start;
+          padding: 30px;
+        }
+
+        h2{
+            color: $gold;
+            font-size: 180px;
+            margin: 0px;
+            font-weight: 400;
+            position: relative;
+
+            @include desktop-1920-and-below{
+              font-size: 150px;
+            }
+
+            @include desktop-1024-and-below{
+              font-size: 60px;
+            }
+            
+        }
+
+        &__line{
+            height: 2px;
+            width: 90%;
+            background-color: $gold;
+            position: absolute;
+            bottom: 0;
+            right: -25%;
+
+            @include desktop-1024-and-below{
+              width: 120%;
+            }
+        }
+
     }
 
     &__infos {
@@ -120,6 +167,15 @@
       display: grid;
       grid-template-columns: 1fr;
       row-gap: 70px;
+
+      @include desktop-1024-and-below{
+        padding: 30px;
+        
+      }
+
+      @include tablet-768-and-below{
+        row-gap: 38px;
+      }
     }
 
     &__row {
@@ -127,19 +183,42 @@
       grid-template-columns: 1fr;
       row-gap: 20px;
 
+      @include desktop-1920-and-below{
+        font-size: 15px;
+      }
+
       h4 {
         text-transform: uppercase;
-        color: $gray;
+        color: $gold;
         font-size: 22px;
         padding: 0;
         margin: 0;
+
+        
+        @include desktop-1920-and-below{
+          font-size: 18px;
+        }
+
+        
+        @include desktop-1920-and-below{
+          font-size: 16px;
+        }
       }
 
       h2 {
         font-size: 48px;
-        color: $gray;
+        color: white;
+        font-weight: 500;
         padding: 0;
         margin: 0;
+
+        @include desktop-1920-and-below{
+          font-size: 35px;
+        }
+
+        @include desktop-1366-and-below{
+          font-size: 30px;
+        }
       }
     }
 
@@ -149,26 +228,43 @@
       flex-direction: row;
       justify-content: space-between;
 
-      @include tablet-landscape-and-below {
-        display: grid;
-        grid-template-columns: 1fr;
-        row-gap: 20px;
+      @include desktop-1024-and-below{
+        flex-direction: column;
       }
 
+    
       a {
         text-decoration: none;
-        color: $gray;
+        color: white;
+        font-weight: 500;
         font-size: 48px;
-        font-weight: 800;
+
+        &:hover{
+            text-decoration: underline;
+        }
+
+        @include desktop-1920-and-below{
+          font-size: 35px;
+        }
+
+        @include desktop-1366-and-below{
+          font-size: 30px;
+        }
+
+        @include desktop-1024-and-below{
+          font-size: 45px;
+          margin: 8px 0px;
+        }
+  
       }
     }
 
     &__wpp {
       margin-bottom: 5px;
 
-      @include tablet-landscape-and-below {
-        text-align: center;
-        margin-top: 100px;
+      @include desktop-1024-and-below{
+        margin-top: 50px;
+        text-align: left;
       }
 
       a {
@@ -177,8 +273,12 @@
         text-transform: uppercase;
         font-weight: 700;
         padding: 30px 120px;
-        background: #363636;
+        background: $orange;
         display: inline;
+
+        @include desktop-1440-and-below{
+          padding: 25px 100px;
+        }
       }
     }
 
@@ -187,8 +287,8 @@
       font-size: 12px;
       color: $gray;
 
-      @include tablet-landscape-and-below {
-        text-align: center;
+      @include desktop-1024-and-below{
+        text-align: left;
       }
     }
   }

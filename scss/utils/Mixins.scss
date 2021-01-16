@@ -148,32 +148,38 @@ $mq-desktop: 1440px !default;
 
 
 
-
+$desktop-1920px: 1920px !default;
 $desktop-1440px: 1440px !default;
 $desktop-1366px: 1366px !default;
 $desktop-1024px: 1024px !default;
 $tablet-768px: 768px !default;
 
+@mixin desktop-1920-and-below {
+  @media only screen and (max-width: $desktop-1920px) {
+    @content;
+  }
+}
+
 @mixin desktop-1440-and-below {
-  @media only screen and (max-width: $desktop-1440px - 1) {
+  @media only screen and (max-width: $desktop-1440px) {
     @content;
   }
 }
 
 @mixin desktop-1366-and-below {
-  @media only screen and (max-width: $desktop-1366px - 1) {
+  @media only screen and (max-width: $desktop-1366px ) {
     @content;
   }
 }
 
 @mixin desktop-1024-and-below {
-  @media only screen and (max-width: $desktop-1024px - 1) {
+  @media only screen and (max-width: $desktop-1024px  ) {
     @content;
   }
 }
 
 @mixin tablet-768-and-below {
-  @media only screen and (max-width: $tablet-768px - 1) {
+  @media only screen and (max-width: $tablet-768px) {
     @content;
   }
 }

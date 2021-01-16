@@ -23,10 +23,14 @@
     </div>
 
     <div class="contato__infos">
-        <div class="contato__infos__wrapper">
-            <div></div>
-
-
+        <div class="contato__infos__container">
+            <div class="contato__infos__number">
+                <h2>
+                    01
+                    <div class="contato__infos__number__line"></div>
+                </h2>
+             
+            </div>
             <div class="contato__infos__infos">
 
 
@@ -68,8 +72,6 @@
                 </div>
 
             </div>
-
-
         </div>
     </div>
 </div>
