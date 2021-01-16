@@ -1,8 +1,17 @@
 @import "./Mixins.scss";
 
+$navbar-height: 120px;
 $page-max-width: 1920px;
+
 $link-color: #444;
 $gray: #707070;
+$light-gray: #E6E6E6;
+$purple: #2e1a47;
+$dark-purple: #1E112E;
+$light-purple:#3c235b;
+$gold: #FFB81C;
+$cream: #EFDBB2;
+$padding-left-mobile: 20px;
 
 %section-attr {
   width: 100%;
@@ -56,3 +65,4 @@ $gray: #707070;
     width: 100%;
   }
 }
+

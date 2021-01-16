@@ -1,145 +1,195 @@
 @import "../utils/Mixins.scss";
 @import "../utils/Vars.scss";
 
-$light-gray: #E6E6E6;
-
 .contato {
+  color: white;
+  background-color: $purple;
+  width: 100%;
+  max-width: 1920px;
+  box-shadow: 0px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.39), 0 6px 6px rgba(0, 0, 0, 0.23);
+  margin: 0 auto;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 
-    &__header {
-        @extend %section-attr;
+  &__navbar-area {
+    width: 100%;
+    height: $navbar-height;
+  }
 
-        &__wrapper {
-            @extend %section-wrapper-attr;
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+    width: 100%;
+    background-color: green;
+    position: relative;
+    height: 100vh;
+    min-height: 700px;
+    background-color: #1e112e;
 
-            height: calc(100vh - 76px);
-            background: -webkit-linear-gradient(to right, white 0%, white 40%, $light-gray 40%, $light-gray 40%);
-            background: linear-gradient(to right, white 0%, white 40%, $light-gray 40%, $light-gray 40%);
+    &__left-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 35%;
+      height: 100%;
+      background-image: url("./assets/min-images/contato/header.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
 
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            align-items: flex-end;
+      @include desktop-1024-and-below{
+        width: 100%;
+      }
 
-            @include tablet-landscape-and-below {
-                background: $light-gray;
-            }
+      &__content {
+        width: 75%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 200px;
 
-            h1 {
-                font-size: 200px;
-                font-weight: 900;
-                line-height: 0.72;
-                padding: 0 0 125px 0;
-                margin: 0;
-                color: $gray;
-                text-transform: uppercase;
-
-                @include tablet-landscape-and-below {
-                    font-size: 15vw;
-                }
-            }
-
-            span {
-                font-weight: 400;
-            }
-            
+        @include desktop-1366-and-below{
+            padding-top: 100px;
         }
+
+        @include desktop-1024-and-below{
+            width: 50%;
+        }
+
+        @include tablet-768-and-below{
+            width: 75%;
+            padding-top: 50px;
+
+            h1{
+                font-size: 12em;
+            }
+        }
+
+        h1{
+            font-weight: 500;
+            font-size: 55px;
+            color: $purple;
+
+            @include desktop-1440-and-below{
+                font-size: 40px;
+            }
+        }
+
+      }
+    }
+
+    &__right-background {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 80%;
+      object-fit: contain;
+
+      @include desktop-1024-and-below{
+        top: auto;
+        bottom: 0 !important;
+      }
+    }
+  }
+
+  &__infos {
+    @extend %section-attr;
+
+    &__wrapper {
+      @extend %section-wrapper-attr;
+
+      margin-top: 140px;
+      margin-bottom: 240px;
+
+      display: grid;
+      grid-template-columns: 4fr 6fr;
+
+      @include tablet-landscape-and-below {
+        grid-template-columns: 1fr;
+        margin-bottom: 140;
+      }
     }
 
     &__infos {
-        @extend %section-attr;
-
-        &__wrapper {
-            @extend %section-wrapper-attr;
-
-            margin-top: 140px;
-            margin-bottom: 240px;
-
-            display: grid;
-            grid-template-columns: 4fr 6fr;
-
-            @include tablet-landscape-and-below {
-                grid-template-columns: 1fr;
-                margin-bottom: 140;
-            }
-        }
-
-        &__infos {
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1fr;
-            row-gap: 70px;
-        }
-
-        &__row {
-            display: grid;
-            grid-template-columns: 1fr;
-            row-gap: 20px;
-
-            h4 {
-                text-transform: uppercase;
-                color: $gray;
-                font-size: 22px;
-                padding: 0;
-                margin: 0;
-            }
-
-            h2 {
-                font-size: 48px;
-                color: $gray;
-                padding: 0;
-                margin: 0;
-            }
-        }
-
-        &__social {
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-
-            @include tablet-landscape-and-below {
-                display: grid;
-                grid-template-columns: 1fr;
-                row-gap: 20px;
-            }
-            
-            a {
-                text-decoration: none;
-                color: $gray;
-                font-size: 48px;
-                font-weight: 800;
-            }
-        }
-
-        &__wpp {
-            margin-bottom: 5px;
-
-            @include tablet-landscape-and-below {
-                text-align: center;
-                margin-top: 100px;
-            }
-
-            a {
-                color: white;
-                text-decoration: none;
-                text-transform: uppercase;
-                font-weight: 700;
-                padding: 30px 120px;
-                background: #363636;
-                display: inline;
-            }
-        }
-
-        &__smalltext {
-            margin-top: 10px;
-            font-size: 12px;
-            color: $gray;
-
-            @include tablet-landscape-and-below {
-                text-align: center;
-            }
-        }
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      row-gap: 70px;
     }
 
+    &__row {
+      display: grid;
+      grid-template-columns: 1fr;
+      row-gap: 20px;
+
+      h4 {
+        text-transform: uppercase;
+        color: $gray;
+        font-size: 22px;
+        padding: 0;
+        margin: 0;
+      }
+
+      h2 {
+        font-size: 48px;
+        color: $gray;
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    &__social {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      @include tablet-landscape-and-below {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+      }
+
+      a {
+        text-decoration: none;
+        color: $gray;
+        font-size: 48px;
+        font-weight: 800;
+      }
+    }
+
+    &__wpp {
+      margin-bottom: 5px;
+
+      @include tablet-landscape-and-below {
+        text-align: center;
+        margin-top: 100px;
+      }
+
+      a {
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 700;
+        padding: 30px 120px;
+        background: #363636;
+        display: inline;
+      }
+    }
+
+    &__smalltext {
+      margin-top: 10px;
+      font-size: 12px;
+      color: $gray;
+
+      @include tablet-landscape-and-below {
+        text-align: center;
+      }
+    }
+  }
 }

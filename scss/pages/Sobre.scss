@@ -26,7 +26,7 @@ $padding-left-mobile: 20px;
         background-color: $dark-purple;
         height: 1080px;
         margin-bottom: -280px;
-        z-index: 10000;
+        z-index: 999;
 
         @include tablet-landscape-and-below {
             display: none;
