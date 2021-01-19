@@ -21,7 +21,7 @@ function filme_meta_box_html($post)
     metabox_begin();
     
     metabox_title("Geral");
-    metabox_text_field("FILMES_NOME", "Nome");
+    metabox_text_field("FILMES_SUBTITULO", "Subtítulo");
     metabox_textarea_field("FILMES_DESC", "Descrição");
     metabox_textarea_field("FILMES_EMBEDDED", "Código Embedded do Vídeo");
     metabox_image_field("FILMES_IMAGEM", "Imagem");
@@ -37,7 +37,7 @@ function filmes_meta_box_save($post_id)
             return;
 
         $fields_list = [
-            "FILMES_NOME",
+            "FILMES_SUBTITULO",
             "FILMES_DESC",
             "FILMES_EMBEDDED",
             "FILMES_IMAGEM"

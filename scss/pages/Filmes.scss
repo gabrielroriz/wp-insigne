@@ -97,7 +97,12 @@
         padding-left: 37px;
         justify-content: flex-end;
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: cover;
+
+        &:hover {
+            box-shadow: 0px 0px 73px #000000A1;
+            cursor: pointer;
+        }
 
         @include tablet-landscape-and-below {
             width: 100%;
@@ -468,19 +473,21 @@
             width: 100%;
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
+            justify-content: space-between;;
 
             h3 {
                 text-transform: uppercase;
+                color: #FFB81C;
             }
 
             h4 {
                 font-weight: 400;
+                color: #FFB81C;
             }
 
             a {
                 text-decoration: none;
-                color: black
+                color: #FFB81C;
             }
         }
 

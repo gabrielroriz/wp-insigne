@@ -4,7 +4,6 @@ require get_template_directory() . '/includes/utils.php';
 require get_template_directory() . '/includes/customizer/customizer.php';
 require get_template_directory() . '/includes/widgets/widget-example.php';
 require get_template_directory() . '/includes/metaboxes/filmes.php';
-require get_template_directory() . '/includes/metaboxes/projetos.php';
 
 
 function theme_scripts()
@@ -117,33 +116,6 @@ function create_custom_category($model_slug){
 function wp_register_custom_post_types() {
 
    /**
-   * PROJETOS 
-   */
-
-  create_custom_category("projetos");
-
-  $projetos_labels = array(
-     'name' => _x( 'Projetos', 'Nome geral para o modelo Projetos' ),
-     'singular_name' => _x( 'Projeto', 'Nome singularizado para o modelo Projeto' ),
-     
-  );
-
-  $projetos_args = array(
-    'labels' => $projetos_labels,
-    'description' => 'Projetos disponíveis.',
-    'public' => true,
-    'has_archive'=> true,
-    'show_in_admin_bar' => true,
-    'show_in_nav_menus' => true,
-    'menu_icon'         => 'dashicons-welcome-write-blog',
-    'supports'          => array( 'title', 'thumbnail', 'custom-fields'),
-    'taxonomies'        => array('projetos-category')
-  );
-  
-  register_post_type('projetos', $projetos_args);
-
-
-  /**
    * FILMES 
    */
 
@@ -166,12 +138,16 @@ function wp_register_custom_post_types() {
     'supports'          => array( 'title', 'thumbnail', 'custom-fields'),
     'taxonomies'        => array('filmes-category')
   );
-  
   register_post_type('filmes', $filmes_args);
 
 }
 
 add_action( 'init', 'wp_register_custom_post_types' );
+
+add_action('init', 'my_rem_editor_from_filmes');
+function my_rem_editor_from_filmes() {
+    remove_post_type_support( 'filmes', 'editor' );
+}
 
 
 // Remove a barra de ADMIN.

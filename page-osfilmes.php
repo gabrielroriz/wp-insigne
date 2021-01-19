@@ -12,58 +12,94 @@
         </div>
 
         <div class="filmes__header__posters">
-            <div class="filmes__highlight" style="background-image: url('<?php echo get_template_directory_uri() . "/assets/min-images/filmes/img-primeiro-projeto.png"; ?>');">
-                <div class="filmes__highlight__number">
-                    01
+
+            <?php
+                $header_filmes = new WP_Query([
+                    "post_type" => "filmes",
+                    "tax_query" => [
+                        [
+                            "taxonomy" => "filmes-category",
+                            "field" => "slug",
+                            "terms" => "slider"
+                        ]
+                    ]
+                ]);
+
+                $counter = 1;
+            ?>
+            <?php while ($header_filmes->have_posts()) : $header_filmes->the_post(); ?>
+                <div class="filmes__highlight" style="background-image: url('<?php echo get_post_meta(get_the_ID(), "FILMES_IMAGEM")[0]; ?>');">
+                    <div class="filmes__highlight__number">
+                        <?php echo "0".$counter; ?>
+                    </div>
+                    <div class="filmes__highlight__text">
+                        <?php the_title(); ?>
+                    </div>
                 </div>
-                <div class="filmes__highlight__text">
-                    General Electric
-                </div>
-            </div>
+                <?php $counter = $counter + 1; ?>
+            <?php endwhile; ?>
         </div>
     </div>
 
     <div class="filmes__destaques">
 
+        <?php
+            $destaques_filmes = new WP_Query([
+                "post_type" => "filmes",
+                "posts_per_page" => 5,
+                "tax_query" => [
+                    [
+                        "taxonomy" => "filmes-category",
+                        "field" => "slug",
+                        "terms" => "destaques"
+                    ]
+                ]
+            ]);
+            $destaques_filmes = $destaques_filmes->posts;
+            var_dump($destaques_filmes[0]);
+
+        ?>
+                            
         <div class="filmes__destaques__title">
             <div class="filmes__destaques__text">Destaques</div>
-            <div class="filmes__destaques__img filmes__destaques__img1" style="background-image: url('<?php echo get_template_directory_uri() . "/assets/min-images/filmes/img-primeiro-projeto.png"; ?>')">
+
+            <div class="filmes__destaques__img filmes__destaques__img1" style="background-image: url('<?php echo get_post_meta($destaques_filmes[0]->ID, "FILMES_IMAGEM")[0]; ?>')">
                 <div class="filmes__destaques__img__overlay">
                     <div class="filmes__destaques__img__overlaytext">
-                        <h2>General Electric</h2>
-                        <h4>General Electric</h4>
+                        <h2><?php echo $destaques_filmes[0]->post_title ?></h2>
+                        <h4><?php echo get_post_meta($destaques_filmes[0]->ID, "FILMES_SUBTITULO")[0]; ?></h4>
                     </div>
                 </div>
             </div>
-            <div class="filmes__destaques__img filmes__destaques__img2" style="background-image: url('<?php echo get_template_directory_uri() . "/assets/min-images/filmes/img-primeiro-projeto.png"; ?>')">
+            <div class="filmes__destaques__img filmes__destaques__img2" style="background-image: url('<?php echo get_post_meta($destaques_filmes[1]->ID, "FILMES_IMAGEM")[0]; ?>')">
                 <div class="filmes__destaques__img__overlay">
                     <div class="filmes__destaques__img__overlaytext">
-                        <h2>General Electric</h2>
-                        <h4>General Electric</h4>
+                        <h2><?php echo $destaques_filmes[1]->post_title ?></h2>
+                        <h4><?php echo get_post_meta($destaques_filmes[1]->ID, "FILMES_SUBTITULO")[0]; ?></h4>
                     </div>
                 </div>
             </div>
-            <div class="filmes__destaques__img filmes__destaques__img3" style="background-image: url('<?php echo get_template_directory_uri() . "/assets/min-images/filmes/img-primeiro-projeto.png"; ?>')">
+            <div class="filmes__destaques__img filmes__destaques__img3" style="background-image: url('<?php echo get_post_meta($destaques_filmes[2]->ID, "FILMES_IMAGEM")[0]; ?>')">
                 <div class="filmes__destaques__img__overlay">
                     <div class="filmes__destaques__img__overlaytext">
-                        <h2>General Electric</h2>
-                        <h4>General Electric</h4>
+                        <h2><?php echo $destaques_filmes[2]->post_title ?></h2>
+                        <h4><?php echo get_post_meta($destaques_filmes[2]->ID, "FILMES_SUBTITULO")[0]; ?></h4>
                     </div>
                 </div>
             </div>
-            <div class="filmes__destaques__img filmes__destaques__img4" style="background-image: url('<?php echo get_template_directory_uri() . "/assets/min-images/filmes/img-primeiro-projeto.png"; ?>')">
+            <div class="filmes__destaques__img filmes__destaques__img4" style="background-image: url('<?php echo get_post_meta($destaques_filmes[3]->ID, "FILMES_IMAGEM")[0]; ?>')">
                 <div class="filmes__destaques__img__overlay">
                     <div class="filmes__destaques__img__overlaytext">
-                        <h2>General Electric</h2>
-                        <h4>General Electric</h4>
+                        <h2><?php echo $destaques_filmes[3]->post_title ?></h2>
+                        <h4><?php echo get_post_meta($destaques_filmes[3]->ID, "FILMES_SUBTITULO")[0]; ?></h4>
                     </div>
                 </div>
             </div>
-            <div class="filmes__destaques__img filmes__destaques__img5" style="background-image: url('<?php echo get_template_directory_uri() . "/assets/min-images/filmes/img-primeiro-projeto.png"; ?>')">
+            <div class="filmes__destaques__img filmes__destaques__img5" style="background-image: url('<?php echo get_post_meta($destaques_filmes[4]->ID, "FILMES_IMAGEM")[0]; ?>')">
                 <div class="filmes__destaques__img__overlay">
                     <div class="filmes__destaques__img__overlaytext">
-                        <h2>General Electric</h2>
-                        <h4>General Electric</h4>
+                        <h2><?php echo $destaques_filmes[4]->post_title ?></h2>
+                        <h4><?php echo get_post_meta($destaques_filmes[4]->ID, "FILMES_SUBTITULO")[0]; ?></h4>
                     </div>
                 </div>
             </div>
@@ -129,7 +165,7 @@
                     <div class="filmes__tab__poster__grid">
                         <div class="filmes__tab__poster__text">
                             <span>
-                                Catho
+                                <?php echo the_title(); ?>
                             </span>
                         </div>
                     </div>
@@ -150,10 +186,17 @@
                     "Branded Content",
                     "Institucionais"
                 ];
+                // remover as categorias administrativas:
+                // slider e  destaques
                 $categorias = get_terms([
                     "taxonomy" => "filmes-category",
-                    "hide_empty" => false
+                    "hide_empty" => true
                 ]);
+
+                $categorias = array_filter($categorias, function($categoria) {
+                    return $categoria->slug != "slider" && $categoria->slug != "destaques";
+                });
+
 
                 ?>
 
@@ -162,6 +205,7 @@
                     <?php
                     $filmes = new WP_Query([
                         "post_type" => "filmes",
+                        "posts_per_page" => 4,
                         "tax_query" => [
                             [
                                 "taxonomy" => "filmes-category",
@@ -183,7 +227,7 @@
                                 <div class="filmes__tab__poster__grid">
                                     <div class="filmes__tab__poster__text">
                                         <span>
-                                            Catho
+                                            <?php echo the_title(); ?>
                                         </span>
                                     </div>
                                 </div>
