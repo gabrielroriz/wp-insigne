@@ -28,7 +28,22 @@
                 $counter = 1;
             ?>
             <?php while ($header_filmes->have_posts()) : $header_filmes->the_post(); ?>
-                <div class="filmes__highlight" style="background-image: url('<?php echo get_post_meta(get_the_ID(), "FILMES_IMAGEM")[0]; ?>');">
+                <div 
+                    class="filmes__highlight" 
+                    style="background-image: url('<?php echo get_post_meta(get_the_ID(), "FILMES_IMAGEM")[0]; ?>');" 
+                    onclick="openModal('modal-highlight-<?php echo $counter; ?>')"
+                >
+                <div id="modal-highlight-<?php echo $counter; ?>" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <div class="modal-content__embedded"></div>
+                        <span class="close">&times;</span>
+                        <p>
+                            <?php the_title(); ?>
+                        </p>
+                    </div>
+                </div>
+
                     <div class="filmes__highlight__number">
                         <?php echo "0".$counter; ?>
                     </div>
@@ -56,7 +71,6 @@
                 ]
             ]);
             $destaques_filmes = $destaques_filmes->posts;
-            var_dump($destaques_filmes[0]);
 
         ?>
                             
@@ -258,6 +272,30 @@
         <img width="100%" src="<?php echo get_template_directory_uri() . "/assets/min-images/quemsomos/notavel-baixo.svg"; ?>" alt="">
     </div>
 
-    <?php //get_footer()
-    ?>
+    <script>
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the button, open the modal
+        function openModal(modal_id) {
+
+            var modal = document.getElementById(modal_id);
+            modal.style.display = "block";
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        }
+
+    </script>
+
+    <?php get_footer();?>
 </div>
