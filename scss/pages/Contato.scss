@@ -83,11 +83,16 @@
         top: auto;
         bottom: 0 !important;
       }
+
+      @include mobile-411-and-below{
+        top: auto;
+        bottom: 100px !important;
+      }
     }
   }
 
   &__infos {
-    padding: 100px 0px;
+    padding: 200px 0px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -192,6 +197,7 @@
         font-weight: 500;
         padding: 0;
         margin: 0;
+        line-break: auto;
 
         @include desktop-1920-and-below {
           font-size: 35px;
@@ -258,6 +264,11 @@
         @include desktop-1440-and-below {
           padding: 25px 100px;
         }
+
+        @include mobile-411-and-below{
+          width: 100%;
+          padding: 25px 80px;
+        }
       }
     }
 
@@ -273,7 +284,7 @@
   }
 
   &__instagram {
-    padding: 100px 0px;
+    padding: 200px 0px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -368,6 +379,12 @@
 
           &:nth-child(even) {
             justify-content: flex-end;
+          }
+
+          @include tablet-768-and-below{
+            &:nth-child(even) {
+              justify-content: flex-start;
+            }
           }
 
           img {
