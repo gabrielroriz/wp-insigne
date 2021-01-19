@@ -1,4 +1,3 @@
-<div class="filmes">
     <?php get_header() ?>
 
     <div class="filmes__header">
@@ -298,4 +297,3 @@
     </script>
 
     <?php get_footer();?>
-</div>

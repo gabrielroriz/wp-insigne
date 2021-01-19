@@ -1,6 +1,4 @@
-
 <?php
-// [0] Label, [1] https://www.link.com.br
 
 $contatos = array(
     array("(11) 2338-0310", ""),
@@ -21,18 +19,21 @@ $filmes = array(
 
 ?>
 
-
-
 <footer class="footer">
+    <div class="footer__brand">
+            <div class="footer__brand__container">
+            <span>WE ARE INSIGNE<img src="<?php echo get_template_directory_uri() . "/assets/min-images/home/brand/pontilhado.png"; ?>" class="footer__brand__pontilhado" /></span>                    
+        </div>
+    </div>
 
-    <div class="footer__wrapper">
-        <div class="footer__logo">
+    <div class="footer__access">
+        <div class="footer__access__logo">
             <img src="<?php echo get_template_directory_uri() . "/assets/min-images/logos/insingeLogoAmarelo.svg"; ?>" alt=""/>
         </div>
         
 
-        <div class="footer__content">
-            <div class="footer__list">
+        <div class="footer__access__content">
+            <div class="footer__access__list">
                 <strong>CONTATO</strong>
                 <ul>
                     <?php foreach($contatos as $contato) {?>
@@ -45,7 +46,7 @@ $filmes = array(
                 </ul>
             </div>
 
-        <div class="footer__list">
+        <div class="footer__access__list">
             <strong>REDES SOCIAIS</strong>
             <ul>
                 <?php foreach($socials as $social) {?>
@@ -58,7 +59,7 @@ $filmes = array(
             </ul>
         </div>
 
-        <div class="footer__list">
+        <div class="footer__access__list">
             <strong>FILMES</strong>
             <ul>
                 <?php foreach($filmes as $filme) {?>
@@ -83,8 +84,10 @@ $filmes = array(
             <a>Políticas de Cookies</a>
         </div>
     </div>
-
 </footer>
+
+</div>
+</div>
 
 </body>
     <?php wp_footer(); ?>

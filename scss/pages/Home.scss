@@ -1,21 +1,6 @@
 @import "../utils/Mixins.scss";
 @import "../utils/Vars.scss";
 
-.home__container {
-  width: 100%;
-  background: #2e1a47 0% 0% no-repeat padding-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.home__wrapper {
-  width: 100%;
-  max-width: 1920px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  overflow: hidden;
-}
 
 .home__header {
   width: 100%;
@@ -503,57 +488,3 @@
   }
 }
 
-.home__brand {
-  width: 100%;
-  padding: 100px 0px;
-  background-color: #2e1a47;
-  overflow: hidden;
-
-  &__container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  span {
-    color: #ffb81c;
-
-    margin: 0px;
-    text-align: center;
-    position: relative;
-    z-index: 2;
-    font-weight: 900;
-
-    white-space: nowrap;
-
-    // @include desktop-and-below {
-    //   font-size: 90px;
-    // }
-
-    // @include mobile-landscape-and-below {
-    //   font-size: 30px;
-
-    font-size: 10vw;
-
-    @media (min-width: 1920px) {
-      font-size: 200px;
-    }
-
-    // }
-  }
-
-  &__pontilhado {
-    position: absolute;
-    bottom: -50px;
-    right: -50px;
-    z-index: -1;
-    width: 25%;
-
-    @include mobile-landscape-and-below {
-      width: 40%;
-      bottom: -25px;
-      right: -25px;
-    }
-  }
-}
