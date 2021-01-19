@@ -1,5 +1,10 @@
 <?php get_header() ?>
 
+<script>
+    // const instagramAccount = "<?php echo customizer_get_value("social", "all", "ig-user"); ?>";
+    const instagramAccount = "<?php echo "ofelipepavani"; ?>";
+</script>
+
 <div class="contato">
     <div class="contato__navbar-area"></div>
 
@@ -71,6 +76,47 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </div>
+
+
+    <?php 
+
+        $instagram_posts = array(
+            "https://img.elo7.com.br/product/zoom/2553EAF/post-para-instagram-redes-sociais.jpg",
+            "https://img.elo7.com.br/product/zoom/2553EAF/post-para-instagram-redes-sociais.jpg",
+            "https://img.elo7.com.br/product/zoom/2553EAF/post-para-instagram-redes-sociais.jpg",
+            "https://img.elo7.com.br/product/zoom/2553EAF/post-para-instagram-redes-sociais.jpg",
+            "https://img.elo7.com.br/product/zoom/2553EAF/post-para-instagram-redes-sociais.jpg",
+            "https://img.elo7.com.br/product/zoom/2553EAF/post-para-instagram-redes-sociais.jpg",
+            "https://img.elo7.com.br/product/zoom/2553EAF/post-para-instagram-redes-sociais.jpg",
+            "https://img.elo7.com.br/product/zoom/2553EAF/post-para-instagram-redes-sociais.jpg",
+            "https://img.elo7.com.br/product/zoom/2553EAF/post-para-instagram-redes-sociais.jpg",
+            "https://img.elo7.com.br/product/zoom/2553EAF/post-para-instagram-redes-sociais.jpg",
+            "https://img.elo7.com.br/product/zoom/2553EAF/post-para-instagram-redes-sociais.jpg",
+            "https://img.elo7.com.br/product/zoom/2553EAF/post-para-instagram-redes-sociais.jpg",
+        );
+    ?>
+
+    <div class="contato__instagram">
+        <div class="contato__instagram__container">
+            <div class="contato__instagram__number">
+                <h2>
+                    02
+                    <div class="contato__instagram__number__line"></div>
+                </h2>
+            </div>
+            <div class="contato__instagram__posts">
+                <h3>NOSSO INSTAGRAM</h3>
+
+                <div class="contato__instagram__posts__cards" id="contato__instagram__posts__cards">
+                <!-- <?php for ($i = 0; $i < count($instagram_posts); $i++) { ?>
+                    <?php if($i % 3 == 0) { ?> <div class="contato__instagram__posts__cards__line"> <?php } ?>
+                        <img src=<?php echo $instagram_posts[$i]; ?> />
+                    <?php if(($i + 1) % 3 == 0 || $i == count($instagram_posts) - 1) { ?> </div> <?php } ?>
+                <?php } ?> -->
+                </div>
             </div>
         </div>
     </div>

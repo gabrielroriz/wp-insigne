@@ -25,9 +25,10 @@ function theme_scripts()
 
     global $post;
     if(is_page() || is_single()) {
-        switch($post->post_name) {
-            case 'example':
-                wp_enqueue_script('page-example-js', get_theme_file_uri('/js/page-example.js'), null, microtime(), true);
+        switch($post->post_name) {          
+            case 'contato':
+                wp_enqueue_script('instagram-feed-js', get_theme_file_uri('/js/utils/instagram-feed.js'), null, microtime(), true);
+                wp_enqueue_script('page-contato-js', get_theme_file_uri('/js/page-contato.js'), null, microtime(), true);
                 break;
         }
     }
