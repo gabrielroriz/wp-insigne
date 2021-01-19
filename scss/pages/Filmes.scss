@@ -2,7 +2,20 @@
 @import "../utils/Vars.scss";
 
 
+#tab_todos {
+    opacity: 1;
+    height: auto;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 16px;
+    row-gap: 16px;
+}
 
+#tab_tipos {
+    opacity: 0;
+    height: 0;
+}
 
 .filmes {
     color: white;
@@ -238,15 +251,59 @@
 
         &__img {
             position: absolute;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            padding: 0;
 
             @include tablet-landscape-and-below {
                 display: none;
+            }
+
+            &:hover {
+                box-shadow: 0px 0px 67px #00000078;
+                cursor: pointer;
             }
 
             img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+            }
+
+            &__overlay {
+                background-color: rgba(255, 184, 28, 0.53);
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                opacity: 0;
+                transition: opacity .5s;
+                position: relative;
+
+                &:hover {
+                    visibility: visible;
+                    opacity: 1;
+                }
+
+                h2 {
+                    color: white;
+                    font-weight: 300;
+                    font-size: 80px;
+                    margin: 0 0 10px -60px;
+                }
+
+                h4 {
+                    color: white;
+                    font-weight: 300;
+                    font-size: 22px;
+                    line-height: 32px;
+                    margin: 0 0 0 -60px;
+                    display: inline;
+                    padding-top: 10px;
+                    border-top: 1px solid white;
+                }
             }
         }
 
@@ -354,10 +411,7 @@
         width: 100%;
         max-width: 1600px;
         
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        column-gap: 16px;
-        row-gap: 16px;
+        transition: opacity .5s;
 
         &__poster {
             width: 100%;
@@ -365,23 +419,28 @@
             background-repeat: no-repeat;
             background-size: cover;
             cursor: pointer;
+
+            &:hover {
+                box-shadow: 0px 0px 73px #000000A1;
+            }
             
             &__grid {
                 width: 100%;
                 height: 100%;
-                display: none;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr;
+                opacity: 0;
+                transition: opacity .5s;
 
-                &+:hover {
-                    display: grid;
-                    grid-template-columns: 1fr;
-                    grid-template-rows: 1fr 1fr;
+                &:hover {
+                    opacity: 1;
                 }
             }
 
             &__text {
                 grid-row: 2;
-                background-color: #FFB81C;
-                opacity: 0.69;
+                background-color: rgba(255, 184, 28, 0.69);
                 height: 100%;
                 color: white;
                 display: flex;
@@ -391,6 +450,7 @@
                     font-size: 50px;
                     padding-bottom: 10px;
                     border-bottom: 3px solid white;
+                    margin-left: -30px;
                 }
             }
         }
@@ -401,7 +461,7 @@
 
         margin-bottom: 85px;
 
-        display: flex;
+        display: grid;
         flex-direction: column;
 
         &__head {
@@ -428,8 +488,9 @@
             width: 100%;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
-            column-gap: 10px;
-            row-gap: 10px;
+            column-gap: 16px;
+            row-gap: 16px;
+            flex-wrap: nowrap;
 
             @include tablet-landscape-and-below {
                 overflow-x: scroll;
