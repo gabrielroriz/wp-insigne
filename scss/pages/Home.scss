@@ -445,6 +445,11 @@
     flex-direction: row;
     max-width: 1300px;
 
+    @include desktop-1920-and-below{
+      width: 80%;
+
+    }
+
     @media only screen and (max-width: 1200px) {
       min-height: 450px;
       padding: 50px 10px;
@@ -498,6 +503,10 @@
 
     font-weight: 700;
 
+    @include desktop-1366-and-below{
+      font-size: 46px;
+    }
+
     @media only screen and (max-width: 1200px) {
       font-size: 38px;
       text-align: center;
@@ -513,8 +522,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: flex-end;
     color: white;
+
+    @include desktop-1366-and-below{
+      padding-left: 14px;
+    }
 
     @media only screen and (max-width: 1200px) {
       align-items: center;
@@ -525,7 +538,7 @@
     span {
       margin-top: 10px;
       font-weight: 300;
-      font-size: 17px;
+      font-size: 12px;
 
       @media only screen and (max-width: 1200px) {
         text-align: center;
@@ -552,6 +565,8 @@
     &:hover {
       box-shadow: 0 5px 18px #e3530596;
     }
+
+   
 
     @media only screen and (max-width: 1200px) {
       margin-top: 40px;
