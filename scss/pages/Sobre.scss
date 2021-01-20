@@ -21,7 +21,16 @@ $padding-left-mobile: 20px;
         margin-bottom: -280px;
         z-index: 999;
 
-        @include tablet-landscape-and-below {
+        @include desktop-1920-and-below{
+            margin-bottom: -380px;
+        }
+
+        @include desktop-1440-and-below{
+            margin-bottom: -480px;
+        }
+
+
+        @include desktop-1366-and-below{
             display: none;
         }
     }
@@ -44,11 +53,16 @@ $padding-left-mobile: 20px;
         height: auto;
         background-image: url("./assets/min-images/quemsomos/yellow.svg");
         background-repeat: no-repeat;
+        background-size: contain;
         padding-top: 200px;
         z-index: 0;
         background-color: $dark-purple;
 
-        @include tablet-landscape-and-below {
+        @include desktop-1920-and-below{
+            background-size: 50%;
+        }
+
+        @include desktop-1366-and-below{
             grid-template-columns: 1fr;
             padding-top: 0;
             background-position: top left;
@@ -62,14 +76,20 @@ $padding-left-mobile: 20px;
             padding-top: 150px;
             padding-left: 143px;
             color: $purple;
-            font-size: 68px;
+            font-size: 60px;
             font-weight: 300;
-
-            display: grid;
-            row-gap: 50px;
             padding-bottom: 330px;
+            padding-right: 20px;
 
-            @include tablet-landscape-and-below {
+            div{
+                margin: 50px 0px;
+            }
+
+            @include desktop-1440-and-below{
+                font-size: 48px;
+            }
+
+            @include desktop-1366-and-below{
                 padding-top: 0px;
                 padding-bottom: 0px;
                 padding-left: $padding-left-mobile;
@@ -80,7 +100,7 @@ $padding-left-mobile: 20px;
             }
 
             div {
-                @include tablet-landscape-and-below {
+                @include desktop-1366-and-below{
                     width: 213px;
                 }
             }
@@ -103,7 +123,7 @@ $padding-left-mobile: 20px;
             display: grid;
             row-gap: 40px;
 
-            @include tablet-landscape-and-below {
+            @include desktop-1366-and-below{
                 padding: 0;
                 width: 100%;
                 padding-top: 170px;
@@ -115,7 +135,7 @@ $padding-left-mobile: 20px;
             }
 
             div {
-                @include tablet-landscape-and-below {
+                @include desktop-1366-and-below{
                     width: 302px;
                 }
             }
@@ -126,7 +146,7 @@ $padding-left-mobile: 20px;
             font-weight: 300;
             font-size: 28px;
 
-            @include tablet-landscape-and-below {
+            @include desktop-1366-and-below{
                 font-size: 16px;
                 line-height: 23px;
                 letter-spacing: 6.25px;
@@ -142,7 +162,7 @@ $padding-left-mobile: 20px;
         background-color: $purple;
         margin-bottom: -570px;
 
-        @include tablet-landscape-and-below {
+        @include desktop-1366-and-below{
             display: none;
         }
     }
@@ -165,7 +185,7 @@ $padding-left-mobile: 20px;
         background-color: transparent;
         position: relative;
         
-        @include tablet-landscape-and-below {
+        @include desktop-1366-and-below{
             display: none;
         }
 
@@ -181,7 +201,7 @@ $padding-left-mobile: 20px;
             letter-spacing: 8.6px;
             width: 280px;
 
-            @include tablet-landscape-and-below {
+            @include desktop-1366-and-below{
                 position: relative;
                 top: 0;
                 left: 0;
@@ -198,7 +218,7 @@ $padding-left-mobile: 20px;
             align-items: center;
             position: relative;
 
-            @include tablet-landscape-and-below {
+            @include desktop-1366-and-below{
                 height: 400px;
             }
 
@@ -211,7 +231,7 @@ $padding-left-mobile: 20px;
                 margin-bottom: -550px;
                 padding-left: 143px;
 
-                @include tablet-landscape-and-below {
+                @include desktop-1366-and-below{
                     padding: 0;
                 }
             }
@@ -222,7 +242,7 @@ $padding-left-mobile: 20px;
                 background-position: center left;
                 margin: -550px 0;
 
-                @include tablet-landscape-and-below {
+                @include desktop-1366-and-below{
                     margin: -50px 0;
                 }
                 
@@ -235,7 +255,7 @@ $padding-left-mobile: 20px;
                 margin-top: -550px;
                 margin-bottom: -450px;
 
-                @include tablet-landscape-and-below {
+                @include desktop-1366-and-below{
                     margin-top: -50px;
                     margin-bottom: -50px;
                 }
@@ -248,7 +268,7 @@ $padding-left-mobile: 20px;
                 position: absolute;
                 z-index: 3;
 
-                @include tablet-landscape-and-below {
+                @include desktop-1366-and-below{
                     position: relative;
                 }
 
@@ -279,7 +299,7 @@ $padding-left-mobile: 20px;
                 position: absolute;
                 z-index: 2;
 
-                @include tablet-landscape-and-below {
+                @include desktop-1366-and-below{
                     position: static;
                 }
 
@@ -288,7 +308,7 @@ $padding-left-mobile: 20px;
                     top: 700px;
                     padding-left: 160px;
 
-                    @include tablet-landscape-and-below {
+                    @include desktop-1366-and-below{
                         left: auto;
                         top: auto;
                     }
@@ -300,7 +320,7 @@ $padding-left-mobile: 20px;
                     padding-right: 200px;
                     text-align: right;
 
-                    @include tablet-landscape-and-below {
+                    @include desktop-1366-and-below{
                         padding: 0;
                     }
                 }
@@ -310,7 +330,7 @@ $padding-left-mobile: 20px;
                     top: 550px;
                     padding-left: 190px;
                 
-                    @include tablet-landscape-and-below {
+                    @include desktop-1366-and-below{
                         padding: 0;
                     }
                 }
@@ -416,7 +436,7 @@ $padding-left-mobile: 20px;
         grid-gap: 50px;
         padding: 440px 350px 320px 350px;
 
-        @include tablet-landscape-and-below {
+        @include desktop-1366-and-below{
             background-color: #231436;
             background-image: url("./assets/min-images/quemsomos/crencasmobile.svg");
             background-size: contain;
@@ -435,7 +455,7 @@ $padding-left-mobile: 20px;
             grid-template-columns: 4fr 6fr;
             column-gap: 10px;
 
-            @include tablet-landscape-and-below {
+            @include desktop-1366-and-below{
                 grid-template-columns: 1fr;
             }
 
@@ -446,7 +466,7 @@ $padding-left-mobile: 20px;
                 align-self: flex-start;
                 justify-self: flex-end;
 
-                @include tablet-landscape-and-below {
+                @include desktop-1366-and-below{
                     font-size: 40px;
                     padding-left: $padding-left-mobile;
                     justify-self: flex-start;
@@ -461,7 +481,7 @@ $padding-left-mobile: 20px;
                 color: $cream;
                 border-bottom: 1px solid $cream;
 
-                @include tablet-landscape-and-below {
+                @include desktop-1366-and-below{
                     padding-left: $padding-left-mobile;
                     line-height: 32px;
                     border-bottom: 0;
@@ -474,7 +494,7 @@ $padding-left-mobile: 20px;
         background-color: transparent;
         margin-top: -200px;
 
-        @include tablet-landscape-and-below {
+        @include desktop-1366-and-below{
             margin: 0;
         }
         
@@ -487,7 +507,7 @@ $padding-left-mobile: 20px;
             align-items: center;
             padding: 20px 360px;
 
-            @include tablet-landscape-and-below {
+            @include desktop-1366-and-below{
                 padding: 20px 0;
                 flex-direction: column;
             }
@@ -498,7 +518,7 @@ $padding-left-mobile: 20px;
             font-weight: 800;
             font-size: 76px;
 
-            @include tablet-landscape-and-below {
+            @include desktop-1366-and-below{
                 font-size: 36px;
                 font-weight: 700;
                 text-align: center;
@@ -522,7 +542,7 @@ $padding-left-mobile: 20px;
                 font-weight: 600;
                 margin-bottom: 10px;
 
-                @include tablet-landscape-and-below {
+                @include desktop-1366-and-below{
                     max-width: 80%;
                     margin: 0 auto;
                     padding: 20px 60px;
@@ -537,7 +557,7 @@ $padding-left-mobile: 20px;
                 font-weight: 300;
                 font-size: 12px;
 
-                @include tablet-landscape-and-below {
+                @include desktop-1366-and-below{
                     text-align: center;
                     line-height: 15px;
                     margin-top: 10px;
