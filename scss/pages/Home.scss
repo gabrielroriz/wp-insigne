@@ -1,7 +1,6 @@
 @import "../utils/Mixins.scss";
 @import "../utils/Vars.scss";
 
-
 .home__header {
   width: 100%;
   height: calc(100vh - 100px);
@@ -46,7 +45,7 @@
     padding-right: 150px;
     cursor: pointer;
 
-    @include tablet-landscape-and-below {
+    @media only screen and (max-width: 1200px) {
       padding-right: 40px;
 
       img {
@@ -73,7 +72,7 @@
       transform: scaleX(-1);
     }
 
-    @include tablet-landscape-and-below {
+    @media only screen and (max-width: 1200px) {
       padding-left: 40px;
 
       img {
@@ -96,7 +95,7 @@
     text-shadow: 0px 3px 12px #0000004d;
     z-index: 2;
 
-    @include mobile-landscape-and-below {
+    @include tablet-768-and-below {
       margin-bottom: 0px;
       bottom: 50px;
       font-size: 24px;
@@ -110,7 +109,7 @@
     width: 100%;
     z-index: 2;
 
-    @include mobile-landscape-and-below {
+    @include tablet-768-and-below {
       display: none;
     }
 
@@ -118,10 +117,11 @@
       display: none;
       position: absolute;
       left: 0px;
-      bottom: 0px;
+      bottom: -50px;
       width: 100%;
+      
 
-      @include mobile-landscape-and-below {
+      @include tablet-768-and-below {
         display: block;
       }
     }
@@ -132,17 +132,21 @@
   @extend %section-attr;
   margin-bottom: -600px;
 
-  @include mobile-landscape-and-below {
+  @include mobile-411-and-below {
     margin-bottom: 0px;
   }
 
   &__wrapper {
     @extend %section-wrapper-attr;
     max-width: 1600px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &__grid {
-    width: 100%;
+    width: 90%;
 
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -150,7 +154,7 @@
     column-gap: 4px;
     padding-bottom: 50px;
 
-    @include tablet-landscape-and-below {
+    @media only screen and (max-width: 1200px) {
       grid-template-columns: 1fr;
       margin-top: 100px;
     }
@@ -209,7 +213,13 @@
 
   &__wrapper {
     margin-top: 200px;
-    @extend %gridded-section-wrapper-attr;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
 
     background-image: url("./assets/min-images/home/sobre/sobreDesktopBg.svg");
     background-size: contain;
@@ -219,7 +229,7 @@
 
     position: relative;
 
-    @media (max-width: 1763px) {
+    @media only screen and (max-width: 1200px) {
       background-image: none;
       display: flex;
       flex-direction: column;
@@ -228,7 +238,7 @@
       margin-bottom: 100px;
     }
 
-    @include mobile-landscape-and-below {
+    @include mobile-411-and-below {
       padding: 0px;
       margin-top: 0px;
       background-image: none;
@@ -241,13 +251,17 @@
     top: 380px;
     right: -2px;
 
-    @media (max-width: 1763px) {
+    @media only screen and (max-width: 1200px) {
       display: none;
     }
   }
 
   &__title {
-    @extend %gridded-section-title-attr;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     text-align: left;
     color: #ffb81c;
     display: flex;
@@ -256,34 +270,50 @@
     align-items: flex-start;
     padding-left: 130px;
     padding-right: 250px;
-    margin-top: 600px;
+    margin-top: -80px;
 
-    @media (max-width: 1763px) {
+    @include desktop-1440-and-below {
+      padding-left: 120px;
+      padding-right: 127px;
+    }
+
+    @include desktop-1366-and-below {
+      padding-right: 100px;
+    }
+
+    @media only screen and (max-width: 1200px) {
       margin-top: 350px;
       width: 100%;
-
       padding: 150px 30px;
     }
 
-    @include mobile-landscape-and-below {
+    @include mobile-411-and-below {
       padding: 0px 30px;
       margin-top: 0px;
     }
 
     span {
       text-align: left;
-      font-size: 24px;
+      font-size: 47px;
+
+      @media only screen and (max-width: 1200px) {
+        font-size: 24px;
+      }
     }
 
     h2 {
       font-weight: 500;
-      font-size: 64px;
+      font-size: 62px;
 
-      @media (max-width: 1763px) {
-        font-size: 48px;
+      @include desktop-1440-and-below {
+        font-size: 45px;
       }
 
-      @include mobile-landscape-and-below {
+      // @include desktop-1366-and-below {
+      //   font-size: 32px;
+      // }
+
+      @include mobile-411-and-below {
         font-size: 24px;
       }
     }
@@ -291,9 +321,8 @@
 
   &__content {
     margin-top: 100px;
-    @extend %gridded-section-content-attr;
-
-    color: #2e1a47;
+    width: 50%;
+    display: flex;
 
     display: flex;
     flex-direction: column;
@@ -302,14 +331,18 @@
 
     position: relative;
 
-    @media (max-width: 1763px) {
+    @media only screen and (max-width: 1200px) {
       margin-top: 0px;
       width: 100%;
       background-color: #efdbb2;
-      padding: 150px 30px;
+      padding: 200px 30px;
     }
 
-    @include mobile-landscape-and-below {
+    @include tablet-768-and-below{
+      padding: 100px 30px;
+    }
+
+    @include mobile-411-and-below {
       background-color: #efdbb2;
       padding: 100px 30px;
       margin-top: 50px;
@@ -323,12 +356,16 @@
 
       z-index: 1;
 
-      @media (max-width: 1763px) {
+      @include desktop-1440-and-below {
+        font-size: 20px;
+      }
+
+      @media only screen and (max-width: 1200px) {
         width: 100%;
         font-size: 24px;
       }
 
-      @include mobile-landscape-and-below {
+      @include mobile-411-and-below {
         width: 100%;
         font-size: 18px;
       }
@@ -340,18 +377,34 @@
       width: 100%;
       object-fit: contain;
 
-      @include mobile-landscape-and-below {
+      @media only screen and (max-width: 1200px) {
         display: block;
       }
 
       &--top {
-        top: 0px;
+        top: -214px;
         left: 0px;
+
+        @include tablet-768-and-below{
+          top: -115px;
+        }
+
+        @include mobile-411-and-below{
+          top: -65px;
+        }
       }
 
       &--bottom {
-        bottom: -5px;
+        bottom: -145px;
         left: 0px;
+
+        @include tablet-768-and-below{
+          bottom: -80px;
+        }
+
+        @include mobile-411-and-below{
+          bottom: -50px;
+        }
       }
     }
   }
@@ -360,30 +413,52 @@
 .home__cta {
   @extend %section-attr;
   padding-bottom: 75px;
-  background-color: #2e1a47;
   position: relative;
 
-  @include tablet-landscape-and-below {
+  @include desktop-1920-and-below {
+    margin-top: -50px;
+  }
+
+  @include desktop-1440-and-below {
+    margin-top: -200px;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    margin-top: 200px;
+    margin-bottom: 200px;
     background-color: #201231;
     padding: 100px 10px;
   }
 
-  @include mobile-landscape-and-below {
+  @include mobile-411-and-below {
     margin: 120px 0px 50px 0px;
     padding: 50px 10px;
   }
 
   &__wrapper {
-    @extend %gridded-section-wrapper-attr;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
     max-width: 1300px;
 
-    @include tablet-landscape-and-below {
+    @media only screen and (max-width: 1200px) {
+      min-height: 450px;
       padding: 50px 10px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
     }
+
+
+    @include tablet-768-and-below{
+      min-height: 300px;
+    }
+
   }
 
   &__divisoria {
@@ -391,9 +466,9 @@
     position: absolute;
     width: 100%;
     object-fit: fill;
-    // max-height: 50px;
+    // z-index: -1;
 
-    @include tablet-landscape-and-below {
+    @media only screen and (max-width: 1200px) {
       display: block;
     }
 
@@ -423,7 +498,7 @@
 
     font-weight: 700;
 
-    @include tablet-landscape-and-below {
+    @media only screen and (max-width: 1200px) {
       font-size: 38px;
       text-align: center;
       width: 100%;
@@ -441,7 +516,7 @@
     align-items: flex-start;
     color: white;
 
-    @include tablet-landscape-and-below {
+    @media only screen and (max-width: 1200px) {
       align-items: center;
       width: 100%;
       padding-left: 0px;
@@ -452,7 +527,7 @@
       font-weight: 300;
       font-size: 17px;
 
-      @include tablet-landscape-and-below {
+      @media only screen and (max-width: 1200px) {
         text-align: center;
         width: 100%;
         font-size: 12px;
@@ -478,7 +553,7 @@
       box-shadow: 0 5px 18px #e3530596;
     }
 
-    @include tablet-landscape-and-below {
+    @media only screen and (max-width: 1200px) {
       margin-top: 40px;
       width: 100%;
       padding: 27px 0px;
@@ -487,4 +562,3 @@
     }
   }
 }
-
