@@ -21,25 +21,116 @@ $padding-left-mobile: 20px;
     z-index: 999;
 
     @include desktop-1920-and-below {
-      margin-bottom: -380px;
-    }
-
-    @include desktop-1440-and-below {
       margin-bottom: -480px;
     }
 
+    @include desktop-1440-and-below {
+    }
+
     @include desktop-1366-and-below {
-      display: none;
+      margin-bottom: -517px;
+    }
+
+    @include desktop-extra-1300-and-below {
+      margin-bottom: 0px;
+      height: auto;
+
+      img{
+        z-index: 2;
+      }
     }
   }
 
-  &__mheader {
-    margin: 0;
-    padding: 0;
-    margin-bottom: -20%;
+  &__mobile-content {
+    width: 100%;
+    margin-top: -20%;
 
-    @include desktop-and-up {
-      display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    display: none;
+
+    background-color: #1E112E;
+
+    @include desktop-extra-1300-and-below {
+      display: flex;
+    }
+
+    &__first {
+      width: 65%;
+      min-height: 1000px;
+
+      background-image: url("./assets/min-images/quemsomos/yellow.svg");
+      background-repeat: no-repeat;
+      background-position: top left;
+      background-size: contain;
+
+      color: $purple;
+
+      padding: 30px;
+      padding-right: 30%;
+      padding-top: 250px;
+      font-size: 32px;
+
+      @include tablet-768-and-below {
+        padding-top: 160px;
+        padding-right: 220px;
+        font-size: 21px;
+        min-height: 600px;
+      }
+
+      @media only screen and (max-width: 600px) {
+        padding-top: 110px;
+        padding-right: 187px;
+        font-size: 16px;
+        min-height: 480px;
+      }
+
+
+      @media only screen and (max-width: 500px) {
+        padding-right: 78px;
+        font-size: 16px;
+      }
+
+      @include mobile-411-and-below {
+        padding: 20px;
+        padding-top: 65px;
+        padding-right: 85px;
+        min-height: 450px;
+        font-size: 16px;
+      }
+
+      @media only screen and (max-width: 360px) {
+        padding: 20px;
+        padding-top: 50px;
+        padding-right: 70px;
+        min-height: 370px;
+        font-size: 12px;
+      }
+    }
+
+    &__second{
+        color: $gold;
+        padding: 30px;
+        font-size: 40px;
+
+        @include tablet-768-and-below {
+        
+          }
+    
+          @media only screen and (max-width: 600px) {
+            font-size: 20px;
+          }
+    
+          @include mobile-411-and-below {
+            font-size: 20px;
+          }
+    
+          @media only screen and (max-width: 360px) {
+
+          }
     }
   }
 
@@ -59,14 +150,15 @@ $padding-left-mobile: 20px;
       background-size: 50%;
     }
 
-    @include desktop-1366-and-below {
-      grid-template-columns: 1fr;
-      padding-top: 0;
-      background-position: top left;
-      background-position-y: -40px;
-      background-size: contain;
-      background-color: $dark-purple;
-      padding-top: 100px;
+    @include desktop-extra-1300-and-below {
+      //   grid-template-columns: 1fr;
+      //   padding-top: 0;
+      //   background-position: top left;
+      // background-size: 65%;
+      //   background-color: $dark-purple;
+      //   padding-top: 100px;
+      //   padding-right: 60%;
+      display: none;
     }
 
     &__left {
@@ -78,29 +170,33 @@ $padding-left-mobile: 20px;
       padding-bottom: 330px;
       padding-right: 20px;
 
-      div {
-        margin: 50px 0px;
+      @include desktop-extra-1300-and-below {
+        padding-left: 500px;
       }
 
-      @include desktop-1440-and-below {
+      div {
+        margin: 50px 0px;
+
+        @include desktop-extra-1300-and-below {
+          margin: 0px;
+        }
+      }
+
+      @include desktop-1920-and-below {
         padding-top: 70px;
         font-size: 45px;
       }
 
       @include desktop-1366-and-below {
-        padding-top: 0px;
-        padding-bottom: 0px;
-        padding-left: $padding-left-mobile;
-        width: 100%;
-        font-size: 20px;
-        letter-spacing: 0.4px;
-        line-height: 25px;
-      }
-
-      div {
-        @include desktop-1366-and-below {
-          width: 213px;
-        }
+        padding-right: 0px;
+        font-size: 40px;
+        // padding-top: 0px;
+        // padding-bottom: 0px;
+        // padding-left: $padding-left-mobile;
+        // width: 100%;
+        // font-size: 20px;
+        // letter-spacing: 0.4px;
+        // line-height: 25px;
       }
 
       b {
@@ -127,12 +223,6 @@ $padding-left-mobile: 20px;
         font-size: 24px;
         letter-spacing: 0.4px;
         line-height: 48px;
-      }
-
-      div {
-        @include desktop-1366-and-below {
-          width: 302px;
-        }
       }
     }
 
@@ -179,7 +269,7 @@ $padding-left-mobile: 20px;
     background-color: transparent;
     position: relative;
 
-    @include desktop-1366-and-below {
+    @include desktop-extra-1300-and-below {
       display: none;
     }
 
@@ -211,9 +301,9 @@ $padding-left-mobile: 20px;
       align-items: center;
       position: relative;
 
-      @include desktop-1366-and-below {
-        height: 400px;
-      }
+      //   @include desktop-1366-and-below {
+      //     height: 400px;
+      //   }
 
       &__b1 {
         background: url("./assets/min-images/quemsomos/crenca1.png");
@@ -227,9 +317,9 @@ $padding-left-mobile: 20px;
           margin-bottom: 100px;
         }
 
-        @include desktop-1366-and-below {
-          padding: 0;
-        }
+        // @include desktop-1366-and-below {
+        //   padding: 0;
+        // }
       }
 
       &__b2 {
@@ -242,9 +332,9 @@ $padding-left-mobile: 20px;
           margin-bottom: 100px;
         }
 
-        @include desktop-1366-and-below {
-          margin: -50px 0;
-        }
+        // @include desktop-1366-and-below {
+        //   margin: -50px 0;
+        // }
       }
 
       &__b3 {
@@ -258,10 +348,10 @@ $padding-left-mobile: 20px;
           margin-bottom: 100px;
         }
 
-        @include desktop-1366-and-below {
-          margin-top: -50px;
-          margin-bottom: -50px;
-        }
+        // @include desktop-1366-and-below {
+        //   margin-top: -50px;
+        //   margin-bottom: -50px;
+        // }
       }
 
       &__numeral {
@@ -272,12 +362,17 @@ $padding-left-mobile: 20px;
         z-index: 3;
 
         @include desktop-1366-and-below {
-          position: relative;
+          font-size: 150px;
         }
 
         &__b1 {
           left: 130px;
           top: 530px;
+
+          //   @include desktop-1366-and-below{
+          //     left: 130px;
+          //     top: 0;
+          //   }
         }
 
         &__b2 {
@@ -292,29 +387,24 @@ $padding-left-mobile: 20px;
       }
 
       &__text {
-        width: 50%;
+        width: 100%;
         color: $cream;
         font-weight: 300;
         font-size: 22px;
-        width: 484px;
+        max-width: 484px;
         border-top: 1px solid $cream;
         padding-top: 20px;
         position: absolute;
         z-index: 2;
 
-        @include desktop-1366-and-below {
-          position: static;
+        @include desktop-1440-and-below {
+          max-width: 700px;
         }
 
         &__b1 {
           left: 220px;
           top: 700px;
           padding-left: 160px;
-
-          @include desktop-1366-and-below {
-            left: auto;
-            top: auto;
-          }
         }
 
         &__b2 {
@@ -322,34 +412,26 @@ $padding-left-mobile: 20px;
           top: 590px;
           padding-right: 200px;
           text-align: right;
-
-          @include desktop-1366-and-below {
-            padding: 0;
-          }
         }
 
         &__b3 {
           left: 180px;
           top: 550px;
           padding-left: 190px;
-
-          @include desktop-1366-and-below {
-            padding: 0;
-          }
         }
       }
     }
   }
 
   &__mbeliefs {
-    display: grid;
+    display: none;
     grid-template-columns: 1fr;
     width: 100%;
     background-color: $purple;
     padding-top: 50px;
 
-    @include desktop-and-up {
-      display: none;
+    @include desktop-extra-1300-and-below {
+      display: grid;
     }
 
     &__nisto {
@@ -387,8 +469,8 @@ $padding-left-mobile: 20px;
 
       &__text {
         padding-left: $padding-left-mobile;
-        color: $gold;
-        font-size: 22px;
+        color: #EFDBB2;
+        font-size: 18px;
         line-height: 32px;
         letter-spacing: 0;
         font-weight: 300;
@@ -431,7 +513,7 @@ $padding-left-mobile: 20px;
     background-color: $purple;
     background-image: url("./assets/min-images/quemsomos/crencagrid.svg");
     background-repeat: no-repeat;
-    height: 1370px;
+    height: 1290px;
     z-index: 500;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -446,7 +528,8 @@ $padding-left-mobile: 20px;
       height: 1190px;
     }
 
-    @include tablet-768-and-below {
+    @include desktop-extra-1300-and-below {
+        margin-top: 0px;
       background-color: #231436;
       background-image: url("./assets/min-images/quemsomos/crencasmobile.svg");
       background-size: contain;
@@ -465,7 +548,7 @@ $padding-left-mobile: 20px;
       grid-template-columns: 4fr 6fr;
       column-gap: 10px;
 
-      @include tablet-768-and-below {
+      @include desktop-extra-1300-and-below {
         grid-template-columns: 1fr;
       }
 
@@ -480,7 +563,7 @@ $padding-left-mobile: 20px;
           font-size: 95px;
         }
 
-        @include tablet-768-and-below {
+        @include desktop-extra-1300-and-below {
           font-size: 40px;
           padding-left: $padding-left-mobile;
           justify-self: flex-start;
@@ -499,7 +582,7 @@ $padding-left-mobile: 20px;
           font-size: 15px;
         }
 
-        @include tablet-768-and-below {
+        @include desktop-extra-1300-and-below {
           padding-left: $padding-left-mobile;
           line-height: 32px;
           border-bottom: 0;
@@ -526,7 +609,7 @@ $padding-left-mobile: 20px;
       align-items: center;
       padding: 20px 360px;
 
-      @include desktop-1440-and-below{
+      @include desktop-1440-and-below {
         padding: 20px 210px;
       }
 
@@ -543,7 +626,7 @@ $padding-left-mobile: 20px;
 
       font-weight: 700;
 
-      @include desktop-1440-and-below{
+      @include desktop-1440-and-below {
         font-size: 50px;
       }
 
