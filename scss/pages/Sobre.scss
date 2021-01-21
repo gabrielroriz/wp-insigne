@@ -2,568 +2,622 @@
 @import "../utils/Vars.scss";
 
 $purple: #2e1a47;
-$dark-purple: #1E112E;
-$gold: #FFB81C;
-$cream: #EFDBB2;
+$dark-purple: #1e112e;
+$gold: #ffb81c;
+$cream: #efdbb2;
 $padding-left-mobile: 20px;
 
 .sobre {
+  &__navbar {
+    width: 100%;
+    height: 120px;
+  }
 
-    &__navbar {
+  &__header {
+    @extend %section-attr;
+    background-color: $dark-purple;
+    height: 1080px;
+    margin-bottom: -280px;
+    z-index: 999;
+
+    @include desktop-1920-and-below {
+      margin-bottom: -380px;
+    }
+
+    @include desktop-1440-and-below {
+      margin-bottom: -480px;
+    }
+
+    @include desktop-1366-and-below {
+      display: none;
+    }
+  }
+
+  &__mheader {
+    margin: 0;
+    padding: 0;
+    margin-bottom: -20%;
+
+    @include desktop-and-up {
+      display: none;
+    }
+  }
+
+  &__texto1 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 4fr 7fr;
+    height: auto;
+    background-image: url("./assets/min-images/quemsomos/yellow.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-top: 200px;
+    z-index: 0;
+    background-color: $dark-purple;
+
+    @include desktop-1920-and-below {
+      background-size: 50%;
+    }
+
+    @include desktop-1366-and-below {
+      grid-template-columns: 1fr;
+      padding-top: 0;
+      background-position: top left;
+      background-position-y: -40px;
+      background-size: contain;
+      background-color: $dark-purple;
+      padding-top: 100px;
+    }
+
+    &__left {
+      padding-top: 150px;
+      padding-left: 143px;
+      color: $purple;
+      font-size: 60px;
+      font-weight: 300;
+      padding-bottom: 330px;
+      padding-right: 20px;
+
+      div {
+        margin: 50px 0px;
+      }
+
+      @include desktop-1440-and-below {
+        padding-top: 70px;
+        font-size: 45px;
+      }
+
+      @include desktop-1366-and-below {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-left: $padding-left-mobile;
         width: 100%;
-        height: 120px;
+        font-size: 20px;
+        letter-spacing: 0.4px;
+        line-height: 25px;
+      }
+
+      div {
+        @include desktop-1366-and-below {
+          width: 213px;
+        }
+      }
+
+      b {
+        font-weight: 700;
+      }
     }
 
-    &__header {
-        @extend %section-attr;
-        background-color: $dark-purple;
-        height: 1080px;
-        margin-bottom: -280px;
-        z-index: 999;
+    &__right {
+      font-size: 34px;
+      color: $gold;
+      line-height: 1.8;
+      padding-top: 150px;
+      width: 80%;
+      justify-self: flex-end;
+      padding-right: 140px;
+      padding-left: 200px;
 
-        @include desktop-1920-and-below{
-            margin-bottom: -380px;
+      display: grid;
+      row-gap: 40px;
+
+      @include desktop-1440-and-below {
+        padding-right: 150px;
+        padding-left: 120px;
+        font-size: 24px;
+        letter-spacing: 0.4px;
+        line-height: 48px;
+      }
+
+      div {
+        @include desktop-1366-and-below {
+          width: 302px;
         }
-
-        @include desktop-1440-and-below{
-            margin-bottom: -480px;
-        }
-
-
-        @include desktop-1366-and-below{
-            display: none;
-        }
+      }
     }
 
-    &__mheader {
-        margin: 0;
-        padding: 0;
-        margin-bottom: -20%;
+    &__move {
+      text-transform: uppercase;
+      font-weight: 300;
+      font-size: 28px;
 
-        @include desktop-and-up {
-            display: none;
-        }
+      @include desktop-1440-and-below {
+        font-size: 16px;
+        line-height: 23px;
+        letter-spacing: 6.25px;
+      }
+    }
+  }
+  &__texto1-bottom {
+    width: 100%;
+    height: 600px;
+    background: url("./assets/min-images/quemsomos/texto1-bottom.svg");
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-color: $purple;
+    margin-bottom: -570px;
+
+    @include desktop-1366-and-below {
+      display: none;
+    }
+  }
+
+  &__texto1-mbottom {
+    width: 100%;
+    height: auto;
+    background-color: $purple;
+    padding: 0;
+    margin: 0;
+
+    @include desktop-and-up {
+      display: none;
+    }
+  }
+
+  &__beliefs {
+    width: 100%;
+    background-color: transparent;
+    position: relative;
+
+    @include desktop-1366-and-below {
+      display: none;
     }
 
+    &__nisto {
+      position: absolute;
+      top: 300px;
+      left: 143px;
+      font-size: 22px;
+      text-transform: uppercase;
+      color: $gold;
+      font-weight: 300;
+      line-height: 32px;
+      letter-spacing: 8.6px;
+      width: 280px;
 
-    &__texto1 {
-        width: 100%;
-        display: grid;
-        grid-template-columns: 4fr 7fr;
-        height: auto;
-        background-image: url("./assets/min-images/quemsomos/yellow.svg");
-        background-repeat: no-repeat;
-        background-size: contain;
-        padding-top: 200px;
-        z-index: 0;
-        background-color: $dark-purple;
-
-        @include desktop-1920-and-below{
-            background-size: 50%;
-        }
-
-        @include desktop-1366-and-below{
-            grid-template-columns: 1fr;
-            padding-top: 0;
-            background-position: top left;
-            background-position-y: -40px;
-            background-size: contain;
-            background-color: $dark-purple;
-            padding-top: 100px;
-        }
-
-        &__left {
-            padding-top: 150px;
-            padding-left: 143px;
-            color: $purple;
-            font-size: 60px;
-            font-weight: 300;
-            padding-bottom: 330px;
-            padding-right: 20px;
-
-            div{
-                margin: 50px 0px;
-            }
-
-            @include desktop-1440-and-below{
-                font-size: 48px;
-            }
-
-            @include desktop-1366-and-below{
-                padding-top: 0px;
-                padding-bottom: 0px;
-                padding-left: $padding-left-mobile;
-                width: 100%;
-                font-size: 20px;
-                letter-spacing: 0.4px;
-                line-height: 25px;
-            }
-
-            div {
-                @include desktop-1366-and-below{
-                    width: 213px;
-                }
-            }
-
-            b {
-                font-weight: 700;
-            }
-        }
-
-        &__right {
-            font-size: 34px;
-            color: $gold;
-            line-height: 1.8;
-            padding-top: 150px;
-            width: 80%;
-            justify-self: flex-end;
-            padding-right: 140px;
-            padding-left: 200px;
-            
-            display: grid;
-            row-gap: 40px;
-
-            @include desktop-1366-and-below{
-                padding: 0;
-                width: 100%;
-                padding-top: 170px;
-                padding-left: $padding-left-mobile;
-
-                font-size: 20px;
-                letter-spacing: 0.4px;
-                line-height: 30px;
-            }
-
-            div {
-                @include desktop-1366-and-below{
-                    width: 302px;
-                }
-            }
-        }
-
-        &__move {
-            text-transform: uppercase;
-            font-weight: 300;
-            font-size: 28px;
-
-            @include desktop-1366-and-below{
-                font-size: 16px;
-                line-height: 23px;
-                letter-spacing: 6.25px;
-            }
-        }
-    }
-    &__texto1-bottom {
-        width: 100%;
-        height: 600px;
-        background: url("./assets/min-images/quemsomos/texto1-bottom.svg");
-        background-repeat: no-repeat;
-        background-position: top left;
-        background-color: $purple;
-        margin-bottom: -570px;
-
-        @include desktop-1366-and-below{
-            display: none;
-        }
-    }
-
-    &__texto1-mbottom {
-        width: 100%;
-        height: auto;
-        background-color: $purple;
-        padding: 0;
-        margin: 0;
-
-        @include desktop-and-up {
-            display: none;
-        }
-    }
-
-
-    &__beliefs {
-        width: 100%;
-        background-color: transparent;
+      @include desktop-1366-and-below {
         position: relative;
-        
-        @include desktop-1366-and-below{
-            display: none;
-        }
-
-        &__nisto {
-            position: absolute;
-            top: 300px;
-            left: 143px;
-            font-size: 22px;
-            text-transform: uppercase;
-            color: $gold;
-            font-weight: 300;
-            line-height: 32px;
-            letter-spacing: 8.6px;
-            width: 280px;
-
-            @include desktop-1366-and-below{
-                position: relative;
-                top: 0;
-                left: 0;
-                width: 100%;
-
-            }
-        }
-        
-        &__belief {
-            width: 100%;
-            height: 1200px;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            position: relative;
-
-            @include desktop-1366-and-below{
-                height: 400px;
-            }
-
-
-            &__b1 {
-                background: url("./assets/min-images/quemsomos/crenca1.png");
-                background-repeat: no-repeat;
-                background-position: center right;
-                margin-top: -280px;
-                margin-bottom: -550px;
-                padding-left: 143px;
-
-                @include desktop-1366-and-below{
-                    padding: 0;
-                }
-            }
-
-            &__b2 {
-                background: url("./assets/min-images/quemsomos/crenca2.png");
-                background-repeat: no-repeat;
-                background-position: center left;
-                margin: -550px 0;
-
-                @include desktop-1366-and-below{
-                    margin: -50px 0;
-                }
-                
-            }
-
-            &__b3 {
-                background: url("./assets/min-images/quemsomos/crenca3.png");
-                background-repeat: no-repeat;
-                background-position: center right;   
-                margin-top: -550px;
-                margin-bottom: -450px;
-
-                @include desktop-1366-and-below{
-                    margin-top: -50px;
-                    margin-bottom: -50px;
-                }
-            }
-
-            &__numeral {
-                font-size: 226px;
-                font-weight: 300;
-                color: $gold;
-                position: absolute;
-                z-index: 3;
-
-                @include desktop-1366-and-below{
-                    position: relative;
-                }
-
-                &__b1 {
-                    left: 130px;
-                    top: 530px;
-                }
-
-                &__b2 {
-                    right: 130px;
-                    top: 420px;
-                }
-
-                &__b3 {
-                    left: 90px;
-                    top: 380px;
-                }
-            }
-
-            &__text {
-                width: 50%;
-                color: $cream;
-                font-weight: 300;
-                font-size: 22px;
-                width: 484px;
-                border-top: 1px solid $cream;
-                padding-top: 20px;
-                position: absolute;
-                z-index: 2;
-
-                @include desktop-1366-and-below{
-                    position: static;
-                }
-
-                &__b1 {
-                    left: 220px;
-                    top: 700px;
-                    padding-left: 160px;
-
-                    @include desktop-1366-and-below{
-                        left: auto;
-                        top: auto;
-                    }
-                }
-
-                &__b2 {
-                    right: 220px;
-                    top: 590px;
-                    padding-right: 200px;
-                    text-align: right;
-
-                    @include desktop-1366-and-below{
-                        padding: 0;
-                    }
-                }
-
-                &__b3 {
-                    left: 180px;
-                    top: 550px;
-                    padding-left: 190px;
-                
-                    @include desktop-1366-and-below{
-                        padding: 0;
-                    }
-                }
-            }
-        }
-    }
-
-    &__mbeliefs {
-        display: grid;
-        grid-template-columns: 1fr;
+        top: 0;
+        left: 0;
         width: 100%;
-        background-color: $purple;
-        padding-top: 50px;
-
-        @include desktop-and-up {
-            display: none;
-        }
-
-        &__nisto {
-            width: 100%;
-            padding-left: $padding-left-mobile;
-            
-            font-size: 22px;
-            letter-spacing: 8.6px;
-            line-height: 32px;
-            font-weight: 300;
-            text-transform: uppercase;
-            color: $gold;
-
-            margin-bottom: 50px;
-        }
-
-        &__belief {
-            width: 100%;
-            height: 500px;
-
-            &__numeral {
-                padding-left: $padding-left-mobile;
-                font-size: 114px;
-                color: $gold;
-                line-height: 116px;
-                letter-spacing: -10px;
-                font-weight: 300;
-
-                &__b2 {
-                    text-align: right;
-                    padding-left: 0;
-                    padding-right: $padding-left-mobile;
-                }
-            }
-
-            &__text {
-                padding-left: $padding-left-mobile;
-                color: $gold;
-                font-size: 22px;
-                line-height: 32px;
-                letter-spacing: 0;
-                font-weight: 300;
-
-                &__b2 {
-                    padding-left: 0;
-                    padding-right: $padding-left-mobile;
-                    text-align: right;
-                    margin: 0;
-                }
-            }
-
-            &__b1 {
-                background-image: url("./assets/min-images/quemsomos/img-cavalo-01-mobile.png");
-                background-size: contain;
-                background-position: right center;
-                background-repeat: no-repeat;
-                margin-bottom: -90px;
-            }
-
-            &__b2 {
-                background-image: url("./assets/min-images/quemsomos/img-cavalo-02-mobile.png");
-                background-size: contain;
-                background-position: left center;
-                background-repeat: no-repeat;
-                margin-bottom: -120px;
-            }
-
-            &__b3 {
-                background-image: url("./assets/min-images/quemsomos/img-cavalo-03-mobile.png");
-                background-size: contain;
-                background-position: right center;
-                background-repeat: no-repeat;
-                margin-bottom: -100px;
-            }
-        }
+      }
     }
 
+    &__belief {
+      width: 100%;
+      height: 1200px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      position: relative;
 
-    &__bgrid {
-        background-color: $purple;
-        background-image: url("./assets/min-images/quemsomos/crencagrid.svg");
+      @include desktop-1366-and-below {
+        height: 400px;
+      }
+
+      &__b1 {
+        background: url("./assets/min-images/quemsomos/crenca1.png");
         background-repeat: no-repeat;
-        height: 1370px;
-        z-index: 500;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 50px;
-        padding: 440px 350px 320px 350px;
+        background-position: center right;
+        margin-top: -280px;
+        margin-bottom: -550px;
+        padding-left: 143px;
 
-        @include desktop-1366-and-below{
-            background-color: #231436;
-            background-image: url("./assets/min-images/quemsomos/crencasmobile.svg");
-            background-size: contain;
-            background-position: bottom;
-            grid-template-columns: 1fr;
+        @include desktop-1440-and-below {
+          margin-bottom: 100px;
+        }
+
+        @include desktop-1366-and-below {
+          padding: 0;
+        }
+      }
+
+      &__b2 {
+        background: url("./assets/min-images/quemsomos/crenca2.png");
+        background-repeat: no-repeat;
+        background-position: center left;
+        margin: -550px 0;
+
+        @include desktop-1440-and-below {
+          margin-bottom: 100px;
+        }
+
+        @include desktop-1366-and-below {
+          margin: -50px 0;
+        }
+      }
+
+      &__b3 {
+        background: url("./assets/min-images/quemsomos/crenca3.png");
+        background-repeat: no-repeat;
+        background-position: center right;
+        margin-top: -550px;
+        margin-bottom: -450px;
+
+        @include desktop-1440-and-below {
+          margin-bottom: 100px;
+        }
+
+        @include desktop-1366-and-below {
+          margin-top: -50px;
+          margin-bottom: -50px;
+        }
+      }
+
+      &__numeral {
+        font-size: 226px;
+        font-weight: 300;
+        color: $gold;
+        position: absolute;
+        z-index: 3;
+
+        @include desktop-1366-and-below {
+          position: relative;
+        }
+
+        &__b1 {
+          left: 130px;
+          top: 530px;
+        }
+
+        &__b2 {
+          right: 130px;
+          top: 420px;
+        }
+
+        &__b3 {
+          left: 90px;
+          top: 380px;
+        }
+      }
+
+      &__text {
+        width: 50%;
+        color: $cream;
+        font-weight: 300;
+        font-size: 22px;
+        width: 484px;
+        border-top: 1px solid $cream;
+        padding-top: 20px;
+        position: absolute;
+        z-index: 2;
+
+        @include desktop-1366-and-below {
+          position: static;
+        }
+
+        &__b1 {
+          left: 220px;
+          top: 700px;
+          padding-left: 160px;
+
+          @include desktop-1366-and-below {
+            left: auto;
+            top: auto;
+          }
+        }
+
+        &__b2 {
+          right: 220px;
+          top: 590px;
+          padding-right: 200px;
+          text-align: right;
+
+          @include desktop-1366-and-below {
             padding: 0;
-            padding-top: 200px;
-            padding-bottom: 200px;
-            margin-top: -200px;
-            height: auto;
+          }
         }
 
-        &__item {
-            position: relative;
-            display: grid;
-            grid-template-columns: 4fr 6fr;
-            column-gap: 10px;
+        &__b3 {
+          left: 180px;
+          top: 550px;
+          padding-left: 190px;
 
-            @include desktop-1366-and-below{
-                grid-template-columns: 1fr;
-            }
-
-            &__number {
-                color: $gold;
-                font-weight: 300;
-                font-size: 145px;
-                align-self: flex-start;
-                justify-self: flex-end;
-
-                @include desktop-1366-and-below{
-                    font-size: 40px;
-                    padding-left: $padding-left-mobile;
-                    justify-self: flex-start;
-                }
-            }
-
-            &__text {
-                align-self: flex-end;
-                padding-bottom: 15px;
-                font-size: 22px;
-                font-weight: 300;
-                color: $cream;
-                border-bottom: 1px solid $cream;
-
-                @include desktop-1366-and-below{
-                    padding-left: $padding-left-mobile;
-                    line-height: 32px;
-                    border-bottom: 0;
-                }
-            }
+          @include desktop-1366-and-below {
+            padding: 0;
+          }
         }
+      }
+    }
+  }
+
+  &__mbeliefs {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    background-color: $purple;
+    padding-top: 50px;
+
+    @include desktop-and-up {
+      display: none;
     }
 
-    &__cta {
-        background-color: transparent;
-        margin-top: -200px;
+    &__nisto {
+      width: 100%;
+      padding-left: $padding-left-mobile;
 
-        @include desktop-1366-and-below{
-            margin: 0;
-        }
-        
-        &__darkpurple {
-            width: 100%;
-            background-color: #201231;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 360px;
+      font-size: 22px;
+      letter-spacing: 8.6px;
+      line-height: 32px;
+      font-weight: 300;
+      text-transform: uppercase;
+      color: $gold;
 
-            @include desktop-1366-and-below{
-                padding: 20px 0;
-                flex-direction: column;
-            }
-        }
-
-        &__texto {
-            color: white;
-            font-weight: 800;
-            font-size: 76px;
-
-            @include desktop-1366-and-below{
-                font-size: 36px;
-                font-weight: 700;
-                text-align: center;
-                width: 80%;
-                margin: 0 auto;
-                margin-bottom: 30px;
-            }
-        }
-
-        &__button {
-            display: flex;
-            flex-direction: column;
-            a {
-                background-color: $orange;
-                padding: 30px 40px;
-                border-radius: 4px;
-                text-decoration: none;
-                color: white;
-                text-transform: uppercase;
-                font-size: 14px;
-                font-weight: 600;
-                margin-bottom: 10px;
-
-                @include desktop-1366-and-below{
-                    max-width: 80%;
-                    margin: 0 auto;
-                    padding: 20px 60px;
-                    font-size: 14px;
-                    line-height: 24px;
-                    letter-spacing: 0.28px;
-                    text-align: center;
-                }
-            }
-
-            span {
-                font-weight: 300;
-                font-size: 12px;
-
-                @include desktop-1366-and-below{
-                    text-align: center;
-                    line-height: 15px;
-                    margin-top: 10px;
-                }
-            }
-        }
+      margin-bottom: 50px;
     }
 
+    &__belief {
+      width: 100%;
+      height: 500px;
+
+      &__numeral {
+        padding-left: $padding-left-mobile;
+        font-size: 114px;
+        color: $gold;
+        line-height: 116px;
+        letter-spacing: -10px;
+        font-weight: 300;
+
+        &__b2 {
+          text-align: right;
+          padding-left: 0;
+          padding-right: $padding-left-mobile;
+        }
+      }
+
+      &__text {
+        padding-left: $padding-left-mobile;
+        color: $gold;
+        font-size: 22px;
+        line-height: 32px;
+        letter-spacing: 0;
+        font-weight: 300;
+
+        &__b2 {
+          padding-left: 0;
+          padding-right: $padding-left-mobile;
+          text-align: right;
+          margin: 0;
+        }
+      }
+
+      &__b1 {
+        background-image: url("./assets/min-images/quemsomos/img-cavalo-01-mobile.png");
+        background-size: contain;
+        background-position: right center;
+        background-repeat: no-repeat;
+        margin-bottom: -90px;
+      }
+
+      &__b2 {
+        background-image: url("./assets/min-images/quemsomos/img-cavalo-02-mobile.png");
+        background-size: contain;
+        background-position: left center;
+        background-repeat: no-repeat;
+        margin-bottom: -120px;
+      }
+
+      &__b3 {
+        background-image: url("./assets/min-images/quemsomos/img-cavalo-03-mobile.png");
+        background-size: contain;
+        background-position: right center;
+        background-repeat: no-repeat;
+        margin-bottom: -100px;
+      }
+    }
+  }
+
+  &__bgrid {
+    background-color: $purple;
+    background-image: url("./assets/min-images/quemsomos/crencagrid.svg");
+    background-repeat: no-repeat;
+    height: 1370px;
+    z-index: 500;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 50px;
+    padding: 440px 350px 320px 350px;
+
+    @include desktop-1440-and-below {
+      margin-top: -881px;
+      padding-left: 200px;
+      padding-top: 530px;
+      padding-right: 180px;
+      height: 1190px;
+    }
+
+    @include tablet-768-and-below {
+      background-color: #231436;
+      background-image: url("./assets/min-images/quemsomos/crencasmobile.svg");
+      background-size: contain;
+      background-position: bottom;
+      grid-template-columns: 1fr;
+      padding: 0;
+      padding-top: 200px;
+      padding-bottom: 200px;
+
+      height: auto;
+    }
+
+    &__item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 4fr 6fr;
+      column-gap: 10px;
+
+      @include tablet-768-and-below {
+        grid-template-columns: 1fr;
+      }
+
+      &__number {
+        color: $gold;
+        font-weight: 300;
+        font-size: 145px;
+        align-self: flex-start;
+        justify-self: flex-end;
+
+        @include desktop-1440-and-below {
+          font-size: 95px;
+        }
+
+        @include tablet-768-and-below {
+          font-size: 40px;
+          padding-left: $padding-left-mobile;
+          justify-self: flex-start;
+        }
+      }
+
+      &__text {
+        align-self: flex-end;
+        padding-bottom: 15px;
+        font-size: 22px;
+        font-weight: 300;
+        color: $cream;
+        border-bottom: 1px solid $cream;
+
+        @include desktop-1440-and-below {
+          font-size: 15px;
+        }
+
+        @include tablet-768-and-below {
+          padding-left: $padding-left-mobile;
+          line-height: 32px;
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &__cta {
+    background-color: transparent;
+    margin-top: -200px;
+    margin-bottom: -150px;
+
+    @include desktop-1366-and-below {
+      margin: 0;
+    }
+
+    &__darkpurple {
+      width: 100%;
+      background-color: #201231;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 360px;
+
+      @include desktop-1440-and-below{
+        padding: 20px 210px;
+      }
+
+      @include desktop-1366-and-below {
+        padding: 20px 0;
+        flex-direction: column;
+      }
+    }
+
+    &__title {
+      width: 50%;
+      color: white;
+      font-size: 66px;
+
+      font-weight: 700;
+
+      @include desktop-1440-and-below{
+        font-size: 50px;
+      }
+
+      @include desktop-1366-and-below {
+        font-size: 46px;
+      }
+
+      @media only screen and (max-width: 1200px) {
+        font-size: 38px;
+        text-align: center;
+        width: 100%;
+        max-width: 400px;
+      }
+    }
+
+    &__content {
+      width: 50%;
+
+      padding-left: 84px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      color: white;
+
+      @include desktop-1366-and-below {
+        padding-left: 14px;
+      }
+
+      @media only screen and (max-width: 1200px) {
+        align-items: center;
+        width: 100%;
+        padding-left: 0px;
+      }
+
+      span {
+        margin-top: 10px;
+        font-weight: 300;
+        font-size: 12px;
+
+        @media only screen and (max-width: 1200px) {
+          text-align: center;
+          width: 100%;
+          font-size: 12px;
+          font-weight: bold;
+        }
+      }
+    }
+
+    &__button {
+      background-color: $orange;
+      border-radius: 4px;
+      padding: 30px 44px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+
+      &:hover {
+        box-shadow: 0 5px 18px #e3530596;
+      }
+
+      @media only screen and (max-width: 1200px) {
+        margin-top: 40px;
+        width: 100%;
+        padding: 27px 0px;
+        font-size: 11px;
+        max-width: 300px;
+      }
+    }
+  }
 }
