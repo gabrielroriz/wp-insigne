@@ -3,18 +3,45 @@
 
 
 #tab_todos {
-    opacity: 1;
-    height: auto;
-    
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 16px;
-    row-gap: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__wrapper {
+        opacity: 1;
+        height: auto;
+        
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        column-gap: 16px;
+        row-gap: 16px;
+    }
 }
 
 #tab_tipos {
     opacity: 0;
     height: 0;
+}
+
+.swiper-button-next {
+    position: absolute;
+    top: 30%;
+    right: 100px;
+    z-index: 9999;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.swiper-wrapper {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+
 }
 
 /* The Modal (background) */
@@ -158,7 +185,12 @@
             position: relative;
             width: 100%;
             height: 100%;
-            margin-top: 185px;
+            padding-top: 185px;
+            padding-left: 70px;
+
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
 
             @include tablet-landscape-and-below {
                 margin-top: 0;
@@ -177,6 +209,7 @@
         justify-content: flex-end;
         background-repeat: no-repeat;
         background-size: cover;
+        margin-right: 30px;
 
         &:hover {
             box-shadow: 0px 0px 73px #000000A1;
@@ -510,6 +543,10 @@
             &:hover {
                 box-shadow: 0px 0px 73px #000000A1;
             }
+
+            &__more {
+                display: none;
+            }
             
             &__grid {
                 width: 100%;
@@ -540,6 +577,22 @@
                     margin-left: -30px;
                 }
             }
+        }
+
+        &__loadmorebutton {
+
+            background-color: $orange;
+            padding: 30px 40px;
+            border-radius: 4px;
+            text-decoration: none;
+            color: white;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+
+            display: inline !important;
+            margin-top: 100px;
         }
     }
 
@@ -665,6 +718,7 @@
             }
 
             span {
+                color: white;
                 font-weight: 300;
                 font-size: 12px;
 

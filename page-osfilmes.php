@@ -1,5 +1,49 @@
     <?php get_header() ?>
 
+    <?php
+        $header_filmes = new WP_Query([
+            "post_type" => "filmes",
+            "tax_query" => [
+                [
+                    "taxonomy" => "filmes-category",
+                    "field" => "slug",
+                    "terms" => "slider"
+                ]
+            ]
+        ]);
+
+        $counter = 1;
+    ?>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- 
+    ////////////
+    // MODAIS //
+    ////////////
+-->
+<?php while ($header_filmes->have_posts()) : $header_filmes->the_post(); ?>
+<!-- Início do modal -->
+<div id="modal-highlight-<?php echo $counter; ?>" class="modal">
+    <div class="modal-content">
+        <div class="modal-content__embedded"></div>
+        <span class="close">
+            <img src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" />
+        </span>
+        <div class="modal-content__video">
+            <?php echo get_post_meta(get_the_ID(), "FILMES_EMBEDDED")[0]; ?>
+        </div>
+        <div class="modal-content__texto">
+            <h2><?php the_title(); ?> - </h2><h4><?php echo get_post_meta(get_the_ID(), "FILMES_SUBTITULO")[0]; ?></h4> 
+            <p>
+                <?php echo get_post_meta(get_the_ID(), "FILMES_DESC")[0]; ?>
+            </p>
+        </div>
+    </div>
+</div>
+<!-- Fim do modal -->
+<?php endwhile; ?>
+
     <div class="filmes__header">
         <div class="filmes__header__title">
             <h1>
@@ -10,56 +54,58 @@
             </h4>
         </div>
 
-        <div class="filmes__header__posters">
+        <div class="filmes__header__posters swiper-container">
 
-            <?php
-                $header_filmes = new WP_Query([
-                    "post_type" => "filmes",
-                    "tax_query" => [
-                        [
-                            "taxonomy" => "filmes-category",
-                            "field" => "slug",
-                            "terms" => "slider"
-                        ]
-                    ]
-                ]);
+            <div class="swiper-button-next">
+                <img src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/img-seta.svg"; ?>" />
+            </div>
 
-                $counter = 1;
-            ?>
-            <?php while ($header_filmes->have_posts()) : $header_filmes->the_post(); ?>
-                <div 
-                    class="filmes__highlight" 
-                    style="background-image: url('<?php echo get_post_meta(get_the_ID(), "FILMES_IMAGEM")[0]; ?>');" 
-                    onclick="openModal('modal-highlight-<?php echo $counter; ?>')"
-                >
-                <!-- Início do modal -->
-                <div id="modal-highlight-<?php echo $counter; ?>" class="modal">
-                    <div class="modal-content">
-                        <div class="modal-content__embedded"></div>
-                        <span class="close">&times;</span>
-                        <div class="modal-content__video">
-                            <?php echo get_post_meta(get_the_ID(), "FILMES_EMBEDDED")[0]; ?>
+            <div class="swiper-wrapper">
+                <?php while ($header_filmes->have_posts()) : $header_filmes->the_post(); ?>
+                    <div 
+                        class="filmes__highlight swiper-slide" 
+                        style="background-image: url('<?php echo get_post_meta(get_the_ID(), "FILMES_IMAGEM")[0]; ?>');" 
+                        onclick="openModal('modal-highlight-<?php echo $counter; ?>')"
+                    >
+                    
+
+                        <div class="filmes__highlight__number">
+                            <?php echo "0".$counter; ?>
                         </div>
-                        <div class="modal-content__texto">
-                            <h2><?php the_title(); ?> - </h2><h4><?php echo get_post_meta(get_the_ID(), "FILMES_SUBTITULO")[0]; ?></h4> 
-                            <p>
-                                <?php echo get_post_meta(get_the_ID(), "FILMES_DESC")[0]; ?>
-                            </p>
+                        <div class="filmes__highlight__text">
+                            <?php the_title(); ?>
                         </div>
                     </div>
-                </div>
-                <!-- Fim do modal -->
-
-                    <div class="filmes__highlight__number">
-                        <?php echo "0".$counter; ?>
-                    </div>
-                    <div class="filmes__highlight__text">
-                        <?php the_title(); ?>
-                    </div>
-                </div>
-                <?php $counter = $counter + 1; ?>
-            <?php endwhile; ?>
+                    <?php $counter = $counter + 1; ?>
+                <?php endwhile; ?>
+            </div>
         </div>
+
+        <script>
+            var mySwiper = new Swiper('.swiper-container', {
+            // Optional parameters
+            direction: 'horizontal',
+            slidesPerView: "auto",
+            spaceBetweem: 20,
+            loop: false,
+
+            // If we need pagination
+            // pagination: {
+            //     el: '.swiper-pagination',
+            // },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+            // scrollbar: {
+            //     el: '.swiper-scrollbar',
+            // },
+            });
+        </script>
     </div>
 
     <div class="filmes__destaques">
@@ -88,7 +134,9 @@
                 <div id="modal-destaques-0" class="modal">
                     <div class="modal-content">
                         <div class="modal-content__embedded"></div>
-                        <span class="close">&times;</span>
+                        <span class="close">
+                            <img src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" />
+                        </span>
                         <div class="modal-content__video">
                             <?php echo get_post_meta($destaques_filmes[0]->ID, "FILMES_EMBEDDED")[0]; ?>
                         </div>
@@ -114,7 +162,9 @@
                 <div id="modal-destaques-1" class="modal">
                     <div class="modal-content">
                         <div class="modal-content__embedded"></div>
-                        <span class="close">&times;</span>
+                        <span class="close">
+                            <img src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" />
+                        </span>
                         <div class="modal-content__video">
                         <?php echo get_post_meta($destaques_filmes[1]->ID, "FILMES_EMBEDDED")[0]; ?>
                         </div>
@@ -140,7 +190,9 @@
                 <div id="modal-destaques-2" class="modal">
                     <div class="modal-content">
                         <div class="modal-content__embedded"></div>
-                        <span class="close">&times;</span>
+                        <span class="close">
+                            <img src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" />
+                        </span>
                         <div class="modal-content__video">
                         <?php echo get_post_meta($destaques_filmes[2]->ID, "FILMES_EMBEDDED")[0]; ?>
                         </div>
@@ -166,7 +218,9 @@
                 <div id="modal-destaques-3" class="modal">
                     <div class="modal-content">
                         <div class="modal-content__embedded"></div>
-                        <span class="close">&times;</span>
+                        <span class="close">
+                            <img src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" />
+                        </span>
                         <div class="modal-content__video">
                         <?php echo get_post_meta($destaques_filmes[3]->ID, "FILMES_EMBEDDED")[0]; ?>
                         </div>
@@ -192,7 +246,9 @@
                 <div id="modal-destaques-4" class="modal">
                     <div class="modal-content">
                         <div class="modal-content__embedded"></div>
-                        <span class="close">&times;</span>
+                        <span class="close">
+                            <img src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" />
+                        </span>
                         <div class="modal-content__video">
                         <?php echo get_post_meta($destaques_filmes[4]->ID, "FILMES_EMBEDDED")[0]; ?>
                         </div>
@@ -260,45 +316,68 @@
             </a>
         </div>
         <div class="filmes__tab" id="tab_todos">
+            <div id="tab_todos__wrapper">
+                <?php
+                    $filmes = new WP_Query([
+                        "post_type" => "filmes",
+                        "posts_per_page" => -1
+                    ]);
 
-            <?php
-                $filmes = new WP_Query([
-                    "post_type" => "filmes",
-                    "posts_per_page" => 16,
-                    "page" => 1
-                ]);
-            ?>
-        
-            <?php while ($filmes->have_posts()) : $filmes->the_post(); ?>
-                <div onclick="openModal('modal-filmes-<?php the_ID(); ?>')" class="filmes__tab__poster" style="background-image: url('<?php echo get_post_meta(get_the_ID(), "FILMES_IMAGEM")[0]; ?>');">
+                    $counter = 0;
+                ?>
+            
+                <?php while ($filmes->have_posts()) : $filmes->the_post(); ?>
+                    <div onclick="openModal('modal-filmes-<?php the_ID(); ?>')" 
+                        class="filmes__tab__poster<?php echo ($counter >= 12 ? " filmes__tab__poster__more" : ""); ?>" 
+                        style="background-image: url('<?php echo get_post_meta(get_the_ID(), "FILMES_IMAGEM")[0]; ?>');"
+                    >
+                        
+                        <!-- Início do modal -->
+                        <div id="modal-filmes-<?php the_ID(); ?>" class="modal">
+                            <div class="modal-content">
+                                <div class="modal-content__embedded"></div>
+                                <span class="close">
+                                    <img src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" />
+                                </span>
+                                <div class="modal-content__video">
+                                <?php echo get_post_meta(the_ID(), "FILMES_EMBEDDED")[0]; ?>
+                                </div>
+                                <div class="modal-content__texto">
+                                    <h2><?php the_title(); ?> - </h2><h4><?php echo get_post_meta(the_ID(), "FILMES_SUBTITULO")[0]; ?></h4> 
+                                    <p>
+                                    <?php echo get_post_meta(the_ID(), "FILMES_DESC")[0]; ?>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Fim do modal -->
                     
-                    <!-- Início do modal -->
-                    <div id="modal-filmes-<?php the_ID(); ?>" class="modal">
-                        <div class="modal-content">
-                            <div class="modal-content__embedded"></div>
-                            <span class="close">&times;</span>
-                            <div class="modal-content__video">
-                            <?php echo get_post_meta(the_ID(), "FILMES_EMBEDDED")[0]; ?>
-                            </div>
-                            <div class="modal-content__texto">
-                                <h2><?php the_title(); ?> - </h2><h4><?php echo get_post_meta(the_ID(), "FILMES_SUBTITULO")[0]; ?></h4> 
-                                <p>
-                                <?php echo get_post_meta(the_ID(), "FILMES_DESC")[0]; ?>
-                                </p>
+                        <div class="filmes__tab__poster__grid">
+                            <div class="filmes__tab__poster__text">
+                                <span>
+                                    <?php echo the_title(); ?>
+                                </span>
                             </div>
                         </div>
                     </div>
-                    <!-- Fim do modal -->
-                
-                    <div class="filmes__tab__poster__grid">
-                        <div class="filmes__tab__poster__text">
-                            <span>
-                                <?php echo the_title(); ?>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            <?php endwhile; ?>
+                <?php $counter++; endwhile; ?>
+            </div>
+
+            <script>
+                function carregarMais(event) {
+                    event.preventDefault();
+                    let hiddenElements = document.getElementsByClassName("filmes__tab__poster__more");
+                    for(let i=0; i<hiddenElements.length; i++) {
+                        hiddenElements[i].style.display = "block";
+                    }
+                    document.getElementById("filmes__tab__loadmorebutton").style.visibility = "hidden";
+                }
+            </script>
+
+            <div onclick="carregarMais(event)" class="filmes__tab__loadmorebutton" id="filmes__tab__loadmorebutton">
+                Carregar Mais
+            </div>
+
         </div>
 
         <div class="filmes__tab" id="tab_tipos">
@@ -356,7 +435,9 @@
                                     <div id="modal-filmescat-<?php the_ID(); ?>" class="modal">
                                         <div class="modal-content">
                                             <div class="modal-content__embedded"></div>
-                                            <span class="close">&times;</span>
+                                            <span class="close">
+                                                <img src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" />
+                                            </span>
                                             <div class="modal-content__video">
                                             <?php echo get_post_meta(the_ID(), "FILMES_EMBEDDED")[0]; ?>
                                             </div>
