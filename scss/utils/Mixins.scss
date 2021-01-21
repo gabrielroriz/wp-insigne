@@ -192,7 +192,6 @@ $mobile-320px: 320px !default;
   }
 }
 
-
 @mixin mobile-320-and-below {
   @media only screen and (max-width: $mobile-320px) {
     @content;
