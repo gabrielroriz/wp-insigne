@@ -151,10 +151,13 @@ $mq-desktop: 1440px !default;
 $desktop-1920px: 1920px !default;
 $desktop-1440px: 1440px !default;
 $desktop-1366px: 1366px !default;
+
 $desktop-1024px: 1024px !default;
 $tablet-768px: 768px !default;
 $mobile-411px: 411px !default;
 $mobile-320px: 320px !default;
+
+$desktop-extra-1300px: 1300px !default;
 
 @mixin desktop-1920-and-below {
   @media only screen and (max-width: $desktop-1920px) {
@@ -200,5 +203,10 @@ $mobile-320px: 320px !default;
 }
 
 
+@mixin desktop-extra-1300-and-below {
+  @media only screen and (max-width: $desktop-extra-1300px ) {
+    @content;
+  }
+}
 
 

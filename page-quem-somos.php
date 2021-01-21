@@ -7,9 +7,9 @@
         <img width="100%" src="<?php echo get_template_directory_uri() . "/assets/min-images/quemsomos/img-cavalo-header.png"; ?>" alt="">
     </div>
 
-    <div class="sobre__mheader">
+    <!-- <div class="sobre__mheader">
         <img width="100%" src="<?php echo get_template_directory_uri() . "/assets/min-images/quemsomos/img-header-mobile.png"; ?>" alt="">
-    </div>
+    </div> -->
 
     <div class="sobre__texto1">
         <div class="sobre__texto1__left">
@@ -32,10 +32,30 @@
             </div>
         </div>
     </div>
+    
     <div class="sobre__texto1-bottom">
     </div>
-    <div class="sobre__texto1-mbottom">
+    <!-- <div class="sobre__texto1-mbottom">
         <img width="100%" src="<?php echo get_template_directory_uri() . "/assets/min-images/quemsomos/texto1-bottom.svg"; ?>" alt="">
+    </div> -->
+
+
+    <div class="sobre__mobile-content">
+        <div class="sobre__mobile-content__first"> 
+                <p>
+                    É isso que nos move
+                </p>
+                    <p>Somos uma produtora audiovisual <b>que te leva aonde você merece estar.</b></p>
+                <p>
+                    Somos para aqueles que só se <b>contentam com o melhor.</b>
+                </p>
+        </div>
+        <div class="sobre__mobile-content__second">
+                <p>Entregamos soluções audiovisuais criativas em diversos formatos: storytelling, lançamento em super lives, animação, branded content, institucionais, programas para internet e tv, e todo tipo de obra original.</p>
+                <p><b>Somos um time de criativos e técnicos a serviço de quem quer alcançar o sucesso do jeito certo. Sabemos o que fazer e como fazer.</b></p>
+                <p>Mais que vídeos, fazemos arte cinematográfica.</p>
+                <p><b>Somos Insigne.</b></p>
+        </div>
     </div>
 
 
