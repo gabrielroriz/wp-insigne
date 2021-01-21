@@ -13,21 +13,23 @@
 
     <div class="sobre__texto1">
         <div class="sobre__texto1__left">
-            <div class="sobre__texto1__move">
-                É isso que nos move
-            </div>
             <div>
-                Somos uma produtora audiovisual <b>que te leva aonde você merece estar.</b>
-            </div>
-            <div>
-                Somos para aqueles que só se <b>contentam com o melhor.</b>
+                <p class="sobre__texto1__move">
+                    É isso que nos move
+                </p>
+                    <p>Somos uma produtora audiovisual <b>que te leva aonde você merece estar.</b></p>
+                <p>
+                    Somos para aqueles que só se <b>contentam com o melhor.</b>
+                </p>
             </div>
         </div>
         <div class="sobre__texto1__right">
-            <div>Entregamos soluções audiovisuais criativas em diversos formatos: storytelling, lançamento em super lives, animação, branded content, institucionais, programas para internet e tv, e todo tipo de obra original.</div>
-            <div><b>Somos um time de criativos e técnicos a serviço de quem quer alcançar o sucesso do jeito certo. Sabemos o que fazer e como fazer.</b></div>
-            <div>Mais que vídeos, fazemos arte cinematográfica.</div>
-            <div><b>Somos Insigne.</b></div>
+            <div>
+                <p>Entregamos soluções audiovisuais criativas em diversos formatos: storytelling, lançamento em super lives, animação, branded content, institucionais, programas para internet e tv, e todo tipo de obra original.</p>
+                <p><b>Somos um time de criativos e técnicos a serviço de quem quer alcançar o sucesso do jeito certo. Sabemos o que fazer e como fazer.</b></p>
+                <p>Mais que vídeos, fazemos arte cinematográfica.</p>
+                <p><b>Somos Insigne.</b></p>
+            </div>
         </div>
     </div>
     <div class="sobre__texto1-bottom">
@@ -142,14 +144,18 @@
     <div class="sobre__cta">
         <img width="100%" src="<?php echo get_template_directory_uri() . "/assets/min-images/quemsomos/notavel-cima.svg"; ?>" alt="">
         <div class="sobre__cta__darkpurple">
-            <div class="sobre__cta__texto">
-                Nós te ajudamos <br>a ser notável.
+            <div class="sobre__cta__title">
+                Nós te ajudamos a ser notável.
             </div>
-            <div class="sobre__cta__button">
-                <a href="">Entrar em contato via WhatsApp</a>
-                <span>Horário de atendimento: <br/> das 08:00h às 17:00h.</span>
+
+            <div class="sobre__cta__content">
+                <div class="sobre__cta__button">
+                    ENTRAR EM CONTATO VIA WHATSAPP
+                </div>
+                <span>Horário de atendimento:<br>das 08:00h às 17:00h</br>
             </div>
         </div>
+        
         <img width="100%" src="<?php echo get_template_directory_uri() . "/assets/min-images/quemsomos/notavel-baixo.svg"; ?>" alt="">
     </div>
 </div>
