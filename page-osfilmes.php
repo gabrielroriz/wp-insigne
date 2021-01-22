@@ -11,8 +11,6 @@
                 ]
             ]
         ]);
-
-        $counter = 1;
     ?>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -22,7 +20,7 @@
     // MODAIS //
     ////////////
 -->
-<?php while ($header_filmes->have_posts()) : $header_filmes->the_post(); ?>
+<?php $counter = 1; while ($header_filmes->have_posts()) : $header_filmes->the_post(); ?>
 <!-- Início do modal -->
 <div id="modal-highlight-<?php echo $counter; ?>" class="modal">
     <div class="modal-content">
@@ -42,7 +40,7 @@
     </div>
 </div>
 <!-- Fim do modal -->
-<?php endwhile; ?>
+<?php $counter++; endwhile; ?>
 
     <div class="filmes__header">
         <div class="filmes__header__title">
@@ -61,7 +59,7 @@
             </div>
 
             <div class="swiper-wrapper">
-                <?php while ($header_filmes->have_posts()) : $header_filmes->the_post(); ?>
+                <?php $counter = 1; while ($header_filmes->have_posts()) : $header_filmes->the_post(); ?>
                     <div 
                         class="filmes__highlight swiper-slide" 
                         style="background-image: url('<?php echo get_post_meta(get_the_ID(), "FILMES_IMAGEM")[0]; ?>');" 
@@ -76,8 +74,7 @@
                             <?php the_title(); ?>
                         </div>
                     </div>
-                    <?php $counter = $counter + 1; ?>
-                <?php endwhile; ?>
+                <?php $counter++; endwhile; ?>
             </div>
         </div>
 
@@ -328,11 +325,11 @@
         function todosFilmesOnClick(event) {
             event.preventDefault();
 
-            document.getElementById("tab_tipos").style.opacity = 0;
-            document.getElementById("tab_tipos").style.height = 0;
+            console.log("clicou carai");
 
-            document.getElementById("tab_todos").style.opacity = 1;
-            document.getElementById("tab_todos").style.height = "auto";
+            document.getElementById("tab_tipos").style.display = "none";
+            
+            document.getElementById("tab_todos").style.removeProperty("display");
 
             document.getElementById("tab_tipo_button").classList.remove("filmes__tabs__selected");
             document.getElementById("tab_todos_button").classList.add("filmes__tabs__selected");
@@ -341,11 +338,9 @@
         function tipoDeTrabalhoOnClick(event) {
             event.preventDefault();
 
-            document.getElementById("tab_todos").style.opacity = 0;
-            document.getElementById("tab_todos").style.height = 0;
+            document.getElementById("tab_todos").style.display = "none";
 
-            document.getElementById("tab_tipos").style.opacity = 1;
-            document.getElementById("tab_tipos").style.height = "auto";
+            document.getElementById("tab_tipos").style.removeProperty("display");            
 
             document.getElementById("tab_todos_button").classList.remove("filmes__tabs__selected");
             document.getElementById("tab_tipo_button").classList.add("filmes__tabs__selected");
@@ -412,6 +407,9 @@
                             </div>
                         </div>
                     </div>
+                    <div class="filmes__tab__poster__mobiletext<?php echo ($counter >= 12 ? " filmes__tab__poster__more" : ""); ?>">
+                        <?php echo the_title(); ?>
+                    </div>
                 <?php $counter++; endwhile; ?>
             </div>
 
@@ -422,7 +420,7 @@
                     for(let i=0; i<hiddenElements.length; i++) {
                         hiddenElements[i].style.display = "block";
                     }
-                    document.getElementById("filmes__tab__loadmorebutton").style.visibility = "hidden";
+                    document.getElementById("filmes__tab__loadmorebutton").style.display = "none";
                 }
             </script>
 
@@ -432,7 +430,7 @@
 
         </div>
 
-        <div class="filmes__tab" id="tab_tipos">
+        <div class="filmes__tab" id="tab_tipos" style="display: none;">
             <div class="filmes__tab__wrapper">
 
                 <?php
@@ -517,7 +515,6 @@
                 <?php endforeach; ?>
 
             </div>
-
         </div>
 
     </div>

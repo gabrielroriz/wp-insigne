@@ -11,11 +11,10 @@ $socials = array(
     array("Facebook", "https://www.instagram.com/ofelipepavani/")
 );
 
-$filmes = array(
-    array("Projeto 01", "https://www.instagram.com/ofelipepavani/"),
-    array("Projeto 02", "https://www.instagram.com/ofelipepavani/"),
-    array("Projeto 03", "https://www.instagram.com/ofelipepavani/"),
-);
+$filmesFooter = (new WP_Query([
+    "post_type" => "filmes",
+    "posts_per_page" => 3
+]))->posts;
 
 ?>
 
@@ -62,10 +61,10 @@ $filmes = array(
         <div class="footer__access__list">
             <strong>FILMES</strong>
             <ul>
-                <?php foreach($filmes as $filme) {?>
+                <?php foreach($filmesFooter as $filme) {?>
                     <li>
-                        <a href="<?php echo $filme[1]; ?>">
-                            <?php echo $filme[0]; ?>
+                        <a href="<?php echo $filme->guid; ?>">
+                            <?php echo $filme->post_title; ?>
                         </a>
                     </li>
                 <?php } ?>
