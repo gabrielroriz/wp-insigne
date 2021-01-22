@@ -126,7 +126,8 @@
                             
         <div class="filmes__destaques__title">
             <div class="filmes__destaques__text">Destaques</div>
-
+        </div>
+        <div class="filmes__destaques__mosaico">
             <div onclick="openModal('modal-destaques-0')" class="filmes__destaques__img filmes__destaques__img1" style="background-image: url('<?php echo get_post_meta($destaques_filmes[0]->ID, "FILMES_IMAGEM")[0]; ?>')">
                 <!-- Início do modal -->
                 <div id="modal-destaques-0" class="modal">
@@ -267,7 +268,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
     <div class="filmes__destaquesmobile">

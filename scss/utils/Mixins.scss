@@ -165,6 +165,12 @@ $desktop-extra-1300px: 1300px !default;
   }
 }
 
+@mixin desktop-below-1920 {
+  @media only screen and (max-width: $desktop-1920px - 1) {
+    @content;
+  }
+}
+
 @mixin desktop-1440-and-below {
   @media only screen and (max-width: $desktop-1440px) {
     @content;

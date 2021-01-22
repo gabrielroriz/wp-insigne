@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1486" height="286" viewBox="0 0 1486 286">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Retângulo_123" data-name="Retângulo 123" width="1486" height="286" transform="translate(0.484 -0.033)" fill="#2e1a47"/>
+    </clipPath>
+  </defs>
+  <g id="img-01-destaques-1440" transform="translate(-0.484 0.033)" clip-path="url(#clip-path)">
+    <path id="fundo-roxo-mosaico-projetos" d="M9967.4,2250.825l1203.513,289.983,370.439-271.544,38.554-1506.9L9959.02,884.723Z" transform="translate(-10038.338 -2266.033)" fill="#3c235b"/>
+    <path id="shape-borda-amarela-mosaico-projeto" d="M9973.469,2235.879l1222.451,191.758,396.59-191.758-12.6-1473.518L9959.02,884.723Z" transform="translate(-10063.516 -2211.863)" fill="none" stroke="#ffb81c" stroke-width="2"/>
+  </g>
+</svg>
