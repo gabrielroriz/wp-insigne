@@ -25,7 +25,7 @@
 <div id="modal-highlight-<?php echo $counter; ?>" class="modal">
     <div class="modal-content">
         <div class="modal-content__embedded"></div>
-        <span class="close">
+        <span class="close" id="modal-highlight-<?php echo $counter; ?>-close">
             <img src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" />
         </span>
         <div class="modal-content__video">
@@ -39,6 +39,8 @@
         </div>
     </div>
 </div>
+
+
 <!-- Fim do modal -->
 <?php $counter++; endwhile; ?>
 
@@ -565,18 +567,15 @@
         
         // When the user clicks on the button, open the modal
         function openModal(modal_id) {
-
-            // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName("close");
-
-            console.log("span", span);
+            var span = document.getElementById(modal_id + "-close");
 
             var modal = document.getElementById(modal_id);
             modal.style.display = "block";
 
+            console.log(span)
+
             // When the user clicks on <span> (x), close the modal
             span.onclick = function() {
-                console.log("jfkdljfsd");
                 modal.style.display = "none";
             }
 
