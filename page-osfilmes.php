@@ -52,7 +52,7 @@
             </h4>
         </div>
 
-        <div class="filmes__header__posters swiper-container">
+        <div class="filmes__header__posters swiper-container swiper-container--desktop">
 
             <div class="slider-button-desktop swiper-button-next">
                 <img src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/img-seta.svg"; ?>" />
@@ -79,32 +79,60 @@
         </div>
 
         <script>
-            var mySwiper = new Swiper('.swiper-container', {
-            // Optional parameters
+            var mySwiper = new Swiper('.swiper-container--desktop', {
             direction: 'horizontal',
-            slidesPerView: window.innerWidth > 883 ? "auto" : 1,
+            slidesPerView: "auto",
             spaceBetweem: 20,
             updateOnWindowResize: true,
             loop: false,
-
-            // If we need pagination
-            // pagination: {
-            //     el: '.swiper-pagination',
-            // },
-
-            // Navigation arrows
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
-
-            // And if we need scrollbar
-            // scrollbar: {
-            //     el: '.swiper-scrollbar',
-            // },
             });
         </script>
-    </div>
+
+    
+    <div class="filmes__header__posters--mobile swiper-container swiper-container--mobile">
+    
+            <div class="swiper-wrapper swiper-wrapper--mobile">
+
+            <?php $counter = 1; while ($header_filmes->have_posts()) : $header_filmes->the_post(); ?>
+                <div class="swiper-slide swiper-slide--mobile" >
+
+                    <div class="filmes__header__posters--mobile__highlight" 
+                            style="background-image: url('<?php echo get_post_meta(get_the_ID(), "FILMES_IMAGEM")[0]; ?>');" 
+                            onclick="openModal('modal-highlight-<?php echo $counter; ?>')">
+                            
+                        <div class="filmes__header__posters--mobile__highlight__number">
+                            <?php echo "0".$counter; ?>
+                        </div>
+                        <div class="filmes__header__posters--mobile__highlight__text">
+                            <?php the_title(); ?>
+                        </div>
+                    </div>
+
+                </div>
+            <?php $counter++; endwhile; ?>
+
+            </div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next--mobile"></div>
+            <div class="swiper-button-prev--mobile"></div>
+        </div>
+
+        <script>
+            var swiper = new Swiper('.swiper-container--mobile', {
+            slidesPerView: 1,
+            direction: 'horizontal',
+            navigation: {
+                nextEl: '.swiper-button-next--mobile',
+                prevEl: '.swiper-button-prev--mobile',
+            },
+            });
+        </script>
+
+</div>
 
     <div class="filmes__destaques">
 

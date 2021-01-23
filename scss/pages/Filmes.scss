@@ -52,14 +52,7 @@
     }
 }
 
-.swiper-wrapper {
-    width: 100%;
-    height: 100%;
 
-    display: flex;
-    flex-direction: row;
-
-}
 
 /* The Modal (background) */
 .modal {
@@ -150,7 +143,7 @@
 
 .filmes {
     &__header {
-
+        width: 100%;
         display: grid;
         grid-template-columns: 3fr 7fr;
         background-image: url("./assets/min-images/filmes/img-header-filmes-desktop.svg");
@@ -161,6 +154,7 @@
         background-color: $light-purple;
         height: 1200px;
         align-items: flex-start;
+        overflow: hidden;
 
         @include desktop-1440-and-below {
             background-image: url("./assets/min-images/filmes/img-header-filmes-desktop-1440.svg");
@@ -179,7 +173,8 @@
         }
 
         @include tablet-768-and-below {
-
+            display: flex;
+            flex-direction: column;
         }
 
         @include mobile-411-and-below {
@@ -229,10 +224,11 @@
                 color: $purple;
 
                 @include tablet-768-and-below {
-                    font-size: 19px;
-                    line-height: 32px;
-                    font-weight: 300;
+                    font-size: 18px;
+                    line-height: 21px;
+                    font-weight: 500;
                     width: 220px;
+                    margin-bottom: 55px;
                 }
             }
         }
@@ -253,8 +249,16 @@
             }
 
             @include tablet-768-and-below {
-                margin-top: 0;
-                padding: 0 30px;
+                display: none;
+            }
+
+            .swiper-wrapper {
+                width: 100%;
+                height: 100%;
+            
+                display: flex;
+                flex-direction: row;
+            
             }
         }
     }
@@ -962,5 +966,92 @@
         }
     }
 }
+
+
+
+
+.filmes__header__posters--mobile{
+    display: none;
+    
+    @include tablet-768-and-below{
+        display: inline-grid;
+        width: 100%;
+    }
+
+    &__highlight{
+        width: 301px;
+        height: 311px;
+        // width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        background-size: cover;
+        background-position: center center;
+
+        &__number {
+            width: 292px;
+            border-bottom: 8px solid white;
+            font-size: 125px;
+            line-height: 143px;
+            letter-spacing: 2.5px;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: white;
+            width: 100%;
+        }
+
+        &__text {
+            font-size: 22px;
+            line-height: 32px;
+            letter-spacing: 0;
+            color: white;
+            font-weight: 500;
+        }
+    }
+}
+
+.swiper-container--mobile {
+    // width: 100%;
+    // height: 100%;
+
+    .swiper-wrapper--mobile {
+        width: 100%;
+        height: 100%;    
+
+        display: flex;
+        flex-direction: row;
+    }
+
+
+    .swiper-slide--mobile {
+        &:nth-child(1){
+            // background-color: red;
+        }
+        // height: 500px;
+        // width: 100%;
+        text-align: center;
+        // background: #fff;
+        
+        
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        justify-content: center;
+        }
+        
+}
+
 
 
