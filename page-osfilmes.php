@@ -24,11 +24,8 @@
 <!-- Início do modal -->
 <div id="modal-highlight-<?php echo $counter; ?>" class="modal">
     <div class="modal-content">
-        <div class="modal-content__embedded"></div>
-        <span class="close" id="modal-highlight-<?php echo $counter; ?>-close">
-            <img src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" />
-        </span>
         <div class="modal-content__video">
+            <img src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" class="close" id="modal-highlight-<?php echo $counter; ?>-close"/>
             <?php echo get_post_meta(get_the_ID(), "FILMES_EMBEDDED")[0]; ?>
         </div>
         <div class="modal-content__texto">
@@ -166,15 +163,12 @@
             <div class="filmes__destaques__text">Destaques</div>
         </div>
         <div class="filmes__destaques__mosaico">
-            <div onclick="openModal('modal-destaques-0')" class="filmes__destaques__img filmes__destaques__img1" style="background-image: url('<?php echo get_post_meta($destaques_filmes[0]->ID, "FILMES_IMAGEM")[0]; ?>')">
-                <!-- Início do modal -->
-                <div id="modal-destaques-0" class="modal">
+             <!-- Início do modal -->
+             <div id="modal-destaques-0" class="modal">
                     <div class="modal-content">
-                        <div class="modal-content__embedded"></div>
-                        <span class="close">
-                            <img src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" />
-                        </span>
+                        
                         <div class="modal-content__video">
+                            <img class="close" src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" id="modal-destaques-0-close" />
                             <?php echo get_post_meta($destaques_filmes[0]->ID, "FILMES_EMBEDDED")[0]; ?>
                         </div>
                         <div class="modal-content__texto">
@@ -186,6 +180,7 @@
                     </div>
                 </div>
                 <!-- Fim do modal -->
+            <div onclick="openModal('modal-destaques-0')" class="filmes__destaques__img filmes__destaques__img1" style="background-image: url('<?php echo get_post_meta($destaques_filmes[0]->ID, "FILMES_IMAGEM")[0]; ?>')">
                 <div class="filmes__destaques__img__overlay">
                     <div class="filmes__destaques__img__overlaytext">
                         <h2><?php echo $destaques_filmes[0]->post_title ?></h2>
@@ -194,15 +189,12 @@
                 </div>
             </div>
 
-            <div onclick="openModal('modal-destaques-1')" class="filmes__destaques__img filmes__destaques__img2" style="background-image: url('<?php echo get_post_meta($destaques_filmes[1]->ID, "FILMES_IMAGEM")[0]; ?>')">
-                <!-- Início do modal -->
-                <div id="modal-destaques-1" class="modal">
+
+            <!-- Início do modal -->
+            <div id="modal-destaques-1" class="modal">
                     <div class="modal-content">
-                        <div class="modal-content__embedded"></div>
-                        <span class="close">
-                            <img src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" />
-                        </span>
                         <div class="modal-content__video">
+                            <img class="close" src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" id="modal-destaques-1-close" />
                         <?php echo get_post_meta($destaques_filmes[1]->ID, "FILMES_EMBEDDED")[0]; ?>
                         </div>
                         <div class="modal-content__texto">
@@ -212,8 +204,9 @@
                             </p>
                         </div>
                     </div>
-                </div>
-                <!-- Fim do modal -->
+            </div>
+            <!-- Fim do modal -->
+            <div onclick="openModal('modal-destaques-1')" class="filmes__destaques__img filmes__destaques__img2" style="background-image: url('<?php echo get_post_meta($destaques_filmes[1]->ID, "FILMES_IMAGEM")[0]; ?>')">
                 <div class="filmes__destaques__img__overlay">
                     <div class="filmes__destaques__img__overlaytext">
                         <h2><?php echo $destaques_filmes[1]->post_title ?></h2>
@@ -222,15 +215,13 @@
                 </div>
             </div>
 
-            <div onclick="openModal('modal-destaques-2')" class="filmes__destaques__img filmes__destaques__img3" style="background-image: url('<?php echo get_post_meta($destaques_filmes[2]->ID, "FILMES_IMAGEM")[0]; ?>')">
-                <!-- Início do modal -->
-                <div id="modal-destaques-2" class="modal">
+            <!-- Início do modal -->
+            <div id="modal-destaques-2" class="modal">
                     <div class="modal-content">
-                        <div class="modal-content__embedded"></div>
-                        <span class="close">
-                            <img src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" />
-                        </span>
+                      
+                        
                         <div class="modal-content__video">
+                        <img class="close" src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" id="modal-destaques-2-close"/>
                         <?php echo get_post_meta($destaques_filmes[2]->ID, "FILMES_EMBEDDED")[0]; ?>
                         </div>
                         <div class="modal-content__texto">
@@ -242,6 +233,8 @@
                     </div>
                 </div>
                 <!-- Fim do modal -->
+
+            <div onclick="openModal('modal-destaques-2')" class="filmes__destaques__img filmes__destaques__img3" style="background-image: url('<?php echo get_post_meta($destaques_filmes[2]->ID, "FILMES_IMAGEM")[0]; ?>')">
                 <div class="filmes__destaques__img__overlay">
                     <div class="filmes__destaques__img__overlaytext">
                         <h2><?php echo $destaques_filmes[2]->post_title ?></h2>
@@ -250,15 +243,13 @@
                 </div>
             </div>
 
-            <div onclick="openModal('modal-destaques-3')" class="filmes__destaques__img filmes__destaques__img4" style="background-image: url('<?php echo get_post_meta($destaques_filmes[3]->ID, "FILMES_IMAGEM")[0]; ?>')">
-                <!-- Início do modal -->
-                <div id="modal-destaques-3" class="modal">
+             <!-- Início do modal -->
+             <div id="modal-destaques-3" class="modal">
                     <div class="modal-content">
-                        <div class="modal-content__embedded"></div>
-                        <span class="close">
-                            <img src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" />
-                        </span>
+                      
+                      
                         <div class="modal-content__video">
+                        <img class="close" src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" id="modal-destaques-3-close" />
                         <?php echo get_post_meta($destaques_filmes[3]->ID, "FILMES_EMBEDDED")[0]; ?>
                         </div>
                         <div class="modal-content__texto">
@@ -269,7 +260,10 @@
                         </div>
                     </div>
                 </div>
-                <!-- Fim do modal -->        
+                <!-- Fim do modal --> 
+
+            <div onclick="openModal('modal-destaques-3')" class="filmes__destaques__img filmes__destaques__img4" style="background-image: url('<?php echo get_post_meta($destaques_filmes[3]->ID, "FILMES_IMAGEM")[0]; ?>')">
+                      
                 <div class="filmes__destaques__img__overlay">
                     <div class="filmes__destaques__img__overlaytext">
                         <h2><?php echo $destaques_filmes[3]->post_title ?></h2>
@@ -278,15 +272,11 @@
                 </div>
             </div>
 
-            <div onclick="openModal('modal-destaques-4')" class="filmes__destaques__img filmes__destaques__img5" style="background-image: url('<?php echo get_post_meta($destaques_filmes[4]->ID, "FILMES_IMAGEM")[0]; ?>')">
-                <!-- Início do modal -->
-                <div id="modal-destaques-4" class="modal">
+            <!-- Início do modal -->
+            <div id="modal-destaques-4" class="modal">
                     <div class="modal-content">
-                        <div class="modal-content__embedded"></div>
-                        <span class="close">
-                            <img src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" />
-                        </span>
                         <div class="modal-content__video">
+                        <img class="close" src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" id="modal-destaques-4-close" />
                         <?php echo get_post_meta($destaques_filmes[4]->ID, "FILMES_EMBEDDED")[0]; ?>
                         </div>
                         <div class="modal-content__texto">
@@ -298,6 +288,8 @@
                     </div>
                 </div>
                 <!-- Fim do modal -->
+
+            <div onclick="openModal('modal-destaques-4')" class="filmes__destaques__img filmes__destaques__img5" style="background-image: url('<?php echo get_post_meta($destaques_filmes[4]->ID, "FILMES_IMAGEM")[0]; ?>')">
                 <div class="filmes__destaques__img__overlay">
                     <div class="filmes__destaques__img__overlaytext">
                         <h2><?php echo $destaques_filmes[4]->post_title ?></h2>
@@ -332,15 +324,12 @@
         </div>
 
         <?php while ($destaques_filmes->have_posts()) : $destaques_filmes->the_post(); ?>
-            <div class="filmes__destaquesmobile__item" onclick="openModal('modal-destaques-<?php echo $counter; ?>')">
-                <!-- Início do modal -->
-                <div id="modal-destaques-<?php echo $counter; ?>" class="modal">
-                    <div class="modal-content">
-                        <div class="modal-content__embedded"></div>
-                        <span class="close">
-                            <img src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" />
-                        </span>
+            <!-- Início do modal -->
+            <div id="modal-mobile-destaques-<?php echo $counter; ?>" class="modal">
+                    <div class="modal-content">ss
+                      
                         <div class="modal-content__video">
+                            <img class="close" src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" id="modal-mobile-destaques-<?php echo $counter; ?>-close" />
                             <?php echo get_post_meta(get_the_ID(), "FILMES_EMBEDDED")[0]; ?>
                         </div>
                         <div class="modal-content__texto">
@@ -351,7 +340,9 @@
                         </div>
                     </div>
                 </div>
-                <!-- Fim do modal -->
+            <!-- Fim do modal -->
+
+            <div class="filmes__destaquesmobile__item" onclick="openModal('modal-mobile-destaques-<?php echo $counter; ?>')">
                 <div class="filmes__destaquesmobile__img"   style="background-image: url('<?php echo get_post_meta(get_the_ID(), "FILMES_IMAGEM")[0]; ?>')"></div>
                 <h2><?php the_title() ?></h2>
                 <h4><?php echo get_post_meta(get_the_ID(), "FILMES_SUBTITULO")[0]; ?></h4>
@@ -412,20 +403,13 @@
                 ?>
             
                 <?php while ($filmes->have_posts()) : $filmes->the_post(); ?>
-                    <div onclick="openModal('modal-filmes-<?php the_ID(); ?>')" 
-                        class="filmes__tab__poster<?php echo ($counter >= 12 ? " filmes__tab__poster__more" : ""); ?>" 
-                        style="background-image: url('<?php echo get_post_meta(get_the_ID(), "FILMES_IMAGEM")[0]; ?>');"
-                    >
-                        
+                             
                         <!-- Início do modal -->
                         <div id="modal-filmes-<?php the_ID(); ?>" class="modal">
-                            <div class="modal-content">
-                                <div class="modal-content__embedded"></div>
-                                <span class="close">
-                                    <img src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" />
-                                </span>
+                            <div class="modal-content">                             
                                 <div class="modal-content__video">
-                                <?php echo get_post_meta(get_the_id(), "FILMES_EMBEDDED")[0]; ?>
+                                    <img class="close" src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>"  id="modal-filmes-<?php the_ID(); ?>-close" />
+                                    <?php echo get_post_meta(get_the_id(), "FILMES_EMBEDDED")[0]; ?>
                                 </div>
                                 <div class="modal-content__texto">
                                     <h2><?php the_title(); ?> - </h2><h4><?php echo get_post_meta(get_the_id(), "FILMES_SUBTITULO")[0]; ?></h4> 
@@ -436,6 +420,11 @@
                             </div>
                         </div>
                         <!-- Fim do modal -->
+                    <div onclick="openModal('modal-filmes-<?php the_ID(); ?>')" 
+                        class="filmes__tab__poster<?php echo ($counter >= 12 ? " filmes__tab__poster__more" : ""); ?>" 
+                        style="background-image: url('<?php echo get_post_meta(get_the_ID(), "FILMES_IMAGEM")[0]; ?>');"
+                    >
+           
                     
                         <div class="filmes__tab__poster__grid">
                             <div class="filmes__tab__poster__text">
@@ -518,15 +507,11 @@
                         </div>
                         <div class="filmes__row__grid">
                             <?php while ($filmes->have_posts()) : $filmes->the_post(); ?>
-                                <div onclick="openModal('modal-filmescat-<?php the_ID(); ?>')" class="filmes__tab__poster" style="background-image: url('<?php echo get_post_meta(get_the_ID(), "FILMES_IMAGEM")[0]; ?>');">
-                                    <!-- Início do modal -->
-                                    <div id="modal-filmescat-<?php the_ID(); ?>" class="modal">
+                               <!-- Início do modal -->
+                               <div id="modal-filmescat-<?php the_ID(); ?>" class="modal">
                                         <div class="modal-content">
-                                            <div class="modal-content__embedded"></div>
-                                            <span class="close">
-                                                <img src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" />
-                                            </span>
                                             <div class="modal-content__video">
+                                            <img class="close" src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" id="modal-filmescat-<?php the_ID(); ?>-close" />
                                             <?php echo get_post_meta(get_the_id(), "FILMES_EMBEDDED")[0]; ?>
                                             </div>
                                             <div class="modal-content__texto">
@@ -538,6 +523,7 @@
                                         </div>
                                     </div>
                                     <!-- Fim do modal -->
+                                <div onclick="openModal('modal-filmescat-<?php the_ID(); ?>')" class="filmes__tab__poster" style="background-image: url('<?php echo get_post_meta(get_the_ID(), "FILMES_IMAGEM")[0]; ?>');">
                                     <div class="filmes__tab__poster__grid">
                                         <div class="filmes__tab__poster__text">
                                             <span>
@@ -575,15 +561,15 @@
         
         // When the user clicks on the button, open the modal
         function openModal(modal_id) {
-            var span = document.getElementById(modal_id + "-close");
+            var image = document.getElementById(modal_id + "-close");
 
             var modal = document.getElementById(modal_id);
-            modal.style.display = "block";
+            modal.style.display = "flex";
 
-            console.log(span)
+            console.log({modalId: modal_id, image, modal});
 
-            // When the user clicks on <span> (x), close the modal
-            span.onclick = function() {
+            // When the user clicks on <image> (x), close the modal
+            image.onclick = function() {
                 modal.style.display = "none";
             }
 
