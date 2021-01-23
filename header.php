@@ -24,12 +24,19 @@
   ?>
 
   <div class="navbar__container">
-      <div class="navbar__wrapper">
+      <div class="navbar__wrapper"> 
 
+          <?php if(is_on_page(["osfilmes"])){ ?>
+          <a href="<?php echo site_url('/home');?>" class="navbar__logo">
+            <img src="<?php echo get_template_directory_uri() . "/assets/min-images/logos/insigneLogoRoxoRow.png.png"; ?>" style="margin-left:30px;width:200px" alt=""/>
+            <img src="<?php echo get_template_directory_uri() . "/assets/min-images/logos/insingeLogoRoxoShort.svg"; ?>" alt=""/>
+          </a>
+          <?php } else { ?>
           <a href="<?php echo site_url('/home');?>" class="navbar__logo">
             <img src="<?php echo get_template_directory_uri() . "/assets/min-images/logos/insigneLogoAmareloRow.png"; ?>" alt=""/>
             <img src="<?php echo get_template_directory_uri() . "/assets/min-images/logos/insingeLogoAmareloShort.svg"; ?>" alt=""/>
           </a>
+          <?php } ?>
 
           <img 
             class="navbar--mobile__button" 
