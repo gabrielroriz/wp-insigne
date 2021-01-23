@@ -118,9 +118,17 @@
             <?php $counter++; endwhile; ?>
 
             </div>
-            <!-- Add Arrows -->
-            <div class="swiper-button-next--mobile"></div>
-            <div class="swiper-button-prev--mobile"></div>
+        </div>
+
+        <div class="filmes__header__posters--mobile__button-container">
+            <div class="filmes__header__posters--mobile__button-container__content">
+                <div class="swiper-button-prev--mobile">
+                    <img src="<?php echo get_template_directory_uri() . "/assets/min-images/icons/arrowRight.svg"; ?>" />
+                </div>
+                <div class="swiper-button-next--mobile">
+                    <img src="<?php echo get_template_directory_uri() . "/assets/min-images/icons/arrowRight.svg"; ?>" />
+                </div>
+            </div>
         </div>
 
         <script>
