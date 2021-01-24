@@ -56,18 +56,6 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
     ////////////
 -->
 
-<?php 
-
-if (array_key_exists('HTTP_ORIGIN', $_SERVER)) {
-    $origin = $_SERVER['HTTP_ORIGIN'];
-} else if (array_key_exists('HTTP_REFERER', $_SERVER)) {
-    $origin = $_SERVER['HTTP_REFERER'];
-} else {
-    $origin = $_SERVER['REMOTE_ADDR'];
-}
-
-?>
-
 <?php $counter = 1; while ($header_filmes->have_posts()) : $header_filmes->the_post(); ?>
 
 <!-- Início do modal -->
