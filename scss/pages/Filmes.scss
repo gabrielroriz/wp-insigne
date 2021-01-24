@@ -565,6 +565,7 @@
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center center;
+      
 
       @include tablet-768-and-below {
         width: 100%;
@@ -610,6 +611,7 @@
         font-weight: 300;
         margin-bottom: 10px;
         margin-top: 12px;
+        
       }
 
       h4 {
@@ -745,6 +747,7 @@
         margin-left: 0px; 
         margin-bottom: 40px;
         
+        
       }
     }
 
@@ -788,6 +791,10 @@
       background-repeat: no-repeat;
       background-size: cover;
       cursor: pointer;
+
+      @include mobile-411-and-below{
+        margin-bottom: 12px;
+      }
 
       &:hover {
         box-shadow: 0px 0px 73px #000000a1;
@@ -840,7 +847,7 @@
         margin-bottom: 40px;
 
         @include tablet-768-and-below {
-          display: block;
+          display: block !important;
         }
       }
 
@@ -864,7 +871,7 @@
       margin-top: 100px;
 
       @include tablet-768-and-below{
-        margin-top: 0px;
+        margin-top: 50px;
       }
     }
   }
@@ -876,12 +883,21 @@
 
     display: grid;
     flex-direction: column;
+    justify-content: center;
+
+    // @include tablet-768-and-below{
+    //   width: 80%;
+    // }
 
     &__head {
       width: 100%;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+
+      @include mobile-411-and-below{
+        width: 80vw;
+      }
 
       h3 {
         text-transform: uppercase;
@@ -914,6 +930,9 @@
       @include tablet-768-and-below {
         overflow-x: scroll;
         grid-template-columns: 1fr;
+        
+        width: 80vw;
+        
       }
 
       &::-webkit-scrollbar {

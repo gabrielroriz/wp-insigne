@@ -520,23 +520,30 @@ if (array_key_exists('HTTP_ORIGIN', $_SERVER)) {
                             </div>
                         </div>
                         <!-- Fim do modal -->
-                    <div onclick="openModal('modal-filmes-<?php the_ID(); ?>')" 
-                        class="filmes__tab__poster<?php echo ($counter >= 12 ? " filmes__tab__poster__more" : ""); ?>" 
-                        style="background-image: url('<?php echo get_post_meta(get_the_ID(), "FILMES_IMAGEM")[0]; ?>');"
-                    >
-           
+
                     
-                        <div class="filmes__tab__poster__grid">
-                            <div class="filmes__tab__poster__text">
-                                <span>
-                                    <?php echo the_title(); ?>
-                                </span>
+
+                    <div class="<?php echo ($counter >= 12 ? " filmes__tab__poster__more" : ""); ?>">
+                        <div onclick="openModal('modal-filmes-<?php the_ID(); ?>')" 
+                            class="filmes__tab__poster<?php echo ($counter >= 12 ? " filmes__tab__poster__more" : ""); ?>" 
+                            style="background-image: url('<?php echo get_post_meta(get_the_ID(), "FILMES_IMAGEM")[0]; ?>');"
+                        >
+            
+                        
+                            <div class="filmes__tab__poster__grid">
+                                <div class="filmes__tab__poster__text">
+                                    <span>
+                                        <?php echo the_title(); ?>
+                                    </span>
+                                </div>
                             </div>
                         </div>
+
+                        <div class="filmes__tab__poster__mobiletext">
+                            <?php echo the_title(); ?>
+                        </div>
                     </div>
-                    <div class="filmes__tab__poster__mobiletext<?php echo ($counter >= 12 ? " filmes__tab__poster__more" : ""); ?>">
-                        <?php echo the_title(); ?>
-                    </div>
+                    
                 <?php $counter++; endwhile; ?>
             </div>
 
@@ -585,7 +592,7 @@ if (array_key_exists('HTTP_ORIGIN', $_SERVER)) {
                 ?>
 
                 <?php foreach ($categorias as $categoria) : ?>
-
+                      
                     <?php
                     $filmes = new WP_Query([
                         "post_type" => "filmes",
@@ -603,7 +610,7 @@ if (array_key_exists('HTTP_ORIGIN', $_SERVER)) {
                     <div class="filmes__row">
                         <div class="filmes__row__head">
                             <h3><?php echo $categoria->name; ?></h3>
-                            <h4><a href="<?php echo "/filmes-category/" . $categoria->slug . "/"; ?>">Veja todos</a></h4>
+                            <h4><a href="<?php echo get_category_link($categoria)?>">Veja todos</a></h4>
                         </div>
                         <div class="filmes__row__grid">
                             <?php while ($filmes->have_posts()) : $filmes->the_post(); ?>

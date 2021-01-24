@@ -324,24 +324,16 @@
 <script>
     function todosFilmesOnClick(event) {
         event.preventDefault();
-
-        console.log("clicou carai");
-
         document.getElementById("tab_tipos").style.display = "none";
-        
         document.getElementById("tab_todos").style.removeProperty("display");
-
         document.getElementById("tab_tipo_button").classList.remove("filmes__tabs__selected");
         document.getElementById("tab_todos_button").classList.add("filmes__tabs__selected");
     }
 
     function tipoDeTrabalhoOnClick(event) {
         event.preventDefault();
-
         document.getElementById("tab_todos").style.display = "none";
-
         document.getElementById("tab_tipos").style.removeProperty("display");            
-
         document.getElementById("tab_todos_button").classList.remove("filmes__tabs__selected");
         document.getElementById("tab_tipo_button").classList.add("filmes__tabs__selected");
     }
@@ -363,19 +355,12 @@
         </a>
     </div>
     <div class="filmes__tab" id="tab_todos">
+        
         <div id="tab_todos__wrapper">
-            <?php
-
-
-                $counter = 0;
-            ?>
+            <?php $counter = 0; ?>
             <?php if ( have_posts() ) : ?>
             <?php while (have_posts()) : the_post(); ?>
-                <div onclick="openModal('modal-filmes-<?php the_ID(); ?>')" 
-                    class="filmes__tab__poster<?php echo ($counter >= 12 ? " filmes__tab__poster__more" : ""); ?>" 
-                    style="background-image: url('<?php echo get_post_meta(get_the_ID(), "FILMES_IMAGEM")[0]; ?>');"
-                >
-                    
+
                     <!-- Início do modal -->
                     <div id="modal-filmes-<?php the_ID(); ?>" class="modal">
                         <div class="modal-content">
@@ -395,7 +380,12 @@
                         </div>
                     </div>
                     <!-- Fim do modal -->
-                
+                    
+                <div onclick="openModal('modal-filmes-<?php the_ID(); ?>')" 
+                    class="filmes__tab__poster<?php echo ($counter >= 12 ? " filmes__tab__poster__more" : ""); ?>" 
+                    style="background-image: url('<?php echo get_post_meta(get_the_ID(), "FILMES_IMAGEM")[0]; ?>');"
+                >
+                    
                     <div class="filmes__tab__poster__grid">
                         <div class="filmes__tab__poster__text">
                             <span>
@@ -404,7 +394,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="filmes__tab__poster__mobiletext<?php echo ($counter >= 12 ? " filmes__tab__poster__more" : ""); ?>">
+
+                <div class="filmes__tab__poster__mobiletext">
                     <?php echo the_title(); ?>
                 </div>
             <?php $counter++; endwhile; endif; ?>
