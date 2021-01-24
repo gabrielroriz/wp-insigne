@@ -1,13 +1,39 @@
 @import "../utils/Mixins.scss";
 @import "../utils/Vars.scss";
 
-#tab_todos {
+#tab_tipos{
+  width: 80%;
+
+  @include desktop-1024-and-below{
+    width: 100%;
+  }
+
+
+  .filmes__row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.filmes__tab__wrapper{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#tab_todos{
+  width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
+
   &__wrapper {
+    width: 100%;
     opacity: 1;
     height: auto;
 
@@ -16,40 +42,29 @@
     column-gap: 16px;
     row-gap: 16px;
 
-    @include desktop-below-1920 {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
+    // @include desktop-below-1920 {
+    //   grid-template-columns: 1fr 1fr 1fr;
+    // }
 
-    @include desktop-1366-and-below {
-      grid-template-columns: 1fr 1fr;
-    }
+    // @include desktop-1366-and-below {
+    //   grid-template-columns: 1fr 1fr;
+    // }
 
-    @include tablet-768-and-below {
+    @include desktop-1024-and-below {
       grid-template-columns: 1fr;
       padding: 0 30px;
     }
   }
 }
 
-#tab_tipos {
-  // opacity: 0;
-  // height: 0;
-}
+// #tab_tipos {
+//   width: 80%;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+// }
 
-.slider-button-desktop {
-  position: absolute;
-  top: 30%;
-  right: 100px;
-  z-index: 4;
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  @include tablet-768-and-below {
-    display: none;
-  }
-}
 
 /* The Modal (background) */
 .modal {
@@ -185,15 +200,17 @@
     background-color: $light-purple;
     height: 1200px;
     align-items: flex-start;
-    overflow: hidden;
+    // overflow: hidden;
 
     @include desktop-1440-and-below {
       background-image: url("./assets/min-images/filmes/img-header-filmes-desktop-1440.svg");
+      height: 1040px;
     }
 
     @include desktop-1366-and-below {
       background-image: url("./assets/min-images/filmes/img-header-filmes-desktop-1366.svg");
-      height: auto;
+      // height: auto;
+      // // min-height: 100vh;
       grid-template-columns: 2fr 8fr;
       padding-bottom: 100px;
     }
@@ -201,6 +218,7 @@
     @include desktop-1024-and-below {
       background-image: url("./assets/min-images/filmes/img-header-filme-mobile.svg");
       grid-template-columns: 1fr;
+      min-height: none;
       padding-bottom: 30px;
     }
 
@@ -241,7 +259,12 @@
         text-transform: uppercase;
         color: $purple;
 
-        @include tablet-768-and-below {
+        @include desktop-1440-and-below {
+          font-size: 96px;
+         
+        }
+
+        @include tablet-768-and-below{
           font-size: 66px;
           width: 137px;
         }
@@ -253,7 +276,7 @@
         margin-left: 10px;
         color: $purple;
 
-        @include tablet-768-and-below {
+        @include desktop-1440-and-below {
           font-size: 18px;
           line-height: 21px;
           font-weight: 500;
@@ -272,7 +295,7 @@
 
       display: flex;
       flex-direction: row;
-      overflow: hidden;
+      
 
       @include desktop-1366-and-below {
         padding-top: 0;
@@ -283,11 +306,20 @@
       }
 
       .swiper-wrapper {
-        width: 100%;
+        width: 40%;
         height: 100%;
+   
 
         display: flex;
         flex-direction: row;
+
+        @include desktop-1440-and-below{
+          align-items: flex-start;
+        }
+
+        @include desktop-1366-and-below{
+          align-items: center;
+        } 
       }
     }
   }
@@ -309,6 +341,11 @@
       cursor: pointer;
     }
 
+    @include desktop-1440-and-below{
+      width: 247px;
+      height: 499px;
+    }
+
     @include tablet-768-and-below {
       width: 100%;
       height: 410px;
@@ -318,13 +355,14 @@
     }
 
     &__number {
-      width: 292px;
+      width: 80%;
       border-bottom: 8px solid white;
-      font-size: 125px;
-      line-height: 143px;
+      font-size: 75px;
+      line-height: 83px;
       letter-spacing: 2.5px;
       font-weight: 300;
       margin-bottom: 10px;
+      
       color: white;
 
       @include tablet-768-and-below {
@@ -355,14 +393,7 @@
     background-color: $light-purple;
 
     @include desktop-1440-and-below {
-      height: 1300px;
-    }
-
-    @include desktop-1366-and-below {
-      height: 1000px;
-    }
-
-    @include desktop-1024-and-below {
+      height: 1144px;
     }
 
     @include tablet-768-and-below {
@@ -372,23 +403,22 @@
     &__mosaico {
       width: 100%;
       margin: 0 auto;
+      margin-left: 100px;
 
       @include desktop-below-1920 {
         transform: scale(0.8);
-        margin-left: -100px;
+        margin-left: 100px;
         margin-top: 250px;
       }
 
       @include desktop-1440-and-below {
         transform: scale(0.7);
-        margin-left: -200px;
-        margin-top: 250px;
+        margin-left: -100px;
+        margin-top: -100px;        
       }
 
       @include desktop-1366-and-below {
-        transform: scale(0.5);
-        margin-left: -200px;
-        margin-top: 250px;
+        margin-left: -160px; 
       }
 
       @include desktop-1024-and-below {
@@ -409,6 +439,12 @@
       background-repeat: no-repeat;
       background-position: center center;
 
+      @include desktop-1440-and-below{
+        margin-top: -150px;
+        width: 202px;
+        height: 236px;
+      }
+
       @include tablet-768-and-below {
         width: 100%;
         height: 300px;
@@ -426,13 +462,17 @@
     }
 
     &__text {
+    
       font-weight: 700;
-      color: $cream;
-      font-size: 28px;
+      color: #EFDBB2;
+      font-size: 21px;
       text-transform: uppercase;
       position: absolute;
-      top: 220px;
-      left: 190px;
+      bottom: 90px;
+      right: -30px;
+  
+
+      
 
       @include tablet-768-and-below {
         position: relative;
@@ -687,6 +727,10 @@
   &__tabs {
     @extend %section-attr;
     position: relative;
+
+    @include desktop-1440-and-below{
+      margin-top: -100px;
+    }
     
 
     &__title {
@@ -696,7 +740,14 @@
       top: 0;
       left: 130px;
       background: url("./assets/min-images/filmes/02.svg");
+      background-size: contain;
       background-repeat: no-repeat;
+      background-position: center center;
+
+      @include desktop-1440-and-below{
+        width: 272px;
+        height: 256px;
+      }
 
       @include tablet-768-and-below {
         width: 80%;
@@ -717,12 +768,19 @@
 
     &__text {
       position: absolute;
-      top: 230px;
-      left: 200px;
-      font-size: 28px;
+      top: 220px;
+      left: 182px;
+      font-size: 24px;
       color: $cream;
       font-weight: 700;
       text-transform: uppercase;
+
+      @include desktop-1440-and-below{
+        top: auto;
+        left: auto;
+        bottom: 60px;
+        right: -30px;
+      }
 
       @include tablet-768-and-below {
         position: relative;
@@ -732,10 +790,9 @@
     }
 
     &__wrapper {
-      width: 100%;
-      max-width: 1600px;
+      width: 80%;
 
-      margin-top: 400px;
+      margin-top: 300px;
       margin-bottom: 100px;
 
       border-bottom: 1px solid $cream;
@@ -795,6 +852,7 @@
       width: 100%;
       background-repeat: no-repeat;
       background-size: cover;
+      background-position: center;
       cursor: pointer;
 
       @include mobile-411-and-below{
@@ -807,12 +865,24 @@
 
       &__grid {
         width: 100%;
-        height: 520px;
+        height: 521px;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
         opacity: 0;
         transition: opacity 0.5s;
+          
+        @include desktop-1440-and-below{
+          height: 368px;
+        }
+
+        @include desktop-1366-and-below{
+          height: 346px;
+        }
+
+        @include desktop-1024-and-below{
+          width: 100%;
+        }
 
         &:hover {
           opacity: 1;
@@ -928,14 +998,9 @@
       row-gap: 16px;
       flex-wrap: nowrap;
 
-      @include desktop-below-1920 {
-        grid-template-columns: 1fr 1fr 1fr;
-      }
-
       @include tablet-768-and-below {
         overflow-x: scroll;
         grid-template-columns: 1fr;
-        
         width: 80vw;
         
       }
@@ -1104,7 +1169,7 @@
   }
 }
 
-.swiper-container--mobile {
+#swiper-container--mobile {
   // width: 100%;
   // height: 100%;
 
@@ -1165,4 +1230,57 @@
 .swiper-button-prev--mobile {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
+}
+
+
+
+.slider-button-desktop {
+  position: absolute;
+  top: 40%;
+  left: 940px;
+  z-index: 4;
+
+  &:hover {
+    cursor: pointer;
+  }
+  
+  &:active,
+  &:focus {
+    border: none;
+    outline: none;
+  }
+
+  @include desktop-1440-and-below{
+    left: 880px;
+  }
+
+  @include tablet-768-and-below {
+    display: none;
+  }
+  
+
+  img{
+    width: 100px;
+    object-fit: contain;
+
+    @include desktop-1440-and-below{
+      width: 80px;
+    }
+  }
+
+  &.swiper-button-disabled{
+    opacity: 0.4;
+  }
+
+  &.swiper-button-prev{
+    position: absolute;
+    top: 42%;
+    left: 88px;
+    z-index: 4;
+
+    img{
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+    }
+  }
 }

@@ -101,6 +101,10 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
                 <img src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/img-seta.svg"; ?>" />
             </div>
 
+            <div class="slider-button-desktop swiper-button-prev">
+                <img src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/img-seta.svg"; ?>" />
+            </div>
+
             <div class="swiper-wrapper">
                 <?php $counter = 1; while ($header_filmes->have_posts()) : $header_filmes->the_post(); ?>
                     <div 

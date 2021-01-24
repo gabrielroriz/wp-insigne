@@ -56,6 +56,8 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
     ////////////
 -->
 
+
+
 <?php $counter = 1; while ($header_filmes->have_posts()) : $header_filmes->the_post(); ?>
 
 <!-- Início do modal -->
@@ -95,12 +97,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
             </h4>
         </div>
 
-        <div class="filmes__header__posters swiper-container swiper-container--desktop">
-
-            <div class="slider-button-desktop swiper-button-next">
-                <img src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/img-seta.svg"; ?>" />
-            </div>
-
+        <div class="filmes__header__posters swiper-container" id="swiper-container--desktop">
             <div class="swiper-wrapper">
                 <?php $counter = 1; while ($header_filmes->have_posts()) : $header_filmes->the_post(); ?>
                     <div 
@@ -108,8 +105,6 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
                         style="background-image: url('<?php echo get_post_meta(get_the_ID(), "FILMES_IMAGEM")[0]; ?>');" 
                         onclick="openModal('modal-highlight-<?php echo $counter; ?>')"
                     >
-                    
-
                         <div class="filmes__highlight__number">
                             <?php echo "0".$counter; ?>
                         </div>
@@ -119,15 +114,24 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
                     </div>
                 <?php $counter++; endwhile; ?>
             </div>
+
+            
+            <div class="slider-button-desktop swiper-button-next">
+                <img src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/img-seta.svg"; ?>" />
+            </div>
+
+            <div class="slider-button-desktop swiper-button-prev">
+                <img src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/img-seta.svg"; ?>" />
+            </div>
         </div>
 
         <script>
-            var mySwiper = new Swiper('.swiper-container--desktop', {
+            var mySwiper = new Swiper('#swiper-container--desktop', {
             direction: 'horizontal',
-            slidesPerView: "auto",
+            slidesPerView: 3,
             spaceBetweem: 20,
             updateOnWindowResize: true,
-            loop: false,
+            // loop: false,
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
@@ -136,7 +140,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
         </script>
 
     
-    <div class="filmes__header__posters--mobile swiper-container swiper-container--mobile">
+    <div class="filmes__header__posters--mobile swiper-container" id="swiper-container--mobile">
     
             <div class="swiper-wrapper swiper-wrapper--mobile">
 
@@ -173,7 +177,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
         </div>
 
         <script>
-            var swiper = new Swiper('.swiper-container--mobile', {
+            var swiper = new Swiper('#swiper-container--mobile', {
             slidesPerView: 1,
             direction: 'horizontal',
             navigation: {
@@ -609,12 +613,13 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
                                             <img class="close" src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" id="modal-filmescat-<?php the_ID(); ?>-close" />
                                             
                                             <iframe 
-                                        src="https://www.youtube.com/embed/<?php echo get_post_meta(get_the_id(), "FILMES_EMBEDDED")[0]; ?>?enablejsapi=1&html5=1"
-                                        frameborder="0"
-                                        id="modal-filmescat-<?php the_ID(); ?>-iframe"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                        allowfullscreen>
-                            </iframe>
+                                                src="https://www.youtube.com/embed/<?php echo get_post_meta(get_the_id(), "FILMES_EMBEDDED")[0]; ?>?enablejsapi=1&html5=1"
+                                                frameborder="0"
+                                                id="modal-filmescat-<?php the_ID(); ?>-iframe"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                                allowfullscreen>
+                                            </iframe>
+                                            
                                             </div>
                                             <div class="modal-content__texto">
                                                 <h2><?php the_title(); ?> - </h2><h4><?php echo get_post_meta(get_the_id(), "FILMES_SUBTITULO")[0]; ?></h4> 

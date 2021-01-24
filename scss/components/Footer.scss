@@ -75,7 +75,7 @@
     align-self: center;
     padding-bottom: 50px;
 
-    @include tablet-landscape-and-below {
+    @include desktop-1024-and-below {
       width: 100%;
       flex-direction: column;
       justify-content: center;
@@ -89,7 +89,7 @@
       display: flex;
       flex-direction: row;
 
-      @include tablet-landscape-and-below {
+      @include desktop-1024-and-below {
         margin-top: 24px;
 
         flex-direction: column;
@@ -101,7 +101,7 @@
     &__list {
       margin-right: 80px;
 
-      @include tablet-landscape-and-below {
+      @include desktop-1024-and-below {
         width: 100%;
         margin-right: 0px;
         margin-top: 40px;
@@ -111,7 +111,7 @@
       &:last-child {
         margin-right: 20px;
 
-        @include tablet-landscape-and-below {
+        @include desktop-1024-and-below {
           margin-right: 0px;
         }
       }
@@ -157,7 +157,7 @@
 
     color: #ffb81c;
 
-    @include desktop-and-below {
+    @include desktop-1024-and-below {
       width: 88%;
     }
 
@@ -165,7 +165,7 @@
       margin-top: 50px;
       font-weight: 500;
 
-      @include desktop-and-below {
+      @include desktop-1024-and-below {
         display: flex;
         flex-direction: column;
       }
@@ -176,7 +176,7 @@
         margin-right: 18px;
         font-weight: 500;
 
-        @include desktop-and-below {
+        @include desktop-1024-and-below {
           margin-top: 18px;
           margin-right: 0px;
         }

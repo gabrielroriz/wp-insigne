@@ -83,6 +83,7 @@
     }
   }
 
+
   &__title {
     font-size: 90px;
     position: absolute;
@@ -94,6 +95,10 @@
     font-weight: 700;
     text-shadow: 0px 3px 12px #0000004d;
     z-index: 2;
+
+    @include desktop-1366-and-below{
+      bottom: 0px;
+    }
 
     @include tablet-768-and-below {
       margin-bottom: 0px;
@@ -130,6 +135,7 @@
       }
     }
   }
+
 }
 
 .home__projetos {
@@ -218,7 +224,7 @@
   background-color: #2e1a47;
 
   &__wrapper {
-    margin-top: 200px;
+    margin-top: 50px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -235,6 +241,10 @@
 
     position: relative;
 
+    @include desktop-1440-and-below{
+      margin-top: -70px;
+    }
+
     @media only screen and (max-width: 1200px) {
       background-image: none;
       display: flex;
@@ -242,6 +252,7 @@
       min-height: 0px;
       padding: 0px;
       margin-bottom: 100px;
+      margin-top:200px;
     }
 
     @include mobile-411-and-below {
@@ -301,7 +312,7 @@
 
     span {
       text-align: left;
-      font-size: 47px;
+      font-size: 37px;
 
       @media only screen and (max-width: 1200px) {
         font-size: 15px;
@@ -455,14 +466,16 @@
     display: flex;
     flex-direction: row;
     max-width: 1300px;
+    margin-top: -50px;
 
     @include desktop-1920-and-below{
       width: 80%;
-
+      margin-top: -150px;
     }
 
     @media only screen and (max-width: 1200px) {
       min-height: 450px;
+      margin-top: 0px;
       padding: 50px 10px;
       display: flex;
       flex-direction: column;
@@ -514,8 +527,8 @@
 
     font-weight: 700;
 
-    @include desktop-1366-and-below{
-      font-size: 46px;
+    @include desktop-1440-and-below{
+      font-size: 56px;
     }
 
     @media only screen and (max-width: 1200px) {
