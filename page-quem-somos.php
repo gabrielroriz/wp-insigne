@@ -57,7 +57,7 @@
                 <p><b>Somos Insigne.</b></p>
         </div>
     </div>
-
+    <img class="sobre__mobile-content__second__diagonal" src="<?php echo get_template_directory_uri() . "/assets/min-images/quemsomos/diagonalSolucoes.png"; ?>" alt="">
 
     <div class="sobre__beliefs">
         <div class="sobre__beliefs__nisto">

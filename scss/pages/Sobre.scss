@@ -5,7 +5,7 @@ $purple: #2e1a47;
 $dark-purple: #1e112e;
 $gold: #ffb81c;
 $cream: #efdbb2;
-$padding-left-mobile: 20px;
+$padding-left-mobile: 30px;
 
 .sobre {
   &__navbar {
@@ -35,7 +35,7 @@ $padding-left-mobile: 20px;
       margin-bottom: 0px;
       height: auto;
 
-      img{
+      img {
         z-index: 2;
       }
     }
@@ -52,7 +52,7 @@ $padding-left-mobile: 20px;
 
     display: none;
 
-    background-color: #1E112E;
+    background-color: #1e112e;
 
     @include desktop-extra-1300-and-below {
       display: flex;
@@ -74,6 +74,13 @@ $padding-left-mobile: 20px;
       padding-top: 250px;
       font-size: 32px;
 
+      p {
+        &:nth-child(1) {
+          text-transform: uppercase;
+          letter-spacing: 6.26px;
+        }
+      }
+
       @include tablet-768-and-below {
         padding-top: 160px;
         padding-right: 220px;
@@ -88,16 +95,16 @@ $padding-left-mobile: 20px;
         min-height: 480px;
       }
 
-
       @media only screen and (max-width: 500px) {
         padding-right: 78px;
         font-size: 16px;
       }
 
       @include mobile-411-and-below {
+        width: 100%;
         padding: 20px;
-        padding-top: 65px;
-        padding-right: 85px;
+        padding-top: 85px;
+        padding-right: 185px;
         min-height: 450px;
         font-size: 16px;
       }
@@ -111,26 +118,37 @@ $padding-left-mobile: 20px;
       }
     }
 
-    &__second{
-        color: $gold;
-        padding: 30px;
-        font-size: 40px;
+    &__second {
+      color: $gold;
+      padding: 30px;
+      font-size: 40px;
+      position: relative;
 
-        @include tablet-768-and-below {
-        
-          }
-    
-          @media only screen and (max-width: 600px) {
-            font-size: 20px;
-          }
-    
-          @include mobile-411-and-below {
-            font-size: 20px;
-          }
-    
-          @media only screen and (max-width: 360px) {
+      @include tablet-768-and-below {
+      }
 
-          }
+      @media only screen and (max-width: 600px) {
+        font-size: 20px;
+      }
+
+      @include mobile-411-and-below {
+        padding: 0px 30px;
+        font-size: 20px;
+        letter-spacing: 0.4px;
+        line-height: 1.8rem;
+      }
+
+      @media only screen and (max-width: 360px) {
+      }
+
+      &__diagonal{
+        display: none;
+        width: 100%;
+        object-fit: contain;
+        @include desktop-extra-1300-and-below {
+          display: block;
+        }
+      }
     }
   }
 
@@ -469,14 +487,15 @@ $padding-left-mobile: 20px;
 
       &__text {
         padding-left: $padding-left-mobile;
-        color: #EFDBB2;
+        color: #efdbb2;
         font-size: 18px;
         line-height: 32px;
         letter-spacing: 0;
         font-weight: 300;
+        padding-right: 50px;
 
         &__b2 {
-          padding-left: 0;
+          padding-left: 50px;
           padding-right: $padding-left-mobile;
           text-align: right;
           margin: 0;
@@ -529,7 +548,7 @@ $padding-left-mobile: 20px;
     }
 
     @include desktop-extra-1300-and-below {
-        margin-top: 0px;
+      margin-top: 0px;
       background-color: #231436;
       background-image: url("./assets/min-images/quemsomos/crencasmobile.svg");
       background-size: contain;
@@ -540,6 +559,13 @@ $padding-left-mobile: 20px;
       padding-bottom: 200px;
 
       height: auto;
+      padding-bottom: 200px;
+      margin-top: -200px;
+      grid-gap: 30px;
+    }
+
+    @include mobile-411-and-below{
+      padding-bottom: 120px;
     }
 
     &__item {
@@ -586,6 +612,8 @@ $padding-left-mobile: 20px;
           padding-left: $padding-left-mobile;
           line-height: 32px;
           border-bottom: 0;
+          font-size: 21px;
+          padding-right: 30px;
         }
       }
     }
@@ -614,7 +642,7 @@ $padding-left-mobile: 20px;
       }
 
       @include desktop-1366-and-below {
-        padding: 20px 0;
+        padding: 80px 20px;
         flex-direction: column;
       }
     }
