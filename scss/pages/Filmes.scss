@@ -687,6 +687,7 @@
   &__tabs {
     @extend %section-attr;
     position: relative;
+    
 
     &__title {
       width: 302px;
@@ -698,15 +699,19 @@
       background-repeat: no-repeat;
 
       @include tablet-768-and-below {
-        width: 90%;
+        width: 80%;
         position: relative;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        background-size: 111px 105px;
+        background-size: 111px 118px;
         background-position: bottom left;
         height: 176px;
         left: 0;
+      }
+
+      @include mobile-411-and-below{
+        height: 100px;
       }
     }
 
@@ -722,7 +727,7 @@
       @include tablet-768-and-below {
         position: relative;
         top: 30px;
-        left: 0;
+        left: 0px;
       }
     }
 

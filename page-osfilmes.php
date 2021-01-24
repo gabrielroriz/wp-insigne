@@ -708,8 +708,6 @@ if (array_key_exists('HTTP_ORIGIN', $_SERVER)) {
             const modal_id = modal.id;
             players[modal.id] = new YT.Player(modal.id + "-iframe", { events: { 'onReady': onPlayerReady }});
         }
-
-        console.log(players);
     }
 </script>
 
