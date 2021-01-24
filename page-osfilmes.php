@@ -1,4 +1,39 @@
     <?php get_header() ?>
+    
+<script>
+
+// global variable for the player
+var players = {}
+
+function onPlayerReady(event) {
+    var buttons = document.getElementsByClassName("close");
+
+    for (var i = 0; i < buttons.length; i++) {
+        const button_item = buttons.item(i);
+
+        const close_id = button_item.id;
+        const modal_id = close_id.replace('-close','');
+
+        // Clique no bbotão.
+        button_item.addEventListener('click', function () {
+            players[modal_id].pauseVideo();
+        });
+
+        // Clique no modal.
+        document.getElementById(modal_id).addEventListener('click', function () {
+            players[modal_id].pauseVideo();
+        });
+    }
+}
+
+// Inject YouTube API script
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/player_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+</script>
+    
 
     <?php
         $header_filmes = new WP_Query([
@@ -20,13 +55,34 @@
     // MODAIS //
     ////////////
 -->
+
+<?php 
+
+if (array_key_exists('HTTP_ORIGIN', $_SERVER)) {
+    $origin = $_SERVER['HTTP_ORIGIN'];
+} else if (array_key_exists('HTTP_REFERER', $_SERVER)) {
+    $origin = $_SERVER['HTTP_REFERER'];
+} else {
+    $origin = $_SERVER['REMOTE_ADDR'];
+}
+
+?>
+
 <?php $counter = 1; while ($header_filmes->have_posts()) : $header_filmes->the_post(); ?>
+
 <!-- Início do modal -->
 <div id="modal-highlight-<?php echo $counter; ?>" class="modal">
     <div class="modal-content">
         <div class="modal-content__video">
             <img src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" class="close" id="modal-highlight-<?php echo $counter; ?>-close"/>
-            <?php echo get_post_meta(get_the_ID(), "FILMES_EMBEDDED")[0]; ?>
+        
+                <iframe 
+                    src="https://www.youtube.com/embed/<?php echo get_post_meta(get_the_ID(), "FILMES_EMBEDDED")[0]; ?>?enablejsapi=1&html5=1" 
+                    frameborder="0" 
+                    id="modal-highlight-<?php echo $counter; ?>-iframe"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
         </div>
         <div class="modal-content__texto">
             <h2><?php the_title(); ?> - </h2><h4><?php echo get_post_meta(get_the_ID(), "FILMES_SUBTITULO")[0]; ?></h4> 
@@ -169,7 +225,13 @@
                         
                         <div class="modal-content__video">
                             <img class="close" src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" id="modal-destaques-0-close" />
-                            <?php echo get_post_meta($destaques_filmes[0]->ID, "FILMES_EMBEDDED")[0]; ?>
+                            
+                            <iframe 
+                                src="https://www.youtube.com/embed/<?php echo get_post_meta($destaques_filmes[0]->ID, "FILMES_EMBEDDED")[0]; ?>?enablejsapi=1&html5=1"
+                                frameborder="0" 
+                                id="modal-destaques-0-iframe"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen></iframe>
                         </div>
                         <div class="modal-content__texto">
                             <h2><?php echo $destaques_filmes[0]->post_title; ?> - </h2><h4><?php echo get_post_meta($destaques_filmes[0]->ID, "FILMES_SUBTITULO")[0]; ?></h4> 
@@ -195,7 +257,14 @@
                     <div class="modal-content">
                         <div class="modal-content__video">
                             <img class="close" src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" id="modal-destaques-1-close" />
-                        <?php echo get_post_meta($destaques_filmes[1]->ID, "FILMES_EMBEDDED")[0]; ?>
+                            <iframe 
+                                        src="https://www.youtube.com/embed/<?php echo get_post_meta($destaques_filmes[1]->ID, "FILMES_EMBEDDED")[0]; ?>?enablejsapi=1&html5=1"
+                                        frameborder="0" 
+                                        id="modal-destaques-1-iframe"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen>
+                    </iframe>
+                        
                         </div>
                         <div class="modal-content__texto">
                             <h2><?php echo $destaques_filmes[1]->post_title; ?> - </h2><h4><?php echo get_post_meta($destaques_filmes[1]->ID, "FILMES_SUBTITULO")[0]; ?></h4> 
@@ -222,7 +291,13 @@
                         
                         <div class="modal-content__video">
                         <img class="close" src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" id="modal-destaques-2-close"/>
-                        <?php echo get_post_meta($destaques_filmes[2]->ID, "FILMES_EMBEDDED")[0]; ?>
+                        
+                        <iframe 
+                                        src="https://www.youtube.com/embed/<?php echo get_post_meta($destaques_filmes[2]->ID, "FILMES_EMBEDDED")[0]; ?>?enablejsapi=1&html5=1"
+                                        frameborder="0" 
+                                        id="modal-destaques-2-iframe"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen></iframe>
                         </div>
                         <div class="modal-content__texto">
                             <h2><?php echo $destaques_filmes[2]->post_title; ?> - </h2><h4><?php echo get_post_meta($destaques_filmes[2]->ID, "FILMES_SUBTITULO")[0]; ?></h4> 
@@ -250,7 +325,13 @@
                       
                         <div class="modal-content__video">
                         <img class="close" src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" id="modal-destaques-3-close" />
-                        <?php echo get_post_meta($destaques_filmes[3]->ID, "FILMES_EMBEDDED")[0]; ?>
+                        
+                        <iframe 
+                                        src="https://www.youtube.com/embed/<?php echo get_post_meta($destaques_filmes[3]->ID, "FILMES_EMBEDDED")[0]; ?>?enablejsapi=1&html5=1"
+                                        frameborder="0" 
+                                        id="modal-destaques-3-iframe"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen></iframe>
                         </div>
                         <div class="modal-content__texto">
                             <h2><?php echo $destaques_filmes[3]->post_title; ?> - </h2><h4><?php echo get_post_meta($destaques_filmes[3]->ID, "FILMES_SUBTITULO")[0]; ?></h4> 
@@ -277,7 +358,15 @@
                     <div class="modal-content">
                         <div class="modal-content__video">
                         <img class="close" src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" id="modal-destaques-4-close" />
-                        <?php echo get_post_meta($destaques_filmes[4]->ID, "FILMES_EMBEDDED")[0]; ?>
+                        <iframe 
+                            src="https://www.youtube.com/embed/<?php echo get_post_meta($destaques_filmes[4]->ID, "FILMES_EMBEDDED")[0]; ?>?enablejsapi=1&html5=1" 
+                            frameborder="0" 
+                            id="modal-destaques-4-iframe"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+
+                        </iframe>
+                        
                         </div>
                         <div class="modal-content__texto">
                             <h2><?php echo $destaques_filmes[4]->post_title; ?> - </h2><h4><?php echo get_post_meta($destaques_filmes[4]->ID, "FILMES_SUBTITULO")[0]; ?></h4> 
@@ -330,7 +419,12 @@
                       
                         <div class="modal-content__video">
                             <img class="close" src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" id="modal-mobile-destaques-<?php echo $counter; ?>-close" />
-                            <?php echo get_post_meta(get_the_ID(), "FILMES_EMBEDDED")[0]; ?>
+                            <iframe 
+                                src="https://www.youtube.com/embed/<?php echo get_post_meta(get_the_ID(), "FILMES_EMBEDDED")[0]; ?>?enablejsapi=1&html5=1" 
+                                frameborder="0" 
+                                id="modal-mobile-destaques-<?php echo $counter; ?>-iframe"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen></iframe>
                         </div>
                         <div class="modal-content__texto">
                             <h2><?php echo the_title(); ?> - </h2><h4><?php echo get_post_meta(get_the_ID(), "FILMES_SUBTITULO")[0]; ?></h4> 
@@ -408,8 +502,14 @@
                         <div id="modal-filmes-<?php the_ID(); ?>" class="modal">
                             <div class="modal-content">                             
                                 <div class="modal-content__video">
-                                    <img class="close" src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>"  id="modal-filmes-<?php the_ID(); ?>-close" />
-                                    <?php echo get_post_meta(get_the_id(), "FILMES_EMBEDDED")[0]; ?>
+                                <img class="close" src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" id="modal-filmes-<?php the_ID(); ?>-close" />
+                                    <iframe 
+                                        src="https://www.youtube.com/embed/<?php echo get_post_meta(get_the_id(), "FILMES_EMBEDDED")[0]; ?>?enablejsapi=1&html5=1"
+                                        frameborder="0" 
+                                        id="modal-filmes-<?php the_ID(); ?>-iframe"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen>
+                                    </iframe>
                                 </div>
                                 <div class="modal-content__texto">
                                     <h2><?php the_title(); ?> - </h2><h4><?php echo get_post_meta(get_the_id(), "FILMES_SUBTITULO")[0]; ?></h4> 
@@ -512,7 +612,14 @@
                                         <div class="modal-content">
                                             <div class="modal-content__video">
                                             <img class="close" src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/close-icon.svg"; ?>" id="modal-filmescat-<?php the_ID(); ?>-close" />
-                                            <?php echo get_post_meta(get_the_id(), "FILMES_EMBEDDED")[0]; ?>
+                                            
+                                            <iframe 
+                                        src="https://www.youtube.com/embed/<?php echo get_post_meta(get_the_id(), "FILMES_EMBEDDED")[0]; ?>?enablejsapi=1&html5=1"
+                                        frameborder="0"
+                                        id="modal-filmescat-<?php the_ID(); ?>-iframe"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen>
+                            </iframe>
                                             </div>
                                             <div class="modal-content__texto">
                                                 <h2><?php the_title(); ?> - </h2><h4><?php echo get_post_meta(get_the_id(), "FILMES_SUBTITULO")[0]; ?></h4> 
@@ -564,9 +671,7 @@
             var image = document.getElementById(modal_id + "-close");
 
             var modal = document.getElementById(modal_id);
-            modal.style.display = "flex";
-
-            console.log({modalId: modal_id, image, modal});
+            modal.style.display = "flex";            
 
             // When the user clicks on <image> (x), close the modal
             image.onclick = function() {
@@ -582,5 +687,23 @@
         }
 
     </script>
+
+
+
+
+
+<script>
+    function onYouTubePlayerAPIReady() {
+        var all_modals = document.getElementsByClassName("modal");
+
+        for (var i = 0; i < all_modals.length; i++) {
+            const modal = all_modals.item(i);
+            const modal_id = modal.id;
+            players[modal.id] = new YT.Player(modal.id + "-iframe", { events: { 'onReady': onPlayerReady }});
+        }
+
+        console.log(players);
+    }
+</script>
 
     <?php get_footer();?>
