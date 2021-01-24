@@ -548,9 +548,11 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
                 }
             </script>
 
+            <?php if($counter > 12) { ?>
             <div onclick="carregarMais(event)" class="filmes__tab__loadmorebutton" id="filmes__tab__loadmorebutton">
                 Carregar Mais
             </div>
+            <?php } ?>
 
         </div>
 

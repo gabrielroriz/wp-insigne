@@ -548,9 +548,11 @@ function tipoDeTrabalhoOnClick(event) {
             }
         </script>
 
-        <div onclick="carregarMais(event)" class="filmes__tab__loadmorebutton" id="filmes__tab__loadmorebutton">
-            Carregar Mais
-        </div>
+            <?php if($counter > 12) { ?>
+            <div onclick="carregarMais(event)" class="filmes__tab__loadmorebutton" id="filmes__tab__loadmorebutton">
+                Carregar Mais
+            </div>
+            <?php } ?>
 
     </div>
 
