@@ -47,8 +47,6 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
     ]);
 ?>
 
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
 <!-- 
     ////////////
     // MODAIS //
@@ -95,7 +93,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
             </h4>
         </div>
 
-        <div class="filmes__header__posters swiper-container swiper-container--desktop">
+        <div class="filmes__header__posters swiper-container" id="swiper-container--desktop">
 
             <div class="slider-button-desktop swiper-button-next">
                 <img src="<?php echo get_template_directory_uri() . "/assets/min-images/filmes/img-seta.svg"; ?>" />
@@ -126,12 +124,12 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
         </div>
 
         <script>
-            var mySwiper = new Swiper('.swiper-container--desktop', {
-            direction: 'horizontal',
-            slidesPerView: "auto",
-            spaceBetweem: 20,
+            var mySwiper = new Swiper('#swiper-container--desktop', {
+            // direction: 'horizontal',
+            slidesPerView: 4,
+            spaceBetweem: 10,
             updateOnWindowResize: true,
-            loop: false,
+            // loop: false,
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
@@ -140,7 +138,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
         </script>
 
     
-    <div class="filmes__header__posters--mobile swiper-container swiper-container--mobile">
+    <div class="filmes__header__posters--mobile swiper-container" id="swiper-container--mobile">
     
             <div class="swiper-wrapper swiper-wrapper--mobile">
 
@@ -177,7 +175,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
         </div>
 
         <script>
-            var swiper = new Swiper('.swiper-container--mobile', {
+            var swiper = new Swiper('#swiper-container--mobile', {
             slidesPerView: 1,
             direction: 'horizontal',
             navigation: {

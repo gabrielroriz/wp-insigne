@@ -190,8 +190,12 @@
 .filmes {
   &__header {
     width: 100%;
-    display: grid;
-    grid-template-columns: 3fr 7fr;
+    // display: grid;
+    // grid-template-columns: 3fr 7fr;
+
+    display: flex;
+    flex-direction: row;
+
     background-image: url("./assets/min-images/filmes/img-header-filmes-desktop.svg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -200,7 +204,7 @@
     background-color: $light-purple;
     height: 1200px;
     align-items: flex-start;
-    // overflow: hidden;
+    overflow: hidden;
 
     @include desktop-1440-and-below {
       background-image: url("./assets/min-images/filmes/img-header-filmes-desktop-1440.svg");
@@ -305,28 +309,36 @@
         display: none;
       }
 
+      .swiper-slide{
+        margin-left: 20px;
+      }
+
       .swiper-wrapper {
-        width: 40%;
-        height: 100%;
+        display: flex;
+        align-items: center;
    
 
-        display: flex;
-        flex-direction: row;
+        // display: flex;
+        // flex-direction: row;
 
-        @include desktop-1440-and-below{
-          align-items: flex-start;
-        }
+        // @include desktop-1440-and-below{
+        //   align-items: flex-start;
+        // }
 
-        @include desktop-1366-and-below{
-          align-items: center;
-        } 
+        // @include desktop-1366-and-below{
+        //   align-items: center;
+        // } 
       }
+
+      // .swiper-slide-prev{
+      //   opacity: 0;
+      // }
     }
   }
 
   &__highlight {
     width: 481px;
-    height: 814px;
+    height: 814px !important;
     display: flex;
     flex-direction: column;
     padding-bottom: 69px;
@@ -337,13 +349,14 @@
     margin-right: 30px;
 
     &:hover {
-      box-shadow: 0px 0px 73px #000000a1;
+      box-shadow: 0px 0px 23px #000000a1;
       cursor: pointer;
     }
 
     @include desktop-1440-and-below{
       width: 247px;
       height: 499px;
+      height: 60% !important;
     }
 
     @include tablet-768-and-below {
@@ -1182,6 +1195,10 @@
   }
 
   .swiper-slide--mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
     &:nth-child(1) {
       // background-color: red;
     }
@@ -1234,11 +1251,19 @@
 
 
 
+.swiper-button-next:after, .swiper-button-prev:after{
+  display: none;
+}
+
 .slider-button-desktop {
   position: absolute;
   top: 40%;
-  left: 940px;
   z-index: 4;
+
+
+  &.swiper-button-next{
+    right: 90px !important;
+  }
 
   &:hover {
     cursor: pointer;
@@ -1274,7 +1299,7 @@
 
   &.swiper-button-prev{
     position: absolute;
-    top: 42%;
+    top: 50%;
     left: 88px;
     z-index: 4;
 

@@ -48,8 +48,6 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
         ]);
     ?>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
 <!-- 
     ////////////
     // MODAIS //
@@ -127,9 +125,9 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
         <script>
             var mySwiper = new Swiper('#swiper-container--desktop', {
-            direction: 'horizontal',
-            slidesPerView: 3,
-            spaceBetweem: 20,
+            // direction: 'horizontal',
+            slidesPerView: 4,
+            spaceBetweem: 10,
             updateOnWindowResize: true,
             // loop: false,
             navigation: {
