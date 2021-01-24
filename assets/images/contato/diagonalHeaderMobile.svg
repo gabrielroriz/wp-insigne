@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="375" height="181" viewBox="0 0 375 181">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Retângulo_146" data-name="Retângulo 146" width="375" height="181" transform="translate(0 522)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="diagonal-inferior-header-mobile" transform="translate(0 -522)" clip-path="url(#clip-path)">
+    <path id="fundo-roxoEscuro-header" d="M4131.326-20308.447s15.781,659.828,24.709,659.828,503.507-128.842,503.507-128.842l9.921-523.211-189.954-199.723Z" transform="translate(-4231 20360)" fill="#1e112e"/>
+  </g>
+</svg>

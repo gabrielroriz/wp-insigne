@@ -23,8 +23,9 @@
         class="contato__header__right-background" 
         src="<?php echo get_template_directory_uri() . "/assets/min-images/contato/office.png"; ?>" 
     />
-
 </div>
+
+<img class="contato__header__diagonal" width="100%" src="<?php echo get_template_directory_uri() . "/assets/min-images/contato/diagonalHeaderMobile.svg"; ?>" alt="">
 
 <div class="contato__infos">
     <div class="contato__infos__container">
@@ -65,9 +66,9 @@
 
             <div class="contato__infos__row">
                 <div class="contato__infos__wpp">
-                    <a href="#">
+                    <div href="#">
                         Whatsapp
-                    </a>    
+                    </div>    
                 </div>
                 <div class="contato__infos__smalltext">
                     Horário de atendimento:<br/>
@@ -78,6 +79,8 @@
         </div>
     </div>
 </div>
+
+<img class="contato__header__diagonal" width="100%" src="<?php echo get_template_directory_uri() . "/assets/min-images/contato/diagonalInstagramMobile.svg"; ?>" alt="">
 
 <div class="contato__instagram">
     <div class="contato__instagram__container">
@@ -91,6 +94,10 @@
             <h3>NOSSO INSTAGRAM</h3>
 
             <div class="contato__instagram__posts__cards" id="contato__instagram__posts__cards">
+            </div>
+
+            <div class="contato__instagram__button">
+                <div>VISITE NOSSO INSTAGRAM</div>
             </div>
         </div>
     </div>

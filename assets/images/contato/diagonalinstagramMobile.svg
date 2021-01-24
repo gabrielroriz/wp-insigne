@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="375" height="114" viewBox="0 0 375 114">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Retângulo_149" data-name="Retângulo 149" width="375" height="114" transform="translate(8854 -18695)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="diagonal-instagram-mobile" transform="translate(-8854 18695)" clip-path="url(#clip-path)">
+    <path id="fundo-roxo-escuro-instagram" d="M4231.027-18189.234l374.874,59.328L4607.019-16857H4231.081Z" transform="translate(4623 -492)" fill="#1e112e"/>
+  </g>
+</svg>

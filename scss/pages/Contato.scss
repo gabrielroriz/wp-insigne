@@ -2,7 +2,6 @@
 @import "../utils/Vars.scss";
 
 .contato {
-
   &__navbar-area {
     width: 100%;
     height: $navbar-height;
@@ -16,9 +15,28 @@
     width: 100%;
     background-color: green;
     position: relative;
+
+    background-color: #1e112e;
+
     height: 100vh;
     min-height: 700px;
-    background-color: #1e112e;
+
+    @include tablet-768-and-below {
+      height: 70vh;
+      min-height: 400px;
+    }
+
+    @include mobile-411-and-below {
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    &__diagonal {
+      width: 100%;
+      margin-top: -80px;
+      object-fit: contain;
+    }
 
     &__left-background {
       position: absolute;
@@ -84,15 +102,15 @@
         bottom: 0 !important;
       }
 
-      @include mobile-411-and-below{
+      @include mobile-411-and-below {
         top: auto;
-        bottom: 100px !important;
+        bottom: 0px !important;
       }
     }
   }
 
   &__infos {
-    padding: 200px 0px;
+    padding: 20px 0px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -163,6 +181,11 @@
 
       @include tablet-768-and-below {
         row-gap: 38px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-bottom: 100px;
       }
     }
 
@@ -173,6 +196,12 @@
 
       @include desktop-1920-and-below {
         font-size: 15px;
+      }
+
+      @include mobile-411-and-below {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0px;
       }
 
       h4 {
@@ -252,28 +281,35 @@
         text-align: left;
       }
 
-      a {
+      @include mobile-411-and-below {
+        margin-top: 0px;
+      }
+
+      div {
         color: white;
         text-decoration: none;
         text-transform: uppercase;
         font-weight: 700;
         padding: 30px 120px;
         background: $orange;
-        display: inline;
+        display: flex;
+        max-width: 400px;
+        justify-content: center;
+        align-items: center;
 
         @include desktop-1440-and-below {
           padding: 25px 100px;
         }
 
-        @include mobile-411-and-below{
+        @include mobile-411-and-below {
           width: 100%;
-          padding: 25px 80px;
+          padding: 25px 0px;
         }
       }
     }
 
     &__smalltext {
-      margin-top: 10px;
+      // margin-top: 10px;
       font-size: 12px;
       color: $gray;
 
@@ -284,14 +320,14 @@
   }
 
   &__instagram {
-    padding: 200px 0px;
+    padding: 30px 0px;
+    margin-top: -30px;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: #1e112e;
- 
 
     &__container {
       width: 70%;
@@ -313,6 +349,11 @@
       @include desktop-1024-and-below {
         justify-content: flex-start;
         padding: 30px;
+      }
+
+      @include mobile-411-and-below {
+        padding-bottom: 0px;
+        margin-top: -30px;
       }
 
       h2 {
@@ -350,11 +391,16 @@
       width: 100%;
       min-height: 700px;
 
-      @include desktop-1024-and-below{
+      @include desktop-1024-and-below {
         padding: 30px;
       }
 
-      h3{
+      @include mobile-411-and-below {
+        padding-top: 15px;
+        min-height: 450px;
+      }
+
+      h3 {
         color: $gold;
         text-transform: uppercase;
       }
@@ -366,8 +412,6 @@
         align-items: center;
         justify-content: center;
 
-        
-
         &__line {
           margin-top: 16px;
           width: 100%;
@@ -377,11 +421,18 @@
           align-items: center;
           justify-content: flex-start;
 
+          @include mobile-411-and-below {
+            display: none;
+            &:nth-child(1) {
+              display: flex;
+            }
+          }
+
           &:nth-child(even) {
             justify-content: flex-end;
           }
 
-          @include tablet-768-and-below{
+          @include tablet-768-and-below {
             &:nth-child(even) {
               justify-content: flex-start;
             }
@@ -393,21 +444,47 @@
             object-fit: contain;
             margin-right: 16px;
 
-            @include desktop-1440-and-below{
+            @include desktop-1440-and-below {
               width: 195px;
               height: 193px;
             }
 
-            @include desktop-1366-and-below{
+            @include desktop-1366-and-below {
               width: 185px;
               height: 184px;
             }
 
-            @include desktop-1024-and-below{
+            @include desktop-1024-and-below {
               width: 235px;
               height: 234px;
             }
           }
+        }
+      }
+    }
+
+    &__button{
+      
+      div {
+        margin: 40px 0px;
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 700;
+        padding: 30px 0px;
+        background: $orange;
+        display: flex;
+        max-width: 400px;
+        justify-content: center;
+        align-items: center;
+
+        @include desktop-1440-and-below {
+          padding: 25px 100px;
+        }
+
+        @include mobile-411-and-below {
+          width: 100%;
+          padding: 25px 0px;
         }
       }
     }
