@@ -142,11 +142,13 @@ $padding-left-mobile: 30px;
       }
 
       &__diagonal{
-        display: none;
+        display: block;
         width: 100%;
         object-fit: contain;
+        margin-bottom: -400px;
+
         @include desktop-extra-1300-and-below {
-          display: block;
+          margin-bottom: 0px; 
         }
       }
     }
@@ -303,11 +305,16 @@ $padding-left-mobile: 30px;
       letter-spacing: 8.6px;
       width: 280px;
 
+      
+
       @include desktop-1366-and-below {
         position: relative;
         top: 0;
         left: 0;
         width: 100%;
+        width: 400px;
+        margin-left: 100px;
+        font-size: 18px;
       }
     }
 
@@ -330,14 +337,9 @@ $padding-left-mobile: 30px;
         margin-top: -280px;
         margin-bottom: -550px;
         padding-left: 143px;
-
         @include desktop-1440-and-below {
-          margin-bottom: 100px;
+          background-size: 100%;
         }
-
-        // @include desktop-1366-and-below {
-        //   padding: 0;
-        // }
       }
 
       &__b2 {
@@ -347,12 +349,8 @@ $padding-left-mobile: 30px;
         margin: -550px 0;
 
         @include desktop-1440-and-below {
-          margin-bottom: 100px;
+          background-size: 100%;
         }
-
-        // @include desktop-1366-and-below {
-        //   margin: -50px 0;
-        // }
       }
 
       &__b3 {
@@ -363,13 +361,9 @@ $padding-left-mobile: 30px;
         margin-bottom: -450px;
 
         @include desktop-1440-and-below {
+          background-size: 100%;
           margin-bottom: 100px;
         }
-
-        // @include desktop-1366-and-below {
-        //   margin-top: -50px;
-        //   margin-bottom: -50px;
-        // }
       }
 
       &__numeral {
@@ -379,7 +373,7 @@ $padding-left-mobile: 30px;
         position: absolute;
         z-index: 3;
 
-        @include desktop-1366-and-below {
+        @include desktop-1440-and-below {
           font-size: 150px;
         }
 
@@ -456,7 +450,7 @@ $padding-left-mobile: 30px;
       width: 100%;
       padding-left: $padding-left-mobile;
 
-      font-size: 22px;
+      font-size: 17px;
       letter-spacing: 8.6px;
       line-height: 32px;
       font-weight: 300;
@@ -597,15 +591,17 @@ $padding-left-mobile: 30px;
       }
 
       &__text {
-        align-self: flex-end;
+        align-self: center;
         padding-bottom: 15px;
-        font-size: 22px;
+        font-size: 18px;
         font-weight: 300;
         color: $cream;
         border-bottom: 1px solid $cream;
+        height: 100px;
 
         @include desktop-1440-and-below {
           font-size: 15px;
+          
         }
 
         @include desktop-extra-1300-and-below {
@@ -624,7 +620,7 @@ $padding-left-mobile: 30px;
     margin-top: -200px;
     margin-bottom: -150px;
 
-    @include desktop-1366-and-below {
+    @include desktop-1024-and-below {
       margin: 0;
     }
 
@@ -641,7 +637,7 @@ $padding-left-mobile: 30px;
         padding: 20px 210px;
       }
 
-      @include desktop-1366-and-below {
+      @include desktop-1024-and-below {
         padding: 80px 20px;
         flex-direction: column;
       }

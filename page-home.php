@@ -100,7 +100,7 @@
         $loop = new WP_Query($args); 
 
         while ($loop->have_posts()) : $loop->the_post();
-            array_push($filmes, array(get_post_meta(get_the_ID(), "FILMES_IMAGEM", true), get_post_permalink()));
+            array_push($filmes, array(get_post_meta(get_the_ID(), "FILMES_IMAGEM", true), site_url('/osfilmes')));
         endwhile;
 
         wp_reset_postdata();
